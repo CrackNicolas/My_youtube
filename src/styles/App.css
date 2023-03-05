@@ -78,7 +78,7 @@ body::-webkit-scrollbar-thumb{
     border-radius: 50%;
     transform: translateY(1px);
 }
-.nav-top .logo .content-logo:hover, .nav-top .logo p:hover{
+.nav-top .logo .content-logo:hover{
     cursor: pointer;
 }
 .nav-top .logo ion-icon{
@@ -87,17 +87,19 @@ body::-webkit-scrollbar-thumb{
     height: 27.5px;
     color: var(--color-icon-youtube);
 }
-.nav-top .logo p{
+.nav-top .logo a:nth-child(2){
     font-size: 21.7px;
     letter-spacing: -2.1px;
     font-family: sans-serif;
     font-weight: bold;
     color: var(--color-text-icon-youtube);
     padding-left: 3px;
+    text-decoration: none;
 }
-.nav-top .logo p::after{
+.nav-top .logo a:nth-child(2):after{
     position: absolute;
     content: "AR";
+    text-decoration: none;
     font-size: 10px;
     font-weight: normal;
     letter-spacing: 1px;

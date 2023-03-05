@@ -14,7 +14,7 @@ import Videos from '../../service/videos/index.js';
 import Channel from '../../schema/channel.js';
 import Video_presentation from '../../schema/video.js';
 
-export default function Explore(){
+export default function Home(){
   let {search} = useLocation();
   let query = new URLSearchParams(search);
   let search_query = query.get("search_query");
@@ -75,7 +75,7 @@ export default function Explore(){
 
   return (
     <React.Fragment>
-      <NavTop/>
+      <NavTop search_query={search_query}/>
       <NavCategories categorie_selected={capture_id_categorie} categories={categories}/>
       <NavLeft/>
       <VideosLayouts videos={videos}/>

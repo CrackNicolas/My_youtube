@@ -31,4 +31,15 @@ export class Video_view{
         this.likes = likes;
         this.comments = comments;
     }
+    static push(video){
+        return new Video_view(
+            video.id,
+            video.snippet.title,
+            get_convert_cantidad(video.statistics.likeCount),
+            get_convert_cantidad(video.statistics.commentCount)
+        )  
+    }
+    static get_url_player(id){
+        return "https://www.youtube.com/embed/"+id;      
+    }
 }

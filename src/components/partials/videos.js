@@ -1,12 +1,17 @@
 import React from 'react'
 
-export default function VideosLayouts(props){
+export default function VideosLayouts({videos}){
+
+  let watch_video = (id) => {
+    return "/watch/"+id;
+  }
+
   return (
     <section className="videos">
       {
-        props.videos.map((video,index) => {
+        videos.map((video,index) => {
           return (
-            <a key={index}>
+            <a href={watch_video(video.id)} key={index}>
               <article className="video">
                 <div className="imagen">
                     <img src={video.url_imagen} alt={video.id}/>

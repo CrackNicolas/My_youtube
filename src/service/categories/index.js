@@ -7,7 +7,7 @@ export default class Categories{
         let categories = [];
         const promise = await axios.get(get_petition_url("videoCategories?part=snippet&hl=es&regionCode=ES"));
         
-        let categorie_all_selected = (id==0 || id===undefined)? "selected" : "no-selected";
+        let categorie_all_selected = (id===0 || id===undefined)? "selected" : "no-selected";
         categories.push(new Categorie("0","Todos",categorie_all_selected));
         
         for(let categorie of promise.data.items){
