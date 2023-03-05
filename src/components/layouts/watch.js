@@ -42,10 +42,12 @@ export default function ComponentWatch(){
             for(let comment of search_comments.data.items){
                 if(comment.snippet.totalReplyCount > 0){
                     for(let repli_comment of comment.replies.comments){
-                        replies_comment.push(Schema_comments.push_replies(repli_comment,undefined));
+                        replies_comment.push(Schema_comments.push_replies(repli_comment,undefined,undefined));
                     }
                 }
-                comments.push(Schema_comments.push_general(comment,replies_comment));
+                let replies_count = (comment.snippet.totalReplyCount==0)? undefined : (comment.snippet.totalReplyCount>1)? comment.snippet.totalReplyCount+" respuestas" : comment.snippet.totalReplyCount+" respuesta";
+                comments.push(Schema_comments.push_general(comment,replies_count,replies_comment));
+                replies_comment = [];
             }
             setComments_video_selected(comments);
         }

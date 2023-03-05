@@ -1010,6 +1010,9 @@ body::-webkit-scrollbar-thumb{
 .view_videos .comments .list-comments .replies{
     display: none;
 }
+.view_videos .comments .list-comments .watch_replies{
+    display: block;
+}
 .view_videos .comments .list-comments .datails-comment-replies{
     width: 92%;
     display: flex;
