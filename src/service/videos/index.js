@@ -1,7 +1,7 @@
 import axios from 'axios';
 import {get_petition_url} from '../../logic/functions.js';
 
-export default class Videos{
+export default class Service_videos{
     static async get_all(search,id_categorie,cantidad){
         let promise;
         if(search==="" || search===undefined || search===null){

@@ -3,6 +3,9 @@ import {key,url} from '../service/config/credentials.js';
 export function get_petition_url(partial){
     return url + partial + "&key="+ key;
 }
+export function get_url_player(id){
+    return "https://www.youtube.com/embed/"+id;
+}
 export function get_time_elapsed(fecha_emit){
     let fecha_emision = new Date(fecha_emit.split("T")[0]).getTime();
     let fecha_actual = new Date().getTime();

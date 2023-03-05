@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function VideosLayouts({videos}){
+export default function ComponentVideosLayouts({videos}){
 
   let watch_video = (id) => {
     return "/watch/"+id;

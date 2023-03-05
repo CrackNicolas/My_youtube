@@ -1,4 +1,4 @@
-export default function ViewVideoFavorite(){
+export default function ComponentViewVideoFavorite(){
     return (
         <section className="views-videos-favorite">
             <article className="publication">

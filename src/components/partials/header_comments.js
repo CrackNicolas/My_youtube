@@ -1,8 +1,10 @@
-export default function Comments(){
+import React from "react"
+
+export default function ComponentHeaderComments({comments_count}){
     return (
-        <article className="comments">
+        <React.Fragment>
             <div className="top">
-                comentarios
+                {comments_count} comentarios
                 <button className="order">
                     <ion-icon name="list-outline"></ion-icon>
                     Ordenar por
@@ -21,9 +23,6 @@ export default function Comments(){
                     </div>
                 </div>
             </div>
-            <div className="list-comments">
-                    
-            </div>
-        </article>
-    );
+        </React.Fragment>
+    )
 }

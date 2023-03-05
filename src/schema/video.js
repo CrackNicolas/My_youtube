@@ -1,6 +1,6 @@
 import {get_convert_cantidad, get_time_elapsed, get_duration_video} from '../logic/functions.js';
 
-export default class Video_presentation{
+export default class Schema_video_presentation{
     constructor(id,title,url_imagen,duration,time_elapsed,license,view_count,channel){
         this.id = id;
         this.title = title;
@@ -12,7 +12,7 @@ export default class Video_presentation{
         this.channel = channel;
     }
     static push(video,channel){
-        return new Video_presentation(
+        return new Schema_video_presentation(
             video.id,
             video.snippet.title,
             video.snippet.thumbnails.medium.url,
@@ -24,22 +24,19 @@ export default class Video_presentation{
         )
     }
 }
-export class Video_view{
-    constructor(id,title,likes,comments){
+export class Schema_video_watch{
+    constructor(id,title,likes,comments_count){
         this.id = id;
         this.title = title;
         this.likes = likes;
-        this.comments = comments;
+        this.comments_count = comments_count;
     }
     static push(video){
-        return new Video_view(
+        return new Schema_video_watch(
             video.id,
             video.snippet.title,
             get_convert_cantidad(video.statistics.likeCount),
             get_convert_cantidad(video.statistics.commentCount)
         )  
-    }
-    static get_url_player(id){
-        return "https://www.youtube.com/embed/"+id;      
     }
 }

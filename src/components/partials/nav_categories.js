@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function NavCategories({categories,categorie_selected}){
+export default function ComponentNavCategories({categories,categorie_selected}){
   
   let load_categorie = (id) => {
     categorie_selected(id);

@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function NavTop({search_query}){
+export default function ComponentNavTop({search_query}){
     return (
         <nav className="nav-top">
             <button className="menu">
