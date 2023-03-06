@@ -978,34 +978,26 @@ body::-webkit-scrollbar-thumb{
     display: flex;
     align-items: center;
     margin: 0 0px 10px 7.3%;
+    font-weight: bold;
+    outline: none;
+    border: none;
+    font-size: 12.5px;
+    padding-left: 5px;
+    padding-right: 17px;
+    letter-spacing: 0.5px;
+    border-radius: 20px;
+    background-color: transparent;
+    color: var(--color-border-input-search);
 }
-.view_videos .comments .list-comments .view-replies .icon-disguise{
-    display: none;
+.view_videos .comments .list-comments .view-replies:hover{
+    cursor: pointer;
+    background-color: var(--color-font-hover-button-reintentar);
 }
 .view_videos .comments .list-comments .view-replies ion-icon{
     color: var(--color-border-input-search);
     width: 20px;
     height: 20px;
-    border-radius: 50%;
-    padding: 9px;
-}
-.view_videos .comments .list-comments .view-replies ion-icon:hover{
-    cursor: pointer;
-    background-color: var(--color-font-hover-button-reintentar);
-}
-.view_videos .comments .list-comments .view-replies a{
-    color: var(--color-border-input-search);
-    font-weight: bold;
-    outline: none;
-    border: none;
-    text-decoration: none;
-    font-size: 12.5px;
-    padding: 11px;
-    border-radius: 20px;
-}
-.view_videos .comments .list-comments .view-replies a:hover{
-    cursor: pointer;
-    background-color: var(--color-font-hover-button-reintentar);
+    padding: 7px;
 }
 .view_videos .comments .list-comments .replies{
     display: none;

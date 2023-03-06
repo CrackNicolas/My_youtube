@@ -1,22 +1,25 @@
 import React, { useState } from "react";
 
 export default function ComponentListComments({comments}){
-    const [replies_selected,setReplies_selected] = useState(undefined);
+    const [replies_selecteds,setReplies_selecteds] = useState([]);
 
-    const View_replies_comment = (e,index) => {
-        setReplies_selected( (e.target.name == "chevron-down-outline")? index : undefined );
+    const check_icon_replie = (index) => {
+        if(replies_selecteds.includes(index)){
+            let new_select_comments = replies_selecteds.filter(item => item != index);
+            setReplies_selecteds(new_select_comments);
+        }else{
+            setReplies_selecteds([...replies_selecteds,index]);
+        }
     }
-
-    const View = (index) => {
-        return (index==replies_selected)? "watch_replies" : "replies";
+    const watch_replie_selected = (index) => {
+        return (replies_selecteds.includes(index))? "watch_replies" : "replies";
     }
-    const View_icon_1 = () => {
-        return (replies_selected==undefined)? {display : "none"} : {display : "block"};
+    const watch_icon_repli_selected = (index) => {
+        return (replies_selecteds.includes(index))? {display : "none"} : {display : "block"};
     }
-    const View_icon_2 = () => {
-        return (replies_selected!=undefined)? {display : "none"} : {display : "block"};
+    const disguise_icon_repli_selected = (index) => {
+        return (!replies_selecteds.includes(index))? {display : "none"} : {display : "block"};
     }
-
     
     return (
         <div className="list-comments">
@@ -43,14 +46,12 @@ export default function ComponentListComments({comments}){
                             {
                                 comment.replies_count !== undefined ?
                                     <React.Fragment>
-                                        <div className="view-replies">
-                                            <ion-icon className="icon-disguise" style={View_icon_1()} onClick={(e) => View_replies_comment(e,index)} name="chevron-up-outline"></ion-icon>
-                                            <ion-icon className="icon-view" style={View_icon_2()} onClick={(e) => View_replies_comment(e,index)} name="chevron-down-outline"></ion-icon>
-                                            <a className="">
-                                                {comment.replies_count}
-                                            </a>
-                                        </div>
-                                        <div className={View(index)}>
+                                        <button className="view-replies" onClick={() => check_icon_replie(index)}>
+                                            <ion-icon style={ disguise_icon_repli_selected(index) } name="chevron-up-outline"></ion-icon>
+                                            <ion-icon style={ watch_icon_repli_selected(index) } name="chevron-down-outline"></ion-icon>
+                                            {comment.replies_count}
+                                        </button>
+                                        <div className={ watch_replie_selected(index) }>
                                             {
                                                 comment.replies.map((replies,index) => {
                                                     return (
