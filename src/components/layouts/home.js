@@ -48,7 +48,7 @@ export default function ComponentHome(){
         
         for(let video of videos_search.data.items){
             result_promises_channels[new_videos.length].data.items.find(item => (
-                channel = Schema_channel.push(video,item)
+                channel = Schema_channel.push(item)
             ))
             result_promises_videos[new_videos.length].data.items.find(item => (
                 new_videos.push(Schema_video_presentation.push(item,channel))
@@ -57,7 +57,7 @@ export default function ComponentHome(){
       }else{
         for(let video of videos_search.data.items){
           result_promises_channels[new_videos.length].data.items.find(item => (
-              channel = Schema_channel.push(video,item)
+              channel = Schema_channel.push(item)
           ))
           new_videos.push(Schema_video_presentation.push(video,channel));
         }
@@ -70,7 +70,7 @@ export default function ComponentHome(){
   },[categorie_selected])
 
   let capture_id_categorie = (id) => {
-    setCategorie_selected(id);
+    setCategorie_selected((id==0)? undefined : id);
   }
 
   return (

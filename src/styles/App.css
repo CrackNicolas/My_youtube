@@ -396,7 +396,7 @@ body::-webkit-scrollbar-thumb{
     left: 90px;
     top: 60px;
     padding: 10px 10px 10px 10px;
-    width: 85%;
+    width: 91%;
     display: flex;
     background-color: var(--color-font-primary);
     justify-content: space-between;
@@ -1113,28 +1113,14 @@ body::-webkit-scrollbar-thumb{
 /**----------------------------------**/
 
 /**------View videos favorites-------**/
-.views-videos-favorite .publication{
-    border-radius: 8px;
-    padding: 12px;
-    margin-top: 80px;
-    background-color: var(--color-font-primary);
-    color: var(--color-text-secondary);
-    border: 0.1px solid var(--color-text-secondary);
-    opacity: 0.4;
-    margin-right: 10px;
-    text-align: center;
-    font-size: 100px;
-    font-weight: bold;
-    letter-spacing: 3px;
-}
-.views-videos-favorite .categories{
+.views-videos-related .categories{
     color: var(--color-text-primary);
     padding: 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-.views-videos-favorite .categories a{
+.views-videos-related .categories a{
     text-decoration: none;
     border-radius: 7px;
     background-color: var(--color-font-secondary);
@@ -1144,24 +1130,24 @@ body::-webkit-scrollbar-thumb{
     font-size: 13.3px;
     letter-spacing: 0.4px;
 }
-.views-videos-favorite .categories a:nth-child(1){
+.views-videos-related .categories a:nth-child(1){
     background-color: var(--color-text-primary);
     color: var(--color-font-primary);
 }
-.views-videos-favorite .categories a:hover{
+.views-videos-related .categories a:hover{
     cursor: pointer;
     background-color: var(--color-font-hover-buttons);
 }
-.views-videos-favorite .categories a:nth-child(1):hover{
+.views-videos-related .categories a:nth-child(1):hover{
     background-color: var(--color-text-primary);
 }
-.views-videos-favorite .nav-categories-two{
+.views-videos-related .nav-categories-two{
     color: var(--color-text-primary);
     width: 455px;
     display: flex;
     margin: 10px 5px 0 0;
 }
-.views-videos-favorite .categories{
+.views-videos-related .categories{
     color: var(--color-text-primary);
     display: flex;
     justify-content: space-between;
@@ -1169,7 +1155,7 @@ body::-webkit-scrollbar-thumb{
     overflow-x: scroll;
     gap: 10px;
 }
-.views-videos-favorite .categories::-webkit-scrollbar{
+.views-videos-related .categories::-webkit-scrollbar{
     height: 0px;
 }
 .prev-two{
@@ -1199,64 +1185,64 @@ body::-webkit-scrollbar-thumb{
     cursor: pointer;
     background-color: var(--color-font-hover-buttons);
 }
-.views-videos-favorite{
+.views-videos-related{
     width: 37%;
     display: block;
 }
-.views-videos-favorite .videos-favorites{
+.views-videos-related .videos-favorites{
     margin-bottom: 10px;
     margin-right: 10px;
     margin-top: 10px;
 }
-.views-videos-favorite .videos-favorites .player-favorite{
+.views-videos-related .videos-favorites .player-favorite{
     display: flex;
     justify-content: center;
     margin-bottom: -63px;
     padding-right: 4px;
 }
-.views-videos-favorite .videos-favorites .player-favorite:hover{
+.views-videos-related .videos-favorites .player-favorite:hover{
     cursor: pointer;
 }
-.views-videos-favorite .videos-favorites .player-favorite:hover ion-icon{
+.views-videos-related .videos-favorites .player-favorite:hover ion-icon{
     visibility: visible;
 }
-.views-videos-favorite .videos-favorites .player-favorite:hover .duration{
+.views-videos-related .videos-favorites .player-favorite:hover .duration{
     transition-duration: 0.4s;
     visibility: hidden;
 }
-.views-videos-favorite .videos-favorites .player-favorite ion-icon{
+.views-videos-related .videos-favorites .player-favorite ion-icon{
     color: var(--color-text-primary);
     visibility: hidden;
 }
-.views-videos-favorite .videos-favorites .player-favorite .imagen{
+.views-videos-related .videos-favorites .player-favorite .imagen{
     width: 40.8%;
 }
-.views-videos-favorite .videos-favorites .player-favorite .datails{
+.views-videos-related .videos-favorites .player-favorite .datails{
     width: 59.2%;
 }
-.views-videos-favorite .videos-favorites .player-favorite .datails p{
+.views-videos-related .videos-favorites .player-favorite .datails p{
     font-family: Arial, Helvetica, sans-serif;
     letter-spacing: 0.3px;
     line-height: 18px;
 }
-.views-videos-favorite .videos-favorites .player-favorite .datails p:nth-child(1){
+.views-videos-related .videos-favorites .player-favorite .datails p:nth-child(1){
     color: var(--color-text-primary);
-    font-size: 13.7px;
+    font-size: 12.5px;
     font-weight: bold;
     margin-bottom: 4px;
 }
-.views-videos-favorite .videos-favorites .player-favorite .datails p:nth-child(2), 
-.views-videos-favorite .videos-favorites .player-favorite .datails p:nth-child(3), 
-.views-videos-favorite .videos-favorites .player-favorite .datails p:nth-child(4){
+.views-videos-related .videos-favorites .player-favorite .datails p:nth-child(2), 
+.views-videos-related .videos-favorites .player-favorite .datails p:nth-child(3), 
+.views-videos-related .videos-favorites .player-favorite .datails p:nth-child(4){
     color: var(--color-text-secondary);
     font-size: 12.5px;
 }
-.views-videos-favorite .videos-favorites .player-favorite img{
+.views-videos-related .videos-favorites .player-favorite img{
     border-radius: 9px;
     width: 173px;
     height: 100px;
 }
-.views-videos-favorite .videos-favorites .player-favorite .imagen .duration{
+.views-videos-related .videos-favorites .player-favorite .imagen .duration{
     position: relative;
     z-index: 5;
     transform: translate(130px, -76px);
@@ -1271,13 +1257,13 @@ body::-webkit-scrollbar-thumb{
     width: 39px;
     text-align: center;
 }
-.views-videos-favorite .videos-favorites .player-favorite .imagen .icons{
+.views-videos-related .videos-favorites .player-favorite .imagen .icons{
     position: relative;
     z-index: 5;
     transform: translate(145px, -99px);
     width: 30px;
 }
-.views-videos-favorite .videos-favorites .player-favorite .imagen .icons ion-icon{
+.views-videos-related .videos-favorites .player-favorite .imagen .icons ion-icon{
     display: block;
     margin-bottom: 3px;
     border-radius: 3px;
