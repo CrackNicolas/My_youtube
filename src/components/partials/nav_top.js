@@ -1,11 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
+
+import Schema_styles_nav_top from '../../styles/schema/styles_nav_top.js';
 
 export default function ComponentNavTop({search_query}){
+    const [styles, setStyles] = useState(Schema_styles_nav_top.model);
+    const [action_menu,setAction_menu] = useState(true);
+
+    const view_menu = () => {
+        setStyles( Schema_styles_nav_top.format( (action_menu)? 1 : 2));
+        setAction_menu(!action_menu);
+    }
+
     return (
         <nav className="nav-top">
-            <button className="menu">
+            <button className="menu" onClick={() => view_menu()}>
             <ion-icon name="menu-outline"></ion-icon>
-            <div className="items-menu">
+            <div className="items-menu" style={styles}>
                 <div className="items">
                     <div className="item">
                         <ion-icon name="home"></ion-icon>
