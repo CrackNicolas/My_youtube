@@ -1160,17 +1160,18 @@ body::-webkit-scrollbar-thumb{
 .views-videos-related .categories::-webkit-scrollbar{
     height: 0px;
 }
-.prev-two{
-    display: none;
-    margin-top: 7px;
-    box-shadow: 8px -10px 45px 6px var(--color-font-primary);
-}
 .prev-two, .next-two{
+    position: relative;
     background-color: var(--color-font-primary);
     width: 45px;
     z-index: 15;
     border: none;
     outline: none;
+}
+.prev-two{
+    display: none;
+    margin-top: 2.5px;
+    box-shadow: 8px -10px 45px 6px var(--color-font-primary);
 }
 .next-two{
     margin-top: 4px;

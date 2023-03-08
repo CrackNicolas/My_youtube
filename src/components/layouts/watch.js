@@ -60,7 +60,7 @@ export default function ComponentWatch(){
                     no_repeat = new_categorie_playlist.data.items[0].snippet.channelTitle                
                 }
             }
-            new_categories.push(new Schema_categorie("R","Relacionados","no-selected"));
+            new_categories.push(new Schema_categorie("0","Relacionados","no-selected"));
             setCategories(new_categories);
         }
         const load_comments_video_selected = async (id_video) => {
