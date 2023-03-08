@@ -8,8 +8,8 @@ export default function ComponentNavToggler({styles}){
                     <ion-icon name="menu-outline"></ion-icon>
                 </button>
                 <a href="/">
-                    <img src="/images/youtube.png"/>
-                    <p>YouTube</p>
+                    <img src="/images/youtube.png" title="Página de inicio de YouTube"/>
+                    <p title="Página de inicio de YouTube">YouTube</p>
                 </a>
             </div>
             <div className="items">

@@ -209,7 +209,7 @@ body::-webkit-scrollbar-thumb{
     width: 9px;
 }
 .nav-top .items:hover::-webkit-scrollbar-thumb{
-    background: var(--color-text-secondary);
+    background: var(--color-text-cuartiary);
     border-radius: 30px;
 }
 .nav-top .items{
@@ -221,7 +221,7 @@ body::-webkit-scrollbar-thumb{
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    padding: 10px 5px;
+    padding: 10px 8px;
     width: 25%;
 }
 .nav-top .menu .items-menu .logo{
@@ -1151,7 +1151,7 @@ body::-webkit-scrollbar-thumb{
     color: var(--color-text-primary);
     width: 455px;
     display: flex;
-    margin: 10px 5px 0 0;
+    margin-top: 77px;
 }
 .views-videos-related .categories{
     color: var(--color-text-primary);
@@ -1160,6 +1160,7 @@ body::-webkit-scrollbar-thumb{
     align-items: center;
     overflow-x: scroll;
     gap: 10px;
+    margin-left: -11.5px;
 }
 .views-videos-related .categories::-webkit-scrollbar{
     height: 0px;

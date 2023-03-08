@@ -21,8 +21,8 @@ export default function ComponentNavTop({search_query}){
                     <ComponentNavToggler styles={styles}/>
                 </div>
                 <a href="/">
-                    <img src="/images/youtube.png"/>
-                    <p>YouTube</p>
+                    <img src="/images/youtube.png" title="Página de inicio de YouTube"/>
+                    <p title="Página de inicio de YouTube">YouTube</p>
                 </a>
             </div>
             <form action="/results" method="GET" className="search" title="Buscar">
