@@ -57,7 +57,7 @@ export default function ComponentSinInternet(){
                 </svg>
                 <p className="text-1">Conéctate a Internet</p>
                 <p className="text-2">No tienes Internet. Comprueba la conexion.</p>
-                <a className="reintentar" href="">Reintentar</a>
+                <a className="reintentar" href="/">Reintentar</a>
             </article>
             <article className="footer">
                 Sin conexion a Internet

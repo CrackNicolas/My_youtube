@@ -3,9 +3,6 @@ import React, { useState } from 'react'
 import Schema_styles_nav_categories from '../../styles/schema/styles_nav_categories.js';
 
 export default function ComponentNavCategories({categories,categorie_selected}){
-  let load_categorie = (id) => {
-    categorie_selected(id);
-  }
   const [styles, setStyles] = useState(Schema_styles_nav_categories.model);
   
   const scroll = (e) => {
@@ -31,7 +28,7 @@ export default function ComponentNavCategories({categories,categorie_selected}){
           {
             categories.map((categorie,index) => {
               return (
-                <a onClick={() => load_categorie(categorie.id)} className="categori" id={categorie.selected} title={categorie.title} key={index}>
+                <a onClick={() => categorie_selected(categorie.id)} className="categori" id={categorie.selected} title={categorie.title} key={index}>
                   {categorie.title}
                 </a>
               )

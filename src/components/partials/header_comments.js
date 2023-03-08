@@ -12,13 +12,13 @@ export default function ComponentHeaderComments({comments_count}){
             </div>
             <div className="body">
                 <div className="add-comment">
-                    <img src="/images/my_perfil.jpg" alt=""/>
+                    <img src="/images/my_perfil.jpg" alt="Imagen de perfil del autor de la cuenta youtube"/>
                     <textarea type="text" placeholder="Añade un comentario..."></textarea>
                     <div className="push-comment">
                         <ion-icon name="happy-outline"></ion-icon>
                         <div className="buttons">
-                            <button className="close">Cancelar</button>
-                            <button className="add">Comentar</button>
+                            <button className="close" title="Cancelar" name="Cancelar">Cancelar</button>
+                            <button className="add" title="Comentar" name="Comentar">Comentar</button>
                         </div>
                     </div>
                 </div>

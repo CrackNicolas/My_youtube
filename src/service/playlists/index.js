@@ -4,11 +4,11 @@ import { get_petition_url } from '../../logic/functions.js';
 
 export default class Service_playlists{
     static get_all(id){
-        const promise = axios.get(get_petition_url("playlists?part=snippet&channelId="+id+"&maxResults=1"));
+        const promise = axios.get(get_petition_url("playlists?channelId="+id+"&maxResults=1"));
         return promise;
     }
-    static async get_all_id(id){
-        const promise = await axios.get(get_petition_url("playlistItems?part=contentDetails&playlistId="+id+"&maxResults=2"));
+    static get_datails_playlits(id_playlist){
+        const promise = axios.get(get_petition_url("playlistItems?part=snippet&playlistId="+id_playlist));
         return promise;
     }
 }

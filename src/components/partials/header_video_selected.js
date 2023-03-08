@@ -16,7 +16,7 @@ export default function ComponentHeaderVideoSelected({video,channel}){
                         <p className="autor">{channel.title}</p>
                         <p className="count">{channel.subscriptions}</p>
                     </article>
-                    <button className="btn-subscription">
+                    <button className="btn-subscription" title="Suscribirse" name="Suscribirse">
                         Suscribirse
                     </button>
                 </div>
@@ -30,7 +30,7 @@ export default function ComponentHeaderVideoSelected({video,channel}){
                     </button>
                     <button className="share">
                         <ion-icon name="arrow-redo-outline"></ion-icon>
-                        <p>Compartir</p>
+                        <p title="Compartir" name="Compartir">Compartir</p>
                     </button>
                     <button className="option">
                         <ion-icon name="ellipsis-horizontal-outline"></ion-icon>

@@ -4,17 +4,18 @@ import { useParams } from "react-router-dom";
 import ComponentHeaderVideoSelected from '../partials/header_video_selected.js';
 import ComponentHeaderComments from "../partials/header_comments.js";
 import ComponentListComments from "../partials/list_comments.js";
+import ComponentNavCategoriesVideosRelated from '../partials/nav_categories_videos_related.js';
 import ComponentListVideosRelated from '../partials/list_videos_related.js';
 
-import Schema_video_presentation, { Schema_video_watch } from '../../schema/video.js';
+import { Schema_video_watch } from '../../schema/video.js';
 import Schema_channel from '../../schema/channel.js';
 import Schema_comments from '../../schema/comment.js';
 
 import Service_videos from '../../service/videos/index.js';
 import Service_channels from '../../service/channels/index.js';
+import Service_playlists from "../../service/playlists/index.js";
 import Service_comments from '../../service/comments/index.js';
-import Service_categories from '../../service/categories/index.js';
-import Service_playlists from '../../service/playlists/index.js';
+import Schema_categorie from "../../schema/categorie.js";
 
 export default function ComponentWatch(){
     let {id} = useParams();
@@ -26,17 +27,17 @@ export default function ComponentWatch(){
     const [categories,setCategories] = useState([]);
     const [categorie_selected,setCategorie_selected] = useState();
 
-    const [playlists_channel_video_selected,setPlaylists_channel_video_selected] = useState([]);
-
     useEffect(() => {
         const load_video_selected = async (id_video) => {
             let search_video_selected = await Service_videos.get_all_id(id_video);
+            let id_channel;
             for(let video of search_video_selected.data.items){
                 setVideo_selected(Schema_video_watch.push(video));
                 load_channel_video_selected(video.snippet.channelId);
-                load_playlist(video.snippet.channelId);
                 load_comments_video_selected(id_video);
+                id_channel = video.snippet.channelId;
             }
+            load_categories(id_channel);
         } 
         const load_channel_video_selected = async (id_video) => {
             let search_channel = await Service_channels.get_id(id_video);
@@ -44,28 +45,23 @@ export default function ComponentWatch(){
                 setChannel_video_selected(Schema_channel.push(channel));
             }
         }
-        const load_playlist = async (channel_id) => {
-            let search_playlists = await Service_playlists.get_all(channel_id);
-            let promises = [];
-            let new_playlist = [];
-            if(search_playlists.data.items.length > 0){
-                let search_id_playlists = await Service_playlists.get_all_id(search_playlists.data.items[0].id);
-                for(let playlist_item of search_id_playlists.data.items){
-                    const datails_playlist = Service_videos.get_all_id_datails(playlist_item.contentDetails.videoId);
-                    promises.push(datails_playlist);
-                }
+        const load_categories = async (channel_id) => {
+            let new_categories = [], no_repeat;
+            let search_list_id_playlist = await Service_channels.get_details(channel_id);
+            
+            new_categories.push(new Schema_categorie("0","Todos","selected"));
 
-                const result_videos_playlist = await Promise.all(promises);
-
-                for(let result of result_videos_playlist){
-                    for(let video of result.data.items){
-                        let search_channel = await Service_channels.get_id(video.snippet.channelId);
-                        let channel = Schema_channel.push(search_channel.data.items[0]);
-                        new_playlist.push(Schema_video_presentation.push(video,channel));
-                    }  
+            for(let item of search_list_id_playlist.data.items){
+                if(item.contentDetails !== undefined && item.contentDetails.playlists !== undefined){
+                    const new_categorie_playlist = await Service_playlists.get_datails_playlits(item.contentDetails.playlists[0]);
+                    if(no_repeat != new_categorie_playlist.data.items[0].snippet.channelTitle){
+                        new_categories.push(Schema_categorie.push_categorie_playlist(new_categorie_playlist));
+                    }
+                    no_repeat = new_categorie_playlist.data.items[0].snippet.channelTitle                
                 }
             }
-            setPlaylists_channel_video_selected(new_playlist);
+            new_categories.push(new Schema_categorie("R","Relacionados","no-selected"));
+            setCategories(new_categories);
         }
         const load_comments_video_selected = async (id_video) => {
             let search_comments = await Service_comments.get_video_id(id_video);
@@ -82,16 +78,12 @@ export default function ComponentWatch(){
             }
             setComments_video_selected(comments);
         }
-        load_video_selected(id); 
+        load_video_selected(id);
     },[]);
 
-    useEffect(() => {
-        const load_categories = async () => {
-            let new_categories = await Service_categories.get_all(categorie_selected);
-            setCategories(new_categories);
-        }
-        load_categories();
-    },[categorie_selected]);
+    let capture_id_categorie = (id) => {
+        setCategorie_selected((id==0)? undefined : id);
+    }
 
     return (
         <section className="section-view-video">
@@ -103,7 +95,8 @@ export default function ComponentWatch(){
                 </article>
             </section>
             <section className="views-videos-related">
-                <ComponentListVideosRelated categories={categories} videos={playlists_channel_video_selected} />
+                <ComponentNavCategoriesVideosRelated categories_playlists={categories} selected_categorie={capture_id_categorie} />
+                <ComponentListVideosRelated id_playlist={categorie_selected}/>
             </section>
         </section>
     );

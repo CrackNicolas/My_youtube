@@ -14,7 +14,7 @@ export default function ComponentVideosLayouts({videos}){
             <a href={watch_video(video.id)} key={index}>
               <article className="video">
                 <div className="imagen">
-                    <img src={video.url_imagen} alt={video.id}/>
+                    <img src={video.url_imagen} alt={video.title}/>
                     <div className="duration">
                         <span>
                             {video.duration}
@@ -22,7 +22,7 @@ export default function ComponentVideosLayouts({videos}){
                     </div>
                 </div>
                 <div className="icon-autor">
-                  <img src={video.channel.logo} alt={video.title}/>
+                  <img src={video.channel.logo} alt={video.channel.title}/>
                   <p>{video.title}</p>
                   <ion-icon name="ellipsis-vertical"></ion-icon>
                 </div>

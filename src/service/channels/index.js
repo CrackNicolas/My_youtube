@@ -6,4 +6,8 @@ export default class Service_channels{
         const promise = axios.get(get_petition_url("channels?part=snippet&part=statistics&id="+id+"&hl=es&maxResults=1"));
         return promise;
     }
+    static get_details(id){
+        const promise = axios.get(get_petition_url("channelSections?part=contentDetails&channelId="+id+"&hl=es"));
+        return promise;
+    }
 }

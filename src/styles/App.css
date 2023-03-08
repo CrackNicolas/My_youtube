@@ -1201,9 +1201,7 @@ body::-webkit-scrollbar-thumb{
     justify-content: center;
     margin-bottom: -63px;
     padding-right: 4px;
-}
-.views-videos-related .videos-favorites .player-favorite:hover{
-    cursor: pointer;
+    text-decoration: none;
 }
 .views-videos-related .videos-favorites .player-favorite:hover ion-icon{
     visibility: visible;

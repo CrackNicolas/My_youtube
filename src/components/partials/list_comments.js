@@ -32,7 +32,12 @@ export default function ComponentListComments({comments}){
                                     <img src={comment.logo} alt="Logo del autor principal de comentario"/>
                                 </div>
                                 <div className="description">
-                                    <p><strong>{comment.autor}</strong>{comment.time_elapsed}</p>
+                                    <p>
+                                        <strong>
+                                            {comment.autor}
+                                        </strong>
+                                        {comment.time_elapsed}
+                                    </p>
                                     <p>{comment.description}</p>
                                     <div className="btns-comment">
                                         <ion-icon name="thumbs-up-outline"></ion-icon>

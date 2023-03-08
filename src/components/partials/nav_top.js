@@ -19,7 +19,7 @@ export default function ComponentNavTop({search_query}){
                 <div className="items">
                     <div className="item">
                         <ion-icon name="home"></ion-icon>
-                        <a>Inicio</a>
+                        <a href="/">Inicio</a>
                     </div>
                     <div className="item">
                         <ion-icon name="triangle-outline"></ion-icon>
