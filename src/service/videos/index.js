@@ -19,5 +19,9 @@ export default class Service_videos{
     static get_all_id_datails(id){
         let promise = axios.get(get_petition_url("videos?part=contentDetails&part=snippet&part=statistics&id="+id));
         return promise;
-    } 
+    }
+    static get_id(id){
+        let promise = axios.get(get_petition_url("videos?part=snippet&id="+id));
+        return promise;
+    }
 }

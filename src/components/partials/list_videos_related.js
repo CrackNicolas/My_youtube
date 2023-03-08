@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
 import Schema_video_presentation from '../../schema/video.js';
 import Schema_channel from '../../schema/channel.js';
@@ -8,7 +9,8 @@ import Service_channels from "../../service/channels/index.js";
 import Service_playlists from '../../service/playlists/index.js';
 
 export default function ComponentListVideosRelated({id_playlist}){
-    const [playlists_channel_video_selected,setPlaylists_channel_video_selected] = useState([]);
+    let {id} = useParams();
+    const [playlists_channel_video_selected, setPlaylists_channel_video_selected] = useState([]);
 
     useEffect(() => {
         const load_playlist_id = async (id_playlist) => {
@@ -42,14 +44,18 @@ export default function ComponentListVideosRelated({id_playlist}){
             setPlaylists_channel_video_selected(new_videos);
         }
 
-        const load_playlist_channel = async (channel_id) => {
-            const search_videos_channel = await Service_playlists.get_all(channel_id);
+        const load_playlist_id_video = async (id_video) => {
+            const search_video = await Service_videos.get_id(id_video);            
+            let id_channel = search_video.data.items[0].snippet.channelId;
+            const search_videos_channel = await Service_playlists.get_all(id_channel);
             let new_id_playlist = search_videos_channel.data.items[0].id;
-            load_playlist_channel(new_id_playlist);
+            load_playlist_id(new_id_playlist);
         }
 
         if(id_playlist!=undefined){
             load_playlist_id(id_playlist);
+        }else{
+            load_playlist_id_video(id);
         }
 
     },[id_playlist]);
