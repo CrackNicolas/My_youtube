@@ -4,13 +4,33 @@ import './styles/App.css';
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+import GlobalContextProvider from './context/global_context.js';
+
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route exact path="/" element={ <ComponentHome/> } />
-        <Route exact path="/results" element={ <ComponentHome/> } />
-        <Route exact path="/watch/:id" element={ <ComponentWatch/>} />
+        <Route exact path="/" element=
+          { 
+            <GlobalContextProvider>
+              <ComponentHome/> 
+            </GlobalContextProvider>
+          } 
+        />
+        <Route exact path="/results" element=
+          { 
+            <GlobalContextProvider>
+              <ComponentHome/> 
+            </GlobalContextProvider>
+          } 
+        />
+        <Route exact path="/watch/:id" element=
+          { 
+            <GlobalContextProvider>
+              <ComponentWatch/> 
+            </GlobalContextProvider>
+          } 
+        />
       </Routes>
     </BrowserRouter>
   );
