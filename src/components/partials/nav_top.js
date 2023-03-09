@@ -12,6 +12,14 @@ export default function ComponentNavTop({search_query}){
         setStyles( Schema_styles_nav_top.format( (action_menu)? 1 : 2));
         setAction_menu(!action_menu);
     }
+    const prevent_event = (e) => {
+        if(search_query===null){
+            e.preventDefault();
+        }
+    }
+    const capture_chart = (e) => {
+        search_query = e.target.value
+    }
 
     return (
         <nav className="nav-top">
@@ -26,9 +34,9 @@ export default function ComponentNavTop({search_query}){
                 </a>
             </div>
             <form action="/results" method="GET" className="search" title="Buscar">
-                <input type="text" name="search_query" defaultValue={search_query} placeholder="Buscar"/>
+                <input type="text" name="search_query" onChange={(e) => capture_chart(e)} defaultValue={search_query} placeholder="Buscar"/>
                 <ion-icon class="buscador-oculto" name="search-outline"></ion-icon>
-                <button type="submit" className="buscador">
+                <button type="submit" className="buscador" onClick={(e) => prevent_event(e)}>
                     <ion-icon name="search-outline"></ion-icon>
                 </button>
                 <ion-icon class="micro" name="mic" title="Haz búsquedas por voz"></ion-icon>

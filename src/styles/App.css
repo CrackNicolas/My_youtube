@@ -596,6 +596,90 @@ body::-webkit-scrollbar-thumb{
 }
 /**--------------------------------**/
 
+/**--------Search videos-----------**/
+.search-videos{
+    background-color: var(--color-font-primary);
+    padding: 70px 40px 50px 110px;
+    height: 100%;
+    display: block;
+    flex-wrap: wrap;
+    gap: 15px;
+    color: var(--color-text-primary);
+}
+.search-videos .filter{
+    background-color: var(--color-font-primary);
+    padding: 10px;
+    border-bottom: 0.1px solid var(--color-font-hover-buttons);
+}
+.search-videos .videos{
+    display: block;
+    padding: 15px 10px 1px 10px;
+    background-color: var(--color-font-primary);
+}
+.search-videos .videos .video{
+    display: flex;
+    width: 100%;
+    gap: 15px;
+    max-height: 203px;
+    min-height: 203px;
+    margin-bottom: 15px;
+}
+.search-videos .videos .video .imagen{
+    width: 33%;
+}
+.search-videos .videos .video .imagen .duration span{
+    color: var(--color-text-primary);
+    font-size: 12.3px;
+}
+.search-videos .videos .video .imagen img{
+    width: 100%;
+    height: 100%;
+}
+.search-videos .videos .video .description{
+    background-color: var(--color-font-primary);
+    width: 67%;
+    padding-top: 5px;
+}
+.search-videos .videos .video .description .title{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+}
+.search-videos .videos .video .description .visualizaciones{
+    padding-top: 1px;
+    padding-left: 2px;
+}
+.search-videos .videos .video .description .icon-autor{
+    position: relative;
+    margin-top: 13px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.search-videos .videos .video .description .icon-autor img{
+    min-width: 24px;
+    max-width: 24px;
+    min-height: 24px;
+    max-height: 24px;
+    border-radius: 50%;
+}
+.search-videos .videos .video .description .icon-autor p{
+    padding-top: 3px;
+    font-size: 12px;
+    font-weight: normal;
+    color: var(--color-text-secondary);
+    letter-spacing: normal;
+}
+.search-videos .videos .video .description .description-video{
+    margin-top: 17px;
+    color: var(--color-text-secondary);
+    letter-spacing: normal;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+
+
+/**--------------------------------**/
+
 /**-----------Views videos---------**/
 .section-view-video{
     display: flex;

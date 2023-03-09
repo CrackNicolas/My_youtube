@@ -1,5 +1,6 @@
 import ComponentHome from './components/layouts/home.js';
 import ComponentWatch from './components/layouts/watch.js';
+import ComponentSearch from './components/layouts/search.js';
 import './styles/App.css';
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -20,7 +21,7 @@ function App() {
         <Route exact path="/results" element=
           { 
             <GlobalContextProvider>
-              <ComponentHome/> 
+              <ComponentSearch/>
             </GlobalContextProvider>
           } 
         />
