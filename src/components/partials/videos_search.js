@@ -1,16 +1,23 @@
 import React from "react";
 
 export default function ComponentSearchVideos({videos}){
+    let watch_video = (id) => {
+        return "/watch/"+id;
+    }
+
     return (
         <section className="search-videos">
             <section className="filter">
-                Filter
+                <button title="Abre los filtros de búsqueda">
+                    <ion-icon name="list-outline"></ion-icon>
+                    <p>Filtros</p>
+                </button>
             </section>
             <section className="videos">
                 {
                     videos.map((video,index) => {
                         return (
-                            <article className="video">
+                            <a href={watch_video(video.id)} className="video" key={index}>
                                 <div className="imagen">
                                     <img src={video.url_imagen} alt={video.title}/>
                                     <div className="duration">
@@ -32,7 +39,8 @@ export default function ComponentSearchVideos({videos}){
                                         {video.description}
                                     </p>
                                 </div>
-                            </article>
+                                <ion-icon name="ellipsis-vertical"></ion-icon>
+                            </a>
                         )
                     })
                 }

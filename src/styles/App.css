@@ -608,8 +608,36 @@ body::-webkit-scrollbar-thumb{
 }
 .search-videos .filter{
     background-color: var(--color-font-primary);
-    padding: 10px;
+    padding: 2px 0px;
     border-bottom: 0.1px solid var(--color-font-hover-buttons);
+}
+.search-videos .filter button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    outline: none;
+    border: none;
+    padding: 5px 15px;
+    background-color: transparent;
+}
+.search-videos .filter button p{
+    padding-top: 2px;
+    color: var(--color-text-primary);
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.search-videos .filter button ion-icon{
+    color: var(--color-text-primary);
+    width: 25px;
+    height: 25px;
+}
+.search-videos .filter button:hover{
+    cursor: pointer;
+    border-radius: 20px;
+    background-color: var(--color-font-button-likes);
 }
 .search-videos .videos{
     display: block;
@@ -623,9 +651,18 @@ body::-webkit-scrollbar-thumb{
     max-height: 203px;
     min-height: 203px;
     margin-bottom: 15px;
+    text-decoration: none;
+    color: var(--color-text-primary);
+}
+.search-videos .videos .video:hover ion-icon{
+    color: pointer;
+    visibility: visible;
+}
+.search-videos .videos .video ion-icon{
+    visibility: hidden;
 }
 .search-videos .videos .video .imagen{
-    width: 33%;
+    width: 36.5%;
 }
 .search-videos .videos .video .imagen .duration span{
     color: var(--color-text-primary);
@@ -637,7 +674,7 @@ body::-webkit-scrollbar-thumb{
 }
 .search-videos .videos .video .description{
     background-color: var(--color-font-primary);
-    width: 67%;
+    width: 63.5%;
     padding-top: 5px;
 }
 .search-videos .videos .video .description .title{
@@ -675,6 +712,9 @@ body::-webkit-scrollbar-thumb{
     letter-spacing: normal;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 12px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 
