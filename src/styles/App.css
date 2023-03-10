@@ -144,6 +144,38 @@ body::-webkit-scrollbar-thumb{
     border-radius: 50%;
     background-color: var(--color-font-tertiary);
 }
+.search-video-micro{
+    position: absolute;
+    visibility: hidden;
+    min-width: 650px;
+    max-width: 650px;
+    height: 400px;
+    background-color: var(--color-font-secondary);
+    transform: translate(-19px,180px);
+    padding: 10px 40px;
+}
+.search-video-micro p:nth-child(1){
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.search-video-micro p:nth-child(2){
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+}
+.search-video-micro p:nth-child(3){
+    text-align: center;
+}
+.search-video-micro ion-icon{
+    width: 40px;
+    height: 40px;
+    margin-top: 170px;
+}
+
+
 .nav-top .icons ion-icon{
     width: 23px;
     height: 23px;
