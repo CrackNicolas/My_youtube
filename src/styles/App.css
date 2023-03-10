@@ -1437,21 +1437,71 @@ body::-webkit-scrollbar-thumb{
     margin-right: 10px;
     margin-top: 10px;
 }
+.views-videos-related .videos-favorites .options{
+    visibility: hidden;
+    position: absolute;
+    display: block;
+    width: 270px;
+    border-radius: 10px;
+    background-color: var(--color-font-secondary);
+    color: var(--color-text-primary);
+    padding: 7px 0px;
+    z-index: 20;
+    transform: translate(92px,20px);
+}
+.views-videos-related .videos-favorites .icon-options{
+    visibility: hidden;
+    width: 5%;
+    text-align: center;
+    color: var(--color-text-primary);
+}
+.views-videos-related .videos-favorites .icon-options ion-icon{
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+}
+.views-videos-related .videos-favorites .option{
+    display: flex;
+    align-items: center;
+    gap: 13.5px;
+    padding: 5.3px 14px;
+}
+.views-videos-related .videos-favorites .option p{
+    width: 100%;
+    padding-top: 1.5px;
+    padding-right: 3px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--color-text-icon-youtube);
+}
+.views-videos-related .videos-favorites .option ion-icon{
+    width: 27px;
+    height: 27px;
+}
+.views-videos-related .videos-favorites .option:hover{
+    cursor: pointer;
+    background-color: var(--color-font-cuartiary);
+}
+.views-videos-related .videos-favorites .player-favorite:hover .icon-options ion-icon{
+    visibility: visible;
+}
 .views-videos-related .videos-favorites .player-favorite{
     display: flex;
     justify-content: center;
     margin-bottom: -63px;
     padding-right: 4px;
+    gap: 9px;
     text-decoration: none;
 }
-.views-videos-related .videos-favorites .player-favorite:hover ion-icon{
+.views-videos-related .videos-favorites .player-favorite:hover .icons ion-icon{
     visibility: visible;
 }
 .views-videos-related .videos-favorites .player-favorite:hover .duration{
     transition-duration: 0.4s;
     visibility: hidden;
 }
-.views-videos-related .videos-favorites .player-favorite ion-icon{
+.views-videos-related .videos-favorites .player-favorite .icons ion-icon{
     color: var(--color-text-primary);
     visibility: hidden;
 }

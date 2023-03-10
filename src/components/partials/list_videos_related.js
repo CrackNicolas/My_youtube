@@ -4,9 +4,12 @@ import { useParams } from "react-router-dom";
 import { Load_videos_related } from "../../controllers/videos.js";
 import Load_id_playlist from '../../controllers/playlists.js';
 
+import ComponentNavOptionsVideo from './nav_options_video.js';
+
 export default function ComponentListVideosRelated({id_playlist}){
     let {id} = useParams();
     const [playlists_channel_video_selected, setPlaylists_channel_video_selected] = useState([]);
+    const [option_selected, setOption_selected] = useState();
 
     useEffect(() => {
         const load_playlist_id = async (id_playlist) => {
@@ -26,6 +29,17 @@ export default function ComponentListVideosRelated({id_playlist}){
 
     let watch_video = (id) => {
         return "/watch/"+id;
+    }
+
+    const visibility_option = (e,index) => {
+        e.preventDefault();
+        setOption_selected( (index===option_selected)? undefined : index);
+    }
+    const get_style_option = (index) => {
+        return (option_selected===index)? { visibility: "visible" } : { visibility: "hidden" };
+    }
+    const get_style_icon_option = (index) => {
+        return (option_selected===index)? { animation: "animate_click_icon_options 0.2s" } : { };
     }
 
     return (
@@ -49,7 +63,10 @@ export default function ComponentListVideosRelated({id_playlist}){
                                 <p>{video.channel.title}</p>
                                 <p>{video.view_count} de visitas .{video.time_elapsed}</p>
                             </div>
-                            <ion-icon name="ellipsis-vertical"></ion-icon>
+                            <div className="icon-options" onClick={(e) => visibility_option(e,index)}>
+                                <ion-icon style={get_style_icon_option(index)} name="ellipsis-vertical"></ion-icon>
+                            </div>
+                            <ComponentNavOptionsVideo get_style_option={get_style_option} index={index}/>
                         </a>
                     )
                 })
