@@ -7,6 +7,7 @@ import Schema_styles_nav_top from '../../styles/schema/styles_nav_top.js';
 export default function ComponentNavTop({search_query}){
     const [styles, setStyles] = useState(Schema_styles_nav_top.model);
     const [action_menu,setAction_menu] = useState(true);
+    const [selected_icon_video,setSelected_icon_video] = useState(false);
 
     const view_menu = () => {
         setStyles( Schema_styles_nav_top.format( (action_menu)? 1 : 2));
@@ -20,6 +21,26 @@ export default function ComponentNavTop({search_query}){
     const capture_chart = (e) => {
         search_query = e.target.value
     }
+    const visibility_option_video = () => {
+        setSelected_icon_video(!selected_icon_video);
+    }
+    const get_style_icon_video = () => {
+        return (selected_icon_video)? 
+            {
+                background: "var(--color-text-icon-youtube)",
+                color: "var(--color-font-primary)"
+                
+            }: 
+            {
+                background: "var(--color-font-primary)",
+                color: "var(--color-text-icon-youtube)",
+                content: "◂"
+            }
+    }
+    const get_style_icon_video_options = () => {
+        return (selected_icon_video)? {visibility : "visible"} : {visibility : "hidden"};
+    }
+
 
     return (
         <nav className="nav-top">
@@ -42,8 +63,18 @@ export default function ComponentNavTop({search_query}){
                 <ion-icon class="micro" name="mic" title="Haz búsquedas por voz"></ion-icon>
             </form>
             <div className="icons">
-                <div className="icon-video" title="Crear">
-                    <div className="video">+</div>
+                <div onClick={() => visibility_option_video()} className="icon-video" title="Crear">
+                    <div style={get_style_icon_video()} className="video">+</div>
+                </div>
+                <div className="options" style={get_style_icon_video_options()}>
+                    <div className="option">
+                        <ion-icon name="videocam-outline"></ion-icon>
+                        <p>Subir video</p>
+                    </div>
+                    <div className="option">
+                        <ion-icon name="radio-outline"></ion-icon>
+                        <p>Emitir en directo</p>
+                    </div>
                 </div>
                 <div className="notification">
                     <ion-icon name="notifications-outline" title="Notificaciones"></ion-icon>
