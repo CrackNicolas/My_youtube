@@ -20,6 +20,15 @@ export default function ComponentSearchVideos({videos}){
                             <a href={watch_video(video.id)} className="video" key={index}>
                                 <div className="imagen">
                                     <img src={video.url_imagen} alt={video.title}/>
+                                    <div className="content-icons">
+                                        <div className="icons">
+                                            <ion-icon name="timer-outline"></ion-icon>
+                                            <ion-icon name="play-outline"></ion-icon>
+                                        </div>
+                                    </div>
+                                    <div className="icon-player">
+                                        <ion-icon name="play-sharp"></ion-icon>
+                                    </div>
                                     <div className="duration">
                                         <span>
                                             {video.duration}

@@ -8,11 +8,13 @@ export default function ComponentNavCategoriesVideosRelated({categories_playlist
 
     const scroll = (e) => {
         const slider_nav_categories = window.document.querySelector('.categories');
+        
+        let coordinate_scroll = slider_nav_categories.scrollLeft;
         for(let i = 0 ; i < 15 ; i++){
             slider_nav_categories.scrollLeft = (e.target.name==="chevron-forward-outline")? (slider_nav_categories.scrollLeft + i) : (slider_nav_categories.scrollLeft - i);
         }
         if(e.target.name=="chevron-forward-outline"){
-            setStyles(Schema_styles_nav_categories_two.format( (slider_nav_categories.scrollLeft===135.3333282470703)? 1 : 2))
+            setStyles(Schema_styles_nav_categories_two.format( (coordinate_scroll!==0 && slider_nav_categories.scrollLeft=== coordinate_scroll)? 1 : 2))
         }
         if(e.target.name=="chevron-back-outline"){
             setStyles(Schema_styles_nav_categories_two.format( (slider_nav_categories.scrollLeft===0)? 3 : 4))
