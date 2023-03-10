@@ -39,7 +39,9 @@ export default function ComponentSearchVideos({videos}){
                                         {video.description}
                                     </p>
                                 </div>
-                                <ion-icon name="ellipsis-vertical"></ion-icon>
+                                <button>
+                                    <ion-icon name="ellipsis-vertical"></ion-icon>
+                                </button>
                             </a>
                         )
                     })

@@ -45,14 +45,17 @@ export default function ComponentListVideosRelated({id_playlist}){
         }
 
         const load_playlist_id_video = async (id_video) => {
-            const search_video = await Service_videos.get_id(id_video);            
+            const search_video = await Service_videos.get_id(id_video);   
             let id_channel = search_video.data.items[0].snippet.channelId;
             const search_videos_channel = await Service_playlists.get_all(id_channel);
-            let new_id_playlist = search_videos_channel.data.items[0].id;
-            load_playlist_id(new_id_playlist);
+            
+            if(search_videos_channel.data.items[0]!==undefined){
+                let new_id_playlist = search_videos_channel.data.items[0].id;
+                load_playlist_id(new_id_playlist);
+            }
         }
 
-        if(id_playlist!=undefined){
+        if(id_playlist!==undefined){
             load_playlist_id(id_playlist);
         }else{
             load_playlist_id_video(id);

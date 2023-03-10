@@ -658,11 +658,23 @@ body::-webkit-scrollbar-thumb{
     color: pointer;
     visibility: visible;
 }
-.search-videos .videos .video ion-icon{
+.search-videos .videos .video button{
+    outline: none;
+    border: none;
+    display: flex;
+    align-items: flex-start;
+    width: 1.8%;
+    background-color: var(--color-font-primary);
+}
+.search-videos .videos .video button ion-icon{
     visibility: hidden;
+    width: 20px;
+    height: 20px;
+    color: var(--color-text-primary);
 }
 .search-videos .videos .video .imagen{
-    width: 36.5%;
+    min-width: 36.5%;
+    max-width: 36.5%;
 }
 .search-videos .videos .video .imagen .duration span{
     color: var(--color-text-primary);
@@ -674,7 +686,8 @@ body::-webkit-scrollbar-thumb{
 }
 .search-videos .videos .video .description{
     background-color: var(--color-font-primary);
-    width: 63.5%;
+    min-width: 60%;
+    max-width: 63.5%;
     padding-top: 5px;
 }
 .search-videos .videos .video .description .title{

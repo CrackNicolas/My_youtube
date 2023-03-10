@@ -10,15 +10,10 @@ import ComponentListComments from "../partials/list_comments.js";
 import ComponentNavCategoriesVideosRelated from '../partials/nav_categories_videos_related.js';
 import ComponentListVideosRelated from '../partials/list_videos_related.js';
 
-import { Schema_video_watch } from '../../schema/video.js';
-import Schema_channel from '../../schema/channel.js';
-import Schema_comments from '../../schema/comment.js';
-
-import Service_videos from '../../service/videos/index.js';
-import Service_channels from '../../service/channels/index.js';
-import Service_playlists from "../../service/playlists/index.js";
-import Service_comments from '../../service/comments/index.js';
-import Schema_categorie from "../../schema/categorie.js";
+import {Load_video} from "../../controllers/videos.js";
+import Load_channel from "../../controllers/channel.js";
+import {Load_categories_playlist} from "../../controllers/categories.js";
+import Load_comments from "../../controllers/comments.js";
 
 export default function ComponentWatch(){
     const context_global = useContext(Global_context);
@@ -34,53 +29,22 @@ export default function ComponentWatch(){
 
     useEffect(() => {
         const load_video_selected = async (id_video) => {
-            let search_video_selected = await Service_videos.get_all_id(id_video);
-            let id_channel;
-            for(let video of search_video_selected.data.items){
-                setVideo_selected(Schema_video_watch.push(video));
-                load_channel_video_selected(video.snippet.channelId);
-                load_comments_video_selected(id_video);
-                id_channel = video.snippet.channelId;
-            }
-            load_categories(id_channel);
+            let video = await Load_video(id_video);
+            setVideo_selected(video);
+            load_channel_video_selected(video.channel_id);
+            load_categories(video.channel_id);
+            load_comments_video_selected(id_video);
         } 
         const load_channel_video_selected = async (id_video) => {
-            let search_channel = await Service_channels.get_id(id_video);
-            for(let channel of search_channel.data.items){
-                setChannel_video_selected(Schema_channel.push(channel));
-            }
+            let search_channel = await Load_channel(id_video);
+            setChannel_video_selected(search_channel);
         }
         const load_categories = async (channel_id) => {
-            let new_categories = [], no_repeat;
-            let search_list_id_playlist = await Service_channels.get_details(channel_id);
-            
-            new_categories.push(new Schema_categorie("0","Todos","selected"));
-
-            for(let item of search_list_id_playlist.data.items){
-                if(item.contentDetails !== undefined && item.contentDetails.playlists !== undefined){
-                    const new_categorie_playlist = await Service_playlists.get_datails_playlits(item.contentDetails.playlists[0]);
-                    if(no_repeat != new_categorie_playlist.data.items[0].snippet.channelTitle){
-                        new_categories.push(Schema_categorie.push_categorie_playlist(new_categorie_playlist));
-                    }
-                    no_repeat = new_categorie_playlist.data.items[0].snippet.channelTitle                
-                }
-            }
-            new_categories.push(new Schema_categorie("0","Relacionados","no-selected"));
+            let new_categories = await Load_categories_playlist(channel_id);
             setCategories(new_categories);
         }
         const load_comments_video_selected = async (id_video) => {
-            let search_comments = await Service_comments.get_video_id(id_video);
-            let comments = [], replies_comment = [];
-            for(let comment of search_comments.data.items){
-                if(comment.snippet.totalReplyCount > 0){
-                    for(let repli_comment of comment.replies.comments){
-                        replies_comment.push(Schema_comments.push_replies(repli_comment,undefined,undefined));
-                    }
-                }
-                let replies_count = (comment.snippet.totalReplyCount==0)? undefined : (comment.snippet.totalReplyCount>1)? comment.snippet.totalReplyCount+" respuestas" : comment.snippet.totalReplyCount+" respuesta";
-                comments.push(Schema_comments.push_general(comment,replies_count,replies_comment));
-                replies_comment = [];
-            }
+            let comments = await Load_comments(id_video);
             setComments_video_selected(comments);
         }
         load_video_selected(id);

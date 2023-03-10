@@ -3,6 +3,10 @@ import {key,url} from '../service/config/credentials.js';
 export function get_petition_url(partial){
     return url + partial + "&key="+ key;
 }
+export function get_search_param(search){
+    let query = new URLSearchParams(search).get("search_query");
+    return (query==="" || query===null)? null : query;
+}
 export function get_url_player(id){
     return "https://www.youtube.com/embed/"+id;
 }

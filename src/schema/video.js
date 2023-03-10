@@ -27,9 +27,10 @@ export default class Schema_video_presentation{
     }
 }
 export class Schema_video_watch{
-    constructor(id,title,likes,comments_count){
+    constructor(id,title,channel_id,likes,comments_count){
         this.id = id;
         this.title = title;
+        this.channel_id = channel_id;
         this.likes = likes;
         this.comments_count = comments_count;
     }
@@ -37,6 +38,7 @@ export class Schema_video_watch{
         return new Schema_video_watch(
             video.id,
             video.snippet.title,
+            video.snippet.channelId,
             get_convert_cantidad(video.statistics.likeCount),
             get_convert_cantidad(video.statistics.commentCount)
         )  
