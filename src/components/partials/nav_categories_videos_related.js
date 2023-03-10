@@ -36,7 +36,7 @@ export default function ComponentNavCategoriesVideosRelated({categories_playlist
                 {
                     categories_playlists.map((categorie,index) => {
                         return (
-                            <a onClick={() => { check_playlist(categorie.id,index) } } style={watch_playlist_selected(index)} title={categorie.title} key={index}>
+                            <a className="categori" onClick={() => { check_playlist(categorie.id,index) } } style={watch_playlist_selected(index)} title={categorie.title} key={index}>
                                 {categorie.title}
                             </a>
                         )

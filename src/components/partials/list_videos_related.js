@@ -24,12 +24,16 @@ export default function ComponentListVideosRelated({id_playlist}){
         
     },[id_playlist]);
 
+    let watch_video = (id) => {
+        return "/watch/"+id;
+    }
+
     return (
         <article className="videos-favorites">
             {
                 playlists_channel_video_selected.map((video,index) => {
                     return (
-                        <article className="player-favorite" key={index}>
+                        <a href={watch_video(video.id)} className="player-favorite" key={index}>
                             <div className="imagen">
                                 <img src={video.url_imagen} alt="Video relacionado con el video seleccionado para reproducir"/>
                                 <div className="icons">
@@ -46,7 +50,7 @@ export default function ComponentListVideosRelated({id_playlist}){
                                 <p>{video.view_count} de visitas .{video.time_elapsed}</p>
                             </div>
                             <ion-icon name="ellipsis-vertical"></ion-icon>
-                        </article>
+                        </a>
                     )
                 })
             }           

@@ -21,7 +21,7 @@ export default class Schema_categorie{
     static push_categorie_playlist(new_categorie_playlist){
         return new Schema_categorie(
             new_categorie_playlist.data.items[0].snippet.playlistId,
-            new_categorie_playlist.data.items[0].snippet.channelTitle,
+            new_categorie_playlist.data.items[0].snippet.channelTitle.split(" ")[0],
             "no-selected"
         )
     }

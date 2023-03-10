@@ -12,7 +12,7 @@ export default function ComponentNavCategories({categories,categorie_selected}){
       slider_nav_categories.scrollLeft = (e.target.name==="chevron-forward-outline")? (slider_nav_categories.scrollLeft + i) : (slider_nav_categories.scrollLeft - i);
     }
     if(e.target.name=="chevron-forward-outline"){
-      setStyles(Schema_styles_nav_categories.format( (slider_nav_categories.scrollLeft===181.3333282470703)? 1 : 2))
+      setStyles(Schema_styles_nav_categories.format( (slider_nav_categories.scrollLeft===4.666666507720947)? 1 : 2))
     }
     if(e.target.name=="chevron-back-outline"){
       setStyles(Schema_styles_nav_categories.format( (slider_nav_categories.scrollLeft===0)? 3 : 4))

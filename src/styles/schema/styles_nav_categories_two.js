@@ -23,35 +23,35 @@ export default class Schema_styles_nav_categories_two{
     static format(num){
         switch(num){
             case 1: 
-            return {
-                next : {
-                    right : "-102px"
-                },
-                prev : {
-                    display : "block"
-                },
-                content_slider_nav_categories : {
-                    width : "490px"
+                return {
+                    next : {
+                        right : "-102px"
+                    },
+                    prev : {
+                        display : "block"
+                    },
+                    content_slider_nav_categories : {
+                        width : "490px"
+                    }
                 }
-            }
             case 2:
-            return {
-                prev : {
-                    display : "block"
+                return {
+                    prev : {
+                        display : "block"
+                    }
                 }
-            }
             case 3:
-            return {
-                prev : {
-                    display : "none",
+                return {
+                    prev : {
+                        display : "none",
+                    }
                 }
-            }
             case 4:
-            return {
-                prev : {
-                    display : "block"
+                return {
+                    prev : {
+                        display : "block"
+                    }
                 }
-            }
         }
     }
 }

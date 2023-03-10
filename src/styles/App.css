@@ -1299,6 +1299,9 @@ body::-webkit-scrollbar-thumb{
     gap: 10px;
     margin-left: -11.5px;
 }
+.nav-categories-two .categories .categori{
+    text-align: center;
+}
 .views-videos-related .categories::-webkit-scrollbar{
     height: 0px;
 }
