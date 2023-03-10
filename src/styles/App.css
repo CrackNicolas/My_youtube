@@ -486,6 +486,12 @@ body::-webkit-scrollbar-thumb{
 /**---------------------------------**/
 
 /**--------------Videos-------------**/
+
+.line-nav-options{
+    margin: 7px 0px;
+    border-bottom: 1px solid var(--color-text-secondary);
+    opacity: 0.4;
+}
 .videos{
     background-color: var(--color-font-primary);
     padding: 137px 0px 50px 95px;
@@ -686,6 +692,53 @@ body::-webkit-scrollbar-thumb{
     padding: 15px 10px 1px 10px;
     background-color: var(--color-font-primary);
 }
+.search-videos .videos .options{
+    visibility: hidden;
+    position: absolute;
+    display: block;
+    width: 285px;
+    border-radius: 10px;
+    background-color: var(--color-font-secondary);
+    color: var(--color-text-primary);
+    padding: 7px 0px;
+    z-index: 20;
+    transform: translate(815px,20px);
+}
+.search-videos .videos .icon-options{
+    visibility: hidden;
+    width: 5%;
+    text-align: center;
+}
+.search-videos .videos .icon-options ion-icon{
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    padding: 8px;
+    margin-top: -8px;
+}
+.search-videos .videos .option{
+    display: flex;
+    align-items: center;
+    gap: 13.5px;
+    padding: 5.3px 14px;
+}
+.search-videos .videos .option p{
+    width: 100%;
+    padding-top: 1.5px;
+    padding-right: 3px;
+    font-size: 13px;
+    font-weight: 500;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--color-text-icon-youtube);
+}
+.search-videos .videos .option ion-icon{
+    width: 27px;
+    height: 27px;
+}
+.search-videos .videos .option:hover{
+    cursor: pointer;
+    background-color: var(--color-font-cuartiary);
+}
 .search-videos .videos .video{
     display: flex;
     width: 100%;
@@ -737,10 +790,6 @@ body::-webkit-scrollbar-thumb{
     display: block;
     background-color: var(--color-font-primary);
     color: var(--color-text-primary);
-}
-.search-videos .videos .video:hover ion-icon{
-    color: pointer;
-    visibility: visible;
 }
 .search-videos .videos .video button{
     outline: none;

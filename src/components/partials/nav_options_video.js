@@ -23,6 +23,7 @@ export default function ComponentNavOptionsVideo({get_style_option,index}){
               <ion-icon name="arrow-redo-outline"></ion-icon>
               <p>Compartir</p>
             </div>
+            <div className="line-nav-options"></div>
             <div className="option">
               <ion-icon name="ban-outline"></ion-icon>
               <p>No me interesa</p>

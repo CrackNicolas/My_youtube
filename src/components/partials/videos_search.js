@@ -1,8 +1,21 @@
-import React from "react";
+import React, {useState} from "react";
 
 export default function ComponentSearchVideos({videos}){
+    const [option_selected, setOption_selected] = useState();
+
     let watch_video = (id) => {
         return "/watch/"+id;
+    }
+
+    const visibility_option = (e,index) => {
+        e.preventDefault();
+        setOption_selected( (index===option_selected)? undefined : index);
+    }
+    const get_style_option = (index) => {
+        return (option_selected===index)? { visibility: "visible" } : { visibility: "hidden" };
+    }
+    const get_style_icon_option = (index) => {
+        return (option_selected===index)? { animation: "animate_click_icon_options 0.2s" } : { };
     }
 
     return (
@@ -48,9 +61,36 @@ export default function ComponentSearchVideos({videos}){
                                         {video.description}
                                     </p>
                                 </div>
-                                <button>
-                                    <ion-icon name="ellipsis-vertical"></ion-icon>
-                                </button>
+                                <div className="icon-options" onClick={(e) => visibility_option(e,index)}>
+                                    <ion-icon style={get_style_icon_option(index)} name="ellipsis-vertical"></ion-icon>
+                                </div>
+                                <div className="options" style={get_style_option(index)}>
+                                    <div className="option">
+                                        <ion-icon name="add-outline"></ion-icon>
+                                        <p>Añadir a la cola</p>
+                                    </div>
+                                    <div className="option">
+                                        <ion-icon name="time-outline"></ion-icon>
+                                        <p>Guardar para ver más tarde</p>
+                                    </div>
+                                    <div className="option">
+                                        <ion-icon name="duplicate-outline"></ion-icon>
+                                        <p>Añadir a la lista de reproducción</p>
+                                    </div>
+                                    <div className="option">
+                                        <ion-icon name="download-outline"></ion-icon>
+                                        <p>Descargar</p>
+                                    </div>
+                                    <div className="option">
+                                        <ion-icon name="arrow-redo-outline"></ion-icon>
+                                        <p>Compartir</p>
+                                    </div>
+                                    <div className="line"></div>
+                                    <div className="option">
+                                        <ion-icon name="flag-outline"></ion-icon>
+                                        <p>Denunciar</p>
+                                    </div>
+                                </div>
                             </a>
                         )
                     })
