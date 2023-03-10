@@ -6,7 +6,7 @@ export default function ComponentHeaderComments({comments_count}){
             <div className="top">
                 {comments_count} comentarios
                 <button className="order">
-                    <ion-icon name="list-outline"></ion-icon>
+                    <ion-icon name="options-outline"></ion-icon>
                     Ordenar por
                 </button>
             </div>

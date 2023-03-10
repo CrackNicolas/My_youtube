@@ -9,7 +9,7 @@ export default function ComponentSearchVideos({videos}){
         <section className="search-videos">
             <section className="filter">
                 <button title="Abre los filtros de búsqueda">
-                    <ion-icon name="list-outline"></ion-icon>
+                    <ion-icon name="options-outline"></ion-icon>
                     <p>Filtros</p>
                 </button>
             </section>
