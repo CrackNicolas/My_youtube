@@ -23,7 +23,7 @@ export default function GlobalContextProvider({children}){
             setCategories(new_categories);
         }
         const load_videos = async () => {
-            let new_videos = await Load_videos(search_query,categorie_selected,4);
+            let new_videos = await Load_videos(search_query,categorie_selected,10);
             setVideos(new_videos);
         }
  

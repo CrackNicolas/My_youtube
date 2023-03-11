@@ -2,14 +2,15 @@ import React, { useState } from "react";
 
 import ComponentNavToggler from "./nav_toggler.js";
 import ComponentNavOptionsCreateVideo from './nav_options_create_video.js';
+import ComponentSearchMicro from './search_micro.js';
+import ComponentNavOptionsNotification from "./nav_options_notification.js";
 
 import Schema_styles_nav_top from '../../styles/schema/styles_nav_top.js';
 
 export default function ComponentNavTop({search_query}){
     const [styles, setStyles] = useState(Schema_styles_nav_top.model);
     const [action_menu,setAction_menu] = useState(true);
-    const [selected_icon_video,setSelected_icon_video] = useState(false);
-    const [selected_icon_micro,setSelected_icon_micro] = useState(false);
+    const [name_selected_icon, setName_selected_icon] = useState();
 
     const view_menu = () => {
         setStyles( Schema_styles_nav_top.format( (action_menu)? 1 : 2));
@@ -23,28 +24,14 @@ export default function ComponentNavTop({search_query}){
     const capture_chart = (e) => {
         search_query = e.target.value
     }
-    const visibility_option_video = () => {
-        setSelected_icon_video(!selected_icon_video);
+    const visibility_options = (e) => {
+        setName_selected_icon(e.target.name);
     }
-    const visibility_option_micro_search_video = () => {
-        setSelected_icon_micro(!selected_icon_micro);
-    }
-    const get_style_icon_video = () => {
-        return (selected_icon_video)? 
-            {
-                background: "var(--color-text-icon-youtube)",
-                color: "var(--color-font-primary)"
-            }: 
-            {
-                background: "var(--color-font-primary)",
-                color: "var(--color-text-icon-youtube)"
-            }
-    }
-    const get_style_icon_video_options = () => {
-        return (selected_icon_video)? {visibility : "visible"} : {visibility : "hidden"};
-    }
-    const get_style_micro_search_videos = () => {
-        return (selected_icon_micro)? {visibility: "visible" } : {visibility: "hidden"};
+    const get_style = (name) => {
+        if(name === name_selected_icon){
+            return {visibility : "visible"};
+        }
+        return {};
     }
 
     return (
@@ -65,29 +52,20 @@ export default function ComponentNavTop({search_query}){
                 <button type="submit" className="buscador" onClick={(e) => prevent_event(e)}>
                     <ion-icon name="search-outline"></ion-icon>
                 </button>
-                <ion-icon onClick={() => visibility_option_micro_search_video()} class="micro" name="mic" title="Haz búsquedas por voz"></ion-icon>
+                <ion-icon onClick={(e) => visibility_options(e)} class="micro" name={(name_selected_icon==="mic-outline")? "mic":"mic-outline"} title="Haz búsquedas por voz"></ion-icon>
             </form>
-            <div style={get_style_micro_search_videos()} className="search-video-micro">
-                <p>
-                    Haz búsquedas por voz 
-                </p>
-                <p>
-                    Para hacer búsquedas por voz, ve a la configuración del navegador y permite el acceso al micrófono.
-                </p>
-                <p>
-                    <ion-icon name="mic" title="Haz búsquedas por voz"></ion-icon>  
-                </p>              
-            </div>
+            <ComponentSearchMicro get_style={get_style} visibility_options={visibility_options}/>            
             <div className="icons">
-                <div onClick={() => visibility_option_video()} className="icon-video" title="Crear">
-                    <div style={get_style_icon_video()} className="video">+</div>
+                <div className="create-video">
+                    <ion-icon onClick={(e) => visibility_options(e)} name={(name_selected_icon==="videocam-outline")? "videocam":"videocam-outline" } title="Crear"></ion-icon>
                 </div>
-                <ComponentNavOptionsCreateVideo get_style_icon_video_options={get_style_icon_video_options}/>
+                <ComponentNavOptionsCreateVideo get_style={get_style}/>
                 <div className="notification">
-                    <ion-icon name="notifications-outline" title="Notificaciones"></ion-icon>
+                    <ion-icon onClick={(e) => visibility_options(e)} name={(name_selected_icon==="notifications-outline")? "notifications":"notifications-outline" } title="Notificaciones"></ion-icon>
                 </div>
+                <img className="perfil" src="/images/my_perfil.jpg" alt=""/>                
+                <ComponentNavOptionsNotification get_style={get_style}/>
             </div>
-            <img className="perfil" src="/images/my_perfil.jpg" alt=""/>
         </nav>
     );
 }
