@@ -13,14 +13,21 @@ export default function GlobalContextProvider({children}){
     let {search} = useLocation();
     let search_query = get_search_param(search);
 
+    const [error,setError] = useState(false);
     const [categories,setCategories] = useState([]);
     const [categorie_selected,setCategorie_selected] = useState();
     const [videos,setVideos] = useState([]);
 
     useEffect(() => {
         const load_categories = async () => {
-            let new_categories = await Load_categories_general(categorie_selected);
-            setCategories(new_categories);
+            try{
+                let new_categories = await Load_categories_general(categorie_selected);
+                setCategories(new_categories);
+            }catch(error){
+                if(!error.response){
+                    setError(true);
+                }
+            }
         }
         const load_videos = async () => {
             let new_videos = await Load_videos(search_query,categorie_selected,10);
@@ -39,7 +46,7 @@ export default function GlobalContextProvider({children}){
     }
 
     return (
-        <Global_context.Provider value={{search_query, capture_id_categorie, categories, videos}}>
+        <Global_context.Provider value={{search_query, capture_id_categorie, categories, videos, error}}>
             {children}
         </Global_context.Provider>
     )

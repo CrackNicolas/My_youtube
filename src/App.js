@@ -1,6 +1,7 @@
 import ComponentHome from './components/layouts/home.js';
 import ComponentWatch from './components/layouts/watch.js';
 import ComponentSearch from './components/layouts/search.js';
+import ComponentSinInternet from './components/layouts/sin_internet.js';
 import './styles/App.css';
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -32,9 +33,9 @@ function App() {
             </GlobalContextProvider>
           } 
         />
+        <Route path="*" element={ <ComponentSinInternet/>} />
       </Routes>
     </BrowserRouter>
   );
 }
-
 export default App;
