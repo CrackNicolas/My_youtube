@@ -56,7 +56,7 @@ export default function ComponentWatch(){
     }
 
     return (
-        (!context_global.internet)? 
+        (context_global.internet)? 
             <React.Fragment>
                 <ComponentNavTop search_query={context_global.search_query}/>
                 <section className="section-view-video">

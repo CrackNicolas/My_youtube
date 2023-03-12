@@ -11,7 +11,7 @@ export default function ComponentSearch(){
     const context_global = useContext(Global_context);
 
     return (
-        (!context_global.internet)? 
+        (context_global.internet)? 
             <React.Fragment>
                 <ComponentNavTop search_query={context_global.search_query}/>
                 <ComponentNavLeft/>

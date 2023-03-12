@@ -12,7 +12,7 @@ export default function ComponentHome(){
   const context_global = useContext(Global_context);
   
   return (
-    (!context_global.internet)? 
+    (context_global.internet)? 
       <React.Fragment>
         <ComponentNavTop search_query={context_global.search_query}/>
         <ComponentNavCategories categorie_selected={context_global.capture_id_categorie} categories={context_global.categories}/>

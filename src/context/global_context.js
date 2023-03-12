@@ -13,7 +13,7 @@ export default function GlobalContextProvider({children}){
     let {search} = useLocation();
     let search_query = get_search_param(search);
 
-    const [internet,setInternet] = useState(false);
+    const [internet,setInternet] = useState(true);
     const [categories,setCategories] = useState([]);
     const [categorie_selected,setCategorie_selected] = useState();
     const [videos,setVideos] = useState([]);
@@ -25,7 +25,7 @@ export default function GlobalContextProvider({children}){
                 setCategories(new_categories);
             }catch(error){
                 if(!error.response){
-                    setInternet(true);
+                    setInternet(false);
                 }
             }
         }
@@ -35,7 +35,7 @@ export default function GlobalContextProvider({children}){
                 setVideos(new_videos);
             }catch(error){
                 if(!error.response){
-                    setInternet(true);
+                    setInternet(false);
                 }
             }
         }
