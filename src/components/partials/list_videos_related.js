@@ -60,8 +60,11 @@ export default function ComponentListVideosRelated({id_playlist}){
                             </div>
                             <div className="datails">
                                 <p>{video.title}</p>
-                                <p>{video.channel.title}</p>
-                                <p>{video.view_count} de visitas .{video.time_elapsed}</p>
+                                <div>
+                                    <p>{video.channel.title}</p>
+                                    { video.license===true ? <ion-icon name="checkmark-circle"></ion-icon> : "" }
+                                </div>
+                                <p>{video.view_count} .{video.time_elapsed}</p>
                             </div>
                             <div className="icon-options" onClick={(e) => visibility_option(e,index)}>
                                 <ion-icon style={get_style_icon_option(index)} name="ellipsis-vertical"></ion-icon>

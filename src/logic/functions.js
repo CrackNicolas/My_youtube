@@ -58,10 +58,11 @@ export function get_count(value){
 }
 export function get_convert_cantidad(value){
     if(value >= 1000000){
-        return (value / 1000000).toString().slice(0,4) + " M ";
-    }
-    if(value >= 1000){
-        return get_count(value / 1000);
+        let new_valor = (value / 1000000).toString().slice(0,4);
+        if(new_valor.split(".")[1]===""){
+            return new_valor.replace(".","") + " M ";
+        }
+        return get_count(new_valor) + " M ";
     }
     return get_count(value);
 }

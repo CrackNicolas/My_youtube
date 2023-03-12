@@ -13,7 +13,10 @@ export default function ComponentHeaderVideoSelected({video,channel}){
                 <div className="btns-izq">
                     <img className="icon" src={channel.logo} alt={channel.title}/>
                     <article className="subscriptions">
-                        <p className="autor">{channel.title}</p>
+                        <div>
+                            <p className="autor">{channel.title}</p>
+                            <ion-icon name="checkmark-circle"></ion-icon>
+                        </div>
                         <p className="count">{channel.subscriptions}</p>
                     </article>
                     <button className="btn-subscription" title="Suscribirse" name="Suscribirse">

@@ -16,9 +16,10 @@ export default function ComponentNavOptionsNotification({get_style}){
                     </p>
                     <p>
                         Pedsdads   dad as ds ad sa ds ad sad sa d asd a sd sad as
-                        <p>
+                        <br/><br/>
+                        <span>
                             Hace 7 dias
-                        </p>
+                        </span>
                     </p>
                     <p>
                         <img src="/images/my_perfil.jpg" alt=""></img>
@@ -34,9 +35,10 @@ export default function ComponentNavOptionsNotification({get_style}){
                     </p>
                     <p>
                         Pedsdads   dad as ds ad sa ds ad sad sa d asd a sd sad as
-                        <p>
-                            Hace 7 diaz
-                        </p>
+                        <br/><br/>
+                        <span>
+                            Hace 7 dias
+                        </span>
                     </p>
                     <p>
                         <img src="/images/my_perfil.jpg" alt=""></img>
