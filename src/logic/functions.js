@@ -66,3 +66,6 @@ export function get_convert_cantidad(value){
     }
     return get_count(value);
 }
+export function get_description(description){
+    return description;
+}

@@ -1044,12 +1044,12 @@ body::-webkit-scrollbar-thumb{
 }
 .view_videos .title{
     color: var(--color-text-primary);
-    font-size: 19px;
+    font-size: 17.3px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 600;
     width: 715px;
     margin: 11px 1px;
-    letter-spacing: 0.4px;
+    letter-spacing: 0.1px;
 }
 .view_videos .details{
     display: flex;
@@ -1093,9 +1093,9 @@ body::-webkit-scrollbar-thumb{
     -webkit-box-orient: vertical;
 }
 .view_videos .details .subscriptions div ion-icon{
-    min-width: 17px;
-    min-height: 17px;
-    color: var(--color-text-primary);
+    min-width: 14.8px;
+    min-height: 14.8px;
+    color: var(--color-text-secondary);
 }
 .view_videos .details .subscriptions .count{
     color: var(--color-text-secondary);
@@ -1138,8 +1138,9 @@ body::-webkit-scrollbar-thumb{
     background-color: var(--color-font-hover-buttons);
 }
 .view_videos .details .btn-likes p{
-    font-weight: bold;
-    font-size: 15px;
+    font-weight: 500;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
     letter-spacing: 0.5px;
     height: 100%;
     display: flex;
@@ -1557,6 +1558,12 @@ body::-webkit-scrollbar-thumb{
     font-size: 13px;
     margin-bottom: 5px;
 }
+.view_videos .description-view-video p:nth-child(2){
+    font-weight: 500;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13.5px;
+    padding-right: 35px;
+}
 .view_videos .description-view-video:hover{
     cursor: pointer;
     background-color: var(--color-font-hover-buttons);
@@ -1754,9 +1761,9 @@ body::-webkit-scrollbar-thumb{
     font-weight: 500;
 }
 .views-videos-related .videos-favorites .player-favorite .datails div ion-icon{
-    width: 17px;
-    height: 17px;
-    color: var(--color-text-primary);
+    width: 16px;
+    height: 16px;
+    color: var(--color-text-secondary);
 }
 .views-videos-related .videos-favorites .player-favorite .datails p:nth-child(3){
     color: var(--color-text-secondary);

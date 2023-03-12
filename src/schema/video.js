@@ -1,4 +1,4 @@
-import {get_convert_cantidad, get_time_elapsed, get_duration_video} from '../logic/functions.js';
+import {get_convert_cantidad, get_time_elapsed, get_duration_video, get_description} from '../logic/functions.js';
 
 export default class Schema_video_presentation{
     constructor(id,title,url_imagen,duration,time_elapsed,description,license,view_count,channel){
@@ -19,7 +19,7 @@ export default class Schema_video_presentation{
             video.snippet.thumbnails.medium.url,
             get_duration_video(video.contentDetails.duration),
             get_time_elapsed(video.snippet.publishedAt),
-            video.snippet.description,
+            video.snippet.localized.description,
             video.contentDetails.licensedContent,
             get_convert_cantidad(video.statistics.viewCount)+" de visitas",
             channel
@@ -27,11 +27,12 @@ export default class Schema_video_presentation{
     }
 }
 export class Schema_video_watch{
-    constructor(id,title,channel_id,likes,comments_count){
+    constructor(id,title,channel_id,likes,description,comments_count){
         this.id = id;
         this.title = title;
         this.channel_id = channel_id;
         this.likes = likes;
+        this.description = description;
         this.comments_count = comments_count;
     }
     static push(video){
@@ -40,6 +41,7 @@ export class Schema_video_watch{
             video.snippet.title,
             video.snippet.channelId,
             get_convert_cantidad(video.statistics.likeCount),
+            get_description(video.snippet.localized.description),
             get_convert_cantidad(video.statistics.commentCount)
         )  
     }

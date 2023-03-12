@@ -3,6 +3,7 @@ import React from "react"
 import { get_url_player } from "../../logic/functions.js";
 
 export default function ComponentHeaderVideoSelected({video,channel}){
+    
     return (
         <React.Fragment>
             <article className="player">
@@ -42,7 +43,7 @@ export default function ComponentHeaderVideoSelected({video,channel}){
             </article>
             <article className="description-view-video">
                 <p>{channel.view_count} .{channel.time_elapsed}</p>
-                <p>{channel.description}</p>
+                <p>{video.description}</p>
             </article>
         </React.Fragment>        
     )

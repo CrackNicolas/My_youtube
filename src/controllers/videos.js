@@ -42,7 +42,7 @@ export default async function Load_videos(search_query,categorie_selected,count_
     return new_videos;
 }
 export async function Load_video(id_video){
-    let search_video_selected = await Service_videos.get_all_id(id_video);   
+    let search_video_selected = await Service_videos.get_all_id(id_video);
     return Schema_video_watch.push(search_video_selected.data.items[0]);
 }
 export async function Load_videos_related(id_playlist){
