@@ -13,7 +13,7 @@ export default function GlobalContextProvider({children}){
     let {search} = useLocation();
     let search_query = get_search_param(search);
 
-    const [error,setError] = useState(false);
+    const [internet,setInternet] = useState(false);
     const [categories,setCategories] = useState([]);
     const [categorie_selected,setCategorie_selected] = useState();
     const [videos,setVideos] = useState([]);
@@ -25,13 +25,19 @@ export default function GlobalContextProvider({children}){
                 setCategories(new_categories);
             }catch(error){
                 if(!error.response){
-                    setError(true);
+                    setInternet(true);
                 }
             }
         }
         const load_videos = async () => {
-            let new_videos = await Load_videos(search_query,categorie_selected,10);
-            setVideos(new_videos);
+            try{
+                let new_videos = await Load_videos(search_query,categorie_selected,10);
+                setVideos(new_videos);
+            }catch(error){
+                if(!error.response){
+                    setInternet(true);
+                }
+            }
         }
  
         if(search_query===null){
@@ -46,7 +52,7 @@ export default function GlobalContextProvider({children}){
     }
 
     return (
-        <Global_context.Provider value={{search_query, capture_id_categorie, categories, videos, error}}>
+        <Global_context.Provider value={{search_query, capture_id_categorie, categories, videos, internet}}>
             {children}
         </Global_context.Provider>
     )

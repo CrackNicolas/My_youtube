@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 
 import {Global_context} from '../../context/global_context.js';
 
+import ComponentSinInternet from './sin_internet.js';
 import ComponentNavTop from '../partials/nav_top.js';
 import ComponentHeaderVideoSelected from '../partials/header_video_selected.js';
 import ComponentHeaderComments from "../partials/header_comments.js";
@@ -55,21 +56,24 @@ export default function ComponentWatch(){
     }
 
     return (
-        <React.Fragment>
-            <ComponentNavTop search_query={context_global.search_query}/>
-            <section className="section-view-video">
-                <section className="view_videos">
-                    <ComponentHeaderVideoSelected video={video_selected} channel={channel_video_selected}/>      
-                    <article className="comments">
-                        <ComponentHeaderComments comments_count={video_selected.comments_count}/>
-                        <ComponentListComments comments={comments_video_selected}/>
-                    </article>
+        (!context_global.internet)? 
+            <React.Fragment>
+                <ComponentNavTop search_query={context_global.search_query}/>
+                <section className="section-view-video">
+                    <section className="view_videos">
+                        <ComponentHeaderVideoSelected video={video_selected} channel={channel_video_selected}/>      
+                        <article className="comments">
+                            <ComponentHeaderComments comments_count={video_selected.comments_count}/>
+                            <ComponentListComments comments={comments_video_selected}/>
+                        </article>
+                    </section>
+                    <section className="views-videos-related">
+                        <ComponentNavCategoriesVideosRelated categories_playlists={categories} selected_categorie={capture_id_categorie} />
+                        <ComponentListVideosRelated id_playlist={categorie_selected}/>
+                    </section>
                 </section>
-                <section className="views-videos-related">
-                    <ComponentNavCategoriesVideosRelated categories_playlists={categories} selected_categorie={capture_id_categorie} />
-                    <ComponentListVideosRelated id_playlist={categorie_selected}/>
-                </section>
-            </section>
-        </React.Fragment>
+            </React.Fragment>
+        :
+            <ComponentSinInternet/>
     );
 }
