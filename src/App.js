@@ -1,6 +1,7 @@
 import ComponentHome from './components/layouts/home.js';
 import ComponentWatch from './components/layouts/watch.js';
 import ComponentSearch from './components/layouts/search.js';
+import ComponentHashtag from './components/layouts/hashtag.js';
 import ComponentSinInternet from './components/layouts/sin_internet.js';
 import './styles/App.css';
 
@@ -30,6 +31,13 @@ function App() {
           { 
             <GlobalContextProvider>
               <ComponentWatch/> 
+            </GlobalContextProvider>
+          } 
+        />
+        <Route exact path="/hashtag/:id" element=
+          { 
+            <GlobalContextProvider>
+              <ComponentHashtag/>
             </GlobalContextProvider>
           } 
         />
