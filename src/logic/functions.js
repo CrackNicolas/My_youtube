@@ -67,5 +67,13 @@ export function get_convert_cantidad(value){
     return get_count(value);
 }
 export function get_description(description){
+    const description_default = description.match(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/g);
+    for(let i = 0 ; i < description_default.length ; i++){
+        description = description.replace(description_default[i],`<a href=${description_default[i]} style="color: rgba(62,166,255,1.000)">${description_default[i]}</a> `+(i<3? "<br/><br/>": (i==9 || i==14)? "<br/><br/>" : "<br/>"));
+    }
+    let claves = description.match(/#[A-Za-z]+/g);
+    for(let i = 0 ; i < claves.length ; i++){
+        description = description.replace(claves[i],((i==0)?"<br/>":"")+`<a href=/hashtag/${claves[i].replace("#","")} style="color: rgba(62,166,255,1.000)">${claves[i]}</a><br/>`);
+    }
     return description;
 }

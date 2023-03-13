@@ -1546,7 +1546,7 @@ body::-webkit-scrollbar-thumb{
 }
 .view_videos .description-view-video{
     margin-top: 20px;
-    background-color: var(--color-font-button-likes);
+    background-color: var(--color-font-secondary);
     border-radius: 10px;
     color: var(--color-text-primary);
     padding: 12px;
@@ -1562,11 +1562,9 @@ body::-webkit-scrollbar-thumb{
     font-weight: 500;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 13.5px;
-    padding-right: 35px;
-}
-.view_videos .description-view-video:hover{
-    cursor: pointer;
-    background-color: var(--color-font-hover-buttons);
+    padding-right: 25px;
+    line-height: 20px;
+    color: var(--color-text-primary);
 }
 /**----------------------------------**/
 

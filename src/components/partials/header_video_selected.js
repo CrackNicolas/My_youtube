@@ -1,9 +1,16 @@
-import React from "react"
+import React, { useEffect } from "react"
 
 import { get_url_player } from "../../logic/functions.js";
 
 export default function ComponentHeaderVideoSelected({video,channel}){
     
+    useEffect(() => {
+        const replace_description = () => {
+            window.document.getElementById("description").innerHTML = video.description;
+        }
+        replace_description();
+    },[video.description]);
+
     return (
         <React.Fragment>
             <article className="player">
@@ -43,7 +50,7 @@ export default function ComponentHeaderVideoSelected({video,channel}){
             </article>
             <article className="description-view-video">
                 <p>{channel.view_count} .{channel.time_elapsed}</p>
-                <p>{video.description}</p>
+                <p id="description"></p>
             </article>
         </React.Fragment>        
     )
