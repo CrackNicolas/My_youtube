@@ -3,6 +3,26 @@ import { useEffect, useState } from "react"
 export default function ComponentHeaderHashtag({videos,name_hashtag}){
     const [count_videos,setCount_videos] = useState(0);
     const [count_channels,setCount_channels] = useState(0);
+    const [style,setStyle] = useState({});
+
+    useEffect(() => {
+        const hidden_header_hashtag = () => {
+            let ubicacion_actual = window.pageYOffset;
+            if(ubicacion_actual == 0){
+                setStyle({
+                    position: "relative",
+                    top: "85px"
+                })
+            }else{
+                setStyle({
+                    position: "fixed",
+                    top: "-30px"
+                })
+            }
+        }
+        window.addEventListener('scroll',hidden_header_hashtag);
+    },[window.pageYOffset]);
+
 
     useEffect(() => {
         const calc_count_videos = () => {
@@ -23,7 +43,7 @@ export default function ComponentHeaderHashtag({videos,name_hashtag}){
     },[videos]);
     
     return (
-        <section className="header-hashtag">
+        <section className="header-hashtag" style={style}>
             <p>#{name_hashtag}</p>
             <article className="details">
                 <p>{count_videos}</p>

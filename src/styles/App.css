@@ -1811,21 +1811,12 @@ body::-webkit-scrollbar-thumb{
     top: 60px;
     left: 97px;
     width: 100%;
-    background-color: red;
-    margin-bottom: -65px;
+    background-color: var(--color-font-primary);
+    padding-bottom: 10px;
+    margin-bottom: -75px;
     line-height: 31px;
     z-index: 15;
-    animation: animate_header_hashtag 1s linear;
 }
-@keyframes animate_header_hashtag{
-    0%{
-        top: 60px;
-    }
-    100%{
-        top: -25px;
-    }
-}
-
 .header-hashtag p{
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 500;
