@@ -34,7 +34,7 @@ function App() {
             </GlobalContextProvider>
           } 
         />
-        <Route exact path="/hashtag/:id" element=
+        <Route exact path="/hashtag/:name" element=
           { 
             <GlobalContextProvider>
               <ComponentHashtag/>
