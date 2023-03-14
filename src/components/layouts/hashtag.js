@@ -26,7 +26,7 @@ export default function ComponentHashtag(){
             setVideos(new_videos);
         }   
         load_videos();    
-    },[name]);
+    },[]);
 
     return (
         (context_global.internet)?
