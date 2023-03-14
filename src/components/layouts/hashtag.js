@@ -17,11 +17,11 @@ export default function ComponentHashtag(){
 
     const [videos,setVideos] = useState([]);
 
-    let {name} = useParams();
+    let {name,shorts} = useParams();
 
     useEffect(() => {
         const load_videos = async () => {
-            let new_videos = await Load_videos(name,"",5);
+            let new_videos = await Load_videos((name+" "+shorts),"",5);
             setVideos(new_videos);
         }   
         load_videos();    

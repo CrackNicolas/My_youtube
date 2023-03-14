@@ -41,6 +41,13 @@ function App() {
             </GlobalContextProvider>
           } 
         />
+        <Route exact path="/hashtag/:name/:shorts" element=
+          { 
+            <GlobalContextProvider>
+              <ComponentHashtag/>
+            </GlobalContextProvider>
+          } 
+        />
         <Route path="*" element={ <ComponentSinInternet/>} />
       </Routes>
     </BrowserRouter>

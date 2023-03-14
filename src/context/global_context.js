@@ -31,7 +31,7 @@ export default function GlobalContextProvider({children}){
         }
         const load_videos = async () => {
             try{
-                let new_videos = await Load_videos(search_query,categorie_selected,1);
+                let new_videos = await Load_videos(search_query,categorie_selected,3);
                 setVideos(new_videos);
             }catch(error){
                 if(!error.response){

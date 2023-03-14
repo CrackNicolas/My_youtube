@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { Link } from "react-router-dom";
 
 export default function ComponentHeaderHashtag({videos,name_hashtag}){
     const [count_videos,setCount_videos] = useState(0);
@@ -41,7 +42,7 @@ export default function ComponentHeaderHashtag({videos,name_hashtag}){
         calc_count_videos();
         calc_count_channels();
     },[videos]);
-    
+
     return (
         <section className="header-hashtag" style={style}>
             <p>#{name_hashtag}</p>
@@ -50,8 +51,8 @@ export default function ComponentHeaderHashtag({videos,name_hashtag}){
                 <p>{count_channels}</p>
             </article>
             <article className="categories">
-                <a href="">Todo</a>
-                <a href="">Shorts</a>
+                <Link to={name_hashtag}>Todo</Link>
+                <Link to={(name_hashtag+"/shorts")}>Shorts</Link>
             </article>
         </section>
     )
