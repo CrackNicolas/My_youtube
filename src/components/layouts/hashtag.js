@@ -21,7 +21,8 @@ export default function ComponentHashtag(){
 
     useEffect(() => {
         const load_videos = async () => {
-            let new_videos = await Load_videos((name+" "+shorts),"",5);
+            let search = (shorts!=undefined)? name+" "+shorts : name;
+            let new_videos = await Load_videos(search,"",5);
             setVideos(new_videos);
         }   
         load_videos();    

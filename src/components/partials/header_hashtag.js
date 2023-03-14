@@ -51,8 +51,8 @@ export default function ComponentHeaderHashtag({videos,name_hashtag}){
                 <p>{count_channels}</p>
             </article>
             <article className="categories">
-                <Link to={name_hashtag}>Todo</Link>
-                <Link to={(name_hashtag+"/shorts")}>Shorts</Link>
+                <Link to={("/hashtag/"+name_hashtag)}>Todo</Link>
+                <Link to={("/hashtag/"+name_hashtag+"/shorts")}>Shorts</Link>
             </article>
         </section>
     )
