@@ -35,6 +35,7 @@ export default function ComponentWatch(){
             load_channel_video_selected(video.channel_id);
             load_categories(video.channel_id);
             load_comments_video_selected(id_video);
+            window.document.title = video.title;
         } 
         const load_channel_video_selected = async (id_video) => {
             let search_channel = await Load_channel(id_video);
