@@ -1,12 +1,17 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 
 import { get_url_player } from "../../logic/functions.js";
 
 export default function ComponentHeaderVideoSelected({video,channel}){
-    
+    const [name_id_description,setName_id_description] = useState("hidden_description");
+
+    const hidden_description = () => {
+        setName_id_description((name_id_description==="hidden_description")? "description":"hidden_description");
+    }
+
     useEffect(() => {
         const replace_description = () => {
-            window.document.getElementById("description").innerHTML = video.description;
+            window.document.getElementById(name_id_description).innerHTML = video.description;
         }
         replace_description();
     },[video.description]);
@@ -50,7 +55,8 @@ export default function ComponentHeaderVideoSelected({video,channel}){
             </article>
             <article className="description-view-video">
                 <p>{channel.view_count} .{channel.time_elapsed}</p>
-                <p id="description"></p>
+                <p id={name_id_description}></p>
+                <button onClick={() => hidden_description()}>Mostrar {(name_id_description==="hidden_description")? "más":"menos"}</button>
             </article>
         </React.Fragment>        
     )
