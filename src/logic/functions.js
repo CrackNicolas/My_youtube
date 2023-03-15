@@ -72,8 +72,10 @@ export function get_description(description){
         description = description.replace(description_default[i],`<a href=${description_default[i]} style="color: rgba(62,166,255,1.000)">${description_default[i]}</a> `+(i<3? "<br/><br/>": (i==9 || i==14)? "<br/><br/>" : "<br/>"));
     }
     let claves = description.match(/#[A-Za-z]+/g);
-    for(let i = 0 ; i < claves.length ; i++){
-        description = description.replace(claves[i],((i==0)?"<br/>":"")+`<a href=/hashtag/${claves[i].replace("#","")} style="color: rgba(62,166,255,1.000)">${claves[i]}</a><br/>`);
+    if(claves!=undefined){
+        for(let i = 0 ; i < claves.length ; i++){
+            description = description.replace(claves[i],((i==0)?"<br/>":"")+`<a href=/hashtag/${claves[i].replace("#","")} style="color: rgba(62,166,255,1.000)">${claves[i]}</a><br/>`);
+        }
     }
     return description;
 }
