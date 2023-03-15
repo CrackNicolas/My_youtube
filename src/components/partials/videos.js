@@ -28,7 +28,7 @@ export default function ComponentVideosLayouts({videos}){
   const mouse_over = (key) => {
     set_time = setTimeout(() => {
       setKey_video_selected(key)
-    }, 1900);
+    }, 1700);
   }
 
   return (
