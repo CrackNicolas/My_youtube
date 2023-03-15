@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import { get_url_player_presentation } from '../../logic/functions.js';
 import ComponentNavOptionsVideo from './nav_options_video';
@@ -6,10 +6,6 @@ import ComponentNavOptionsVideo from './nav_options_video';
 export default function ComponentVideosLayouts({videos}){
   const [option_selected, setOption_selected] = useState();
   const [key_video_selected,setKey_video_selected] = useState();
-
-  let watch_video = (id) => {
-    return "/watch/"+id;
-  }
 
   const visibility_option = (e,index) => {
     e.preventDefault();
@@ -21,22 +17,26 @@ export default function ComponentVideosLayouts({videos}){
   const get_style_icon_option = (index) => {
     return (option_selected===index)? { animation: "animate_click_icon_options 0.2s" } : { };
   }
-
-  const prev_video = (e,key) => {
-    e.preventDefault();
-    setKey_video_selected(key);
-  }
-
   const play = (id_video,index) => {
     return (key_video_selected==index)? get_url_player_presentation(id_video) : "";
   }
+
+  useEffect(() => {
+    window.document.addEventListener('mousemove', (e) => {
+      const cursor = window.document.querySelector('.imagen');
+      const key = window.document.querySelector('.imagen').id;
+      cursor.addEventListener("mouseover", () => {
+        setKey_video_selected(key);
+      });
+    });
+  },[key_video_selected]);
 
   return (
     <section className="videos">
       {
         videos.map((video,index) => {
           return (
-            <a href={watch_video(video.id)} key={index}>
+            <a href={("/watch/"+video.id)} key={index}>
               <article className="video">
                 {
                   (index == key_video_selected)?
@@ -49,8 +49,8 @@ export default function ComponentVideosLayouts({videos}){
                       </div>
                     </iframe>
                   :
-                    <div className="imagen">
-                      <img onClick={(e) => prev_video(e,index)} src={video.url_imagen} alt={video.title}/>
+                    <div className="imagen" id={index}>
+                      <img src={video.url_imagen} alt={video.title}/>
                       <div className="duration">
                           <span>
                               {video.duration}
