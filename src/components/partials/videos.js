@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
+import { get_url_player_presentation } from '../../logic/functions.js';
 import ComponentNavOptionsVideo from './nav_options_video';
 
 export default function ComponentVideosLayouts({videos}){
@@ -20,6 +21,13 @@ export default function ComponentVideosLayouts({videos}){
     return (option_selected===index)? { animation: "animate_click_icon_options 0.2s" } : { };
   }
 
+  const [video_play,setVideo_play] = useState(false);
+
+  const prev_video = (e) => {
+    e.preventDefault();
+    setVideo_play(true);
+  }
+
   return (
     <section className="videos">
       {
@@ -27,14 +35,26 @@ export default function ComponentVideosLayouts({videos}){
           return (
             <a href={watch_video(video.id)} key={index}>
               <article className="video">
-                <div className="imagen">
-                    <img src={video.url_imagen} alt={video.title}/>
-                    <div className="duration">
-                        <span>
-                            {video.duration}
-                        </span>
+                {
+                  video_play?
+                    <iframe src={get_url_player_presentation(video.id)} className="imagen" allow='autoplay *'>
+                      <img src={video.url_imagen} alt={video.title}/>
+                      <div className="duration">
+                          <span>
+                              {video.duration}
+                          </span>
+                      </div>
+                    </iframe>
+                  :
+                    <div src={get_url_player_presentation(video.id)} className="imagen">
+                      <img onClick={(e) => prev_video(e)} src={video.url_imagen} alt={video.title}/>
+                      <div className="duration">
+                          <span>
+                              {video.duration}
+                          </span>
+                      </div>
                     </div>
-                </div>
+                }
                 <div className="icon-autor">
                   <img src={video.channel.logo} alt={video.channel.title}/>
                   <p>{video.title}</p>
