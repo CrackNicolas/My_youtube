@@ -1,11 +1,12 @@
 import React, {useState} from "react";
 
-export default function ComponentSearchVideos({videos}){
-    const [option_selected, setOption_selected] = useState();
+import {get_url_player_presentation} from '../../logic/functions.js';
+import ComponentNavOptionsVideoSearch from './nav_options_video_search.js';
 
-    let watch_video = (id) => {
-        return "/watch/"+id;
-    }
+export default function ComponentSearchVideos({videos}){
+    let set_time;
+    const [option_selected, setOption_selected] = useState();
+    const [key_video_selected,setKey_video_selected] = useState();
 
     const visibility_option = (e,index) => {
         e.preventDefault();
@@ -17,6 +18,19 @@ export default function ComponentSearchVideos({videos}){
     const get_style_icon_option = (index) => {
         return (option_selected===index)? { animation: "animate_click_icon_options 0.2s" } : { };
     }
+    const play = (id_video,index) => {
+        return (key_video_selected==index)? get_url_player_presentation(id_video) : "";
+    }
+    const mouse_out = () => {
+        clearTimeout(set_time);
+        setKey_video_selected(undefined);
+    }
+    const mouse_over = (key) => {
+        set_time = setTimeout(() => {
+          setKey_video_selected(key)
+        }, 1900);
+    }
+
 
     return (
         <section className="search-videos">
@@ -30,24 +44,45 @@ export default function ComponentSearchVideos({videos}){
                 {
                     videos.map((video,index) => {
                         return (
-                            <a href={watch_video(video.id)} className="video" key={index}>
-                                <div className="imagen">
-                                    <img src={video.url_imagen} alt={video.title}/>
-                                    <div className="content-icons">
-                                        <div className="icons">
-                                            <ion-icon name="timer-outline"></ion-icon>
-                                            <ion-icon name="play-outline"></ion-icon>
+                            <a href={("/watch/"+video.id)} className="video" key={index}>
+                                {
+                                    (index == key_video_selected)?
+                                        <iframe src={play(video.id,index)} className="imagen_frame" allow='autoplay *' onMouseOver={() => mouse_over(index)} onMouseOut={() => mouse_out()}>
+                                            <img src={video.url_imagen} alt={video.title}/>
+                                            <div className="content-icons">
+                                                <div className="icons">
+                                                    <ion-icon name="timer-outline"></ion-icon>
+                                                    <ion-icon name="play-outline"></ion-icon>
+                                                </div>
+                                            </div>
+                                            <div className="icon-player">
+                                                <ion-icon name="play-sharp"></ion-icon>
+                                            </div>
+                                            <div className="duration">
+                                                <span>
+                                                    {video.duration}
+                                                </span>
+                                            </div>
+                                        </iframe>
+                                    :
+                                        <div className="imagen" onMouseOver={() => mouse_over(index)} onMouseOut={() => mouse_out()}>
+                                            <img src={video.url_imagen} alt={video.title}/>
+                                            <div className="content-icons">
+                                                <div className="icons">
+                                                    <ion-icon name="timer-outline"></ion-icon>
+                                                    <ion-icon name="play-outline"></ion-icon>
+                                                </div>
+                                            </div>
+                                            <div className="icon-player">
+                                                <ion-icon name="play-sharp"></ion-icon>
+                                            </div>
+                                            <div className="duration">
+                                                <span>
+                                                    {video.duration}
+                                                </span>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div className="icon-player">
-                                        <ion-icon name="play-sharp"></ion-icon>
-                                    </div>
-                                    <div className="duration">
-                                        <span>
-                                            {video.duration}
-                                        </span>
-                                    </div>
-                                </div>
+                                }   
                                 <div className="description">
                                     <p className="title">{video.title}</p>
                                     <div className="visualizaciones">
@@ -64,33 +99,7 @@ export default function ComponentSearchVideos({videos}){
                                 <div className="icon-options" onClick={(e) => visibility_option(e,index)}>
                                     <ion-icon style={get_style_icon_option(index)} name="ellipsis-vertical"></ion-icon>
                                 </div>
-                                <div className="options" style={get_style_option(index)}>
-                                    <div className="option">
-                                        <ion-icon name="add-outline"></ion-icon>
-                                        <p>Añadir a la cola</p>
-                                    </div>
-                                    <div className="option">
-                                        <ion-icon name="time-outline"></ion-icon>
-                                        <p>Guardar para ver más tarde</p>
-                                    </div>
-                                    <div className="option">
-                                        <ion-icon name="duplicate-outline"></ion-icon>
-                                        <p>Añadir a la lista de reproducción</p>
-                                    </div>
-                                    <div className="option">
-                                        <ion-icon name="download-outline"></ion-icon>
-                                        <p>Descargar</p>
-                                    </div>
-                                    <div className="option">
-                                        <ion-icon name="arrow-redo-outline"></ion-icon>
-                                        <p>Compartir</p>
-                                    </div>
-                                    <div className="line"></div>
-                                    <div className="option">
-                                        <ion-icon name="flag-outline"></ion-icon>
-                                        <p>Denunciar</p>
-                                    </div>
-                                </div>
+                                <ComponentNavOptionsVideoSearch get_style_option={get_style_option} index={index}/>
                             </a>
                         )
                     })

@@ -21,7 +21,6 @@ export default function ComponentVideosLayouts({videos}){
   const play = (id_video,index) => {
     return (key_video_selected==index)? get_url_player_presentation(id_video) : "";
   }
-
   const mouse_out = () => {
     clearTimeout(set_time);
     setKey_video_selected(undefined);
@@ -50,7 +49,7 @@ export default function ComponentVideosLayouts({videos}){
                       </div>
                     </iframe>
                   :
-                    <div className="imagen" id={index} onMouseOver={() => mouse_over(index)} onMouseOut={() => mouse_out()}>
+                    <div className="imagen" onMouseOver={() => mouse_over(index)} onMouseOut={() => mouse_out()}>
                       <img src={video.url_imagen} alt={video.title}/>
                       <div className="duration">
                           <span>
