@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 
 import { get_url_player_presentation } from '../../logic/functions.js';
 import ComponentNavOptionsVideo from './nav_options_video';
 
 export default function ComponentVideosLayouts({videos}){
   const [option_selected, setOption_selected] = useState();
+  const [key_video_selected,setKey_video_selected] = useState();
 
   let watch_video = (id) => {
     return "/watch/"+id;
@@ -21,11 +22,13 @@ export default function ComponentVideosLayouts({videos}){
     return (option_selected===index)? { animation: "animate_click_icon_options 0.2s" } : { };
   }
 
-  const [video_play,setVideo_play] = useState(false);
-
-  const prev_video = (e) => {
+  const prev_video = (e,key) => {
     e.preventDefault();
-    setVideo_play(true);
+    setKey_video_selected(key);
+  }
+
+  const play = (id_video,index) => {
+    return (key_video_selected==index)? get_url_player_presentation(id_video) : "";
   }
 
   return (
@@ -36,8 +39,8 @@ export default function ComponentVideosLayouts({videos}){
             <a href={watch_video(video.id)} key={index}>
               <article className="video">
                 {
-                  video_play?
-                    <iframe src={get_url_player_presentation(video.id)} className="imagen" allow='autoplay *'>
+                  (index == key_video_selected)?
+                    <iframe src={play(video.id,index)} className="imagen_frame" allow='autoplay *'>
                       <img src={video.url_imagen} alt={video.title}/>
                       <div className="duration">
                           <span>
@@ -46,8 +49,8 @@ export default function ComponentVideosLayouts({videos}){
                       </div>
                     </iframe>
                   :
-                    <div src={get_url_player_presentation(video.id)} className="imagen">
-                      <img onClick={(e) => prev_video(e)} src={video.url_imagen} alt={video.title}/>
+                    <div className="imagen">
+                      <img onClick={(e) => prev_video(e,index)} src={video.url_imagen} alt={video.title}/>
                       <div className="duration">
                           <span>
                               {video.duration}

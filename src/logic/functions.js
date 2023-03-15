@@ -11,7 +11,7 @@ export function get_url_player(id){
     return "https://www.youtube.com/embed/"+id+"?autoplay=1";
 }
 export function get_url_player_presentation(id){
-    return "https://www.youtube.com/embed/"+id+"?autoplay=1&fs=0&rel=0&showinfo=0&controls=1&modestbranding=1&cc_load_policy=1&iv_load_policy=3";
+    return "https://www.youtube.com/embed/"+id+"?autoplay=1&mute=1&fs=0&rel=0&showinfo=0&controls=1&modestbranding=1&cc_load_policy=1&iv_load_policy=3";
 }
 export function get_time_elapsed(fecha_emit){
     let fecha_emision = new Date(fecha_emit.split("T")[0]).getTime();
