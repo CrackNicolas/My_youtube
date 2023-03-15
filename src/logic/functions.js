@@ -8,7 +8,7 @@ export function get_search_param(search){
     return (query==="" || query===null)? null : query;
 }
 export function get_url_player(id){
-    return "https://www.youtube.com/embed/"+id;
+    return "https://www.youtube.com/embed/"+id+"?autoplay=1";
 }
 export function get_time_elapsed(fecha_emit){
     let fecha_emision = new Date(fecha_emit.split("T")[0]).getTime();

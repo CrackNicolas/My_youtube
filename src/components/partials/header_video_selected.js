@@ -19,7 +19,7 @@ export default function ComponentHeaderVideoSelected({video,channel}){
     return (
         <React.Fragment>
             <article className="player">
-                <iframe src={get_url_player(video.id)}></iframe>
+                <iframe src={get_url_player(video.id)} allow="autoplay *"></iframe>
             </article>
             <p className="title">{video.title}</p>
             <article className="details">
