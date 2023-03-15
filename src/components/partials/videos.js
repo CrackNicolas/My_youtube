@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 
 import { get_url_player_presentation } from '../../logic/functions.js';
 import ComponentNavOptionsVideo from './nav_options_video';
 
 export default function ComponentVideosLayouts({videos}){
+  let set_time;
   const [option_selected, setOption_selected] = useState();
   const [key_video_selected,setKey_video_selected] = useState();
 
@@ -21,15 +22,15 @@ export default function ComponentVideosLayouts({videos}){
     return (key_video_selected==index)? get_url_player_presentation(id_video) : "";
   }
 
-  useEffect(() => {
-    window.document.addEventListener('mousemove', (e) => {
-      const cursor = window.document.querySelector('.imagen');
-      const key = window.document.querySelector('.imagen').id;
-      cursor.addEventListener("mouseover", () => {
-        setKey_video_selected(key);
-      });
-    });
-  },[key_video_selected]);
+  const mouse_out = () => {
+    clearTimeout(set_time);
+    setKey_video_selected(undefined);
+  }
+  const mouse_over = (key) => {
+    set_time = setTimeout(() => {
+      setKey_video_selected(key)
+    }, 1900);
+  }
 
   return (
     <section className="videos">
@@ -40,7 +41,7 @@ export default function ComponentVideosLayouts({videos}){
               <article className="video">
                 {
                   (index == key_video_selected)?
-                    <iframe src={play(video.id,index)} className="imagen_frame" allow='autoplay *'>
+                    <iframe src={play(video.id,index)} className="imagen_frame" allow='autoplay *' onMouseOver={() => mouse_over(index)} onMouseOut={() => mouse_out()} >
                       <img src={video.url_imagen} alt={video.title}/>
                       <div className="duration">
                           <span>
@@ -49,7 +50,7 @@ export default function ComponentVideosLayouts({videos}){
                       </div>
                     </iframe>
                   :
-                    <div className="imagen" id={index}>
+                    <div className="imagen" id={index} onMouseOver={() => mouse_over(index)} onMouseOut={() => mouse_out()}>
                       <img src={video.url_imagen} alt={video.title}/>
                       <div className="duration">
                           <span>
