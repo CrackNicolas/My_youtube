@@ -96,13 +96,13 @@ export default function ComponentSearchVideos({videos}){
                                         {video.description}
                                     </p>
                                     {
-                                        (video.live==true)?
-                                        <div className="live">
-                                            <ion-icon name="radio-outline"></ion-icon>
-                                            <span>EN DIRECTO</span>
-                                        </div>
+                                        video.live?
+                                            <div className="live">
+                                                <ion-icon name="radio-outline"></ion-icon>
+                                                <span>EN DIRECTO</span>
+                                            </div>
                                         : 
-                                        ""
+                                            ""
                                     }
                                 </div>
                                 <div className="icon-options" onClick={(e) => visibility_option(e,index)}>

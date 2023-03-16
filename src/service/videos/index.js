@@ -6,7 +6,7 @@ export default class Service_videos{
         let promise;
         if(search==="" || search===undefined || search===null){
             let id = (id_categorie!==undefined)? "&videoCategoryId="+id_categorie : "";
-            promise = await axios.get(get_petition_url("videos?part=status&part=liveStreamingDetails&part=statistics&part=snippet&part=contentDetails"+id+"&chart=mostPopular&hl=es&regionCode=ES&maxResults="+cantidad));
+            promise = await axios.get(get_petition_url("videos?part=status&part=statistics&part=snippet&part=contentDetails"+id+"&chart=mostPopular&hl=es&regionCode=ES&maxResults="+cantidad));
         }else{
             promise = await axios.get(get_petition_url("search?part=snippet&q="+search+"&type=video&hl=es&regionCode=ES&maxResults="+cantidad));
         }

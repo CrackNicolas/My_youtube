@@ -23,7 +23,7 @@ export default class Schema_video_presentation{
             video.snippet.localized.description,
             video.contentDetails.licensedContent,
             get_convert_cantidad(video.statistics.viewCount)+" de visitas",
-            (video.liveStreamingDetails!=undefined)? true : false,
+            (video.snippet.liveBroadcastContent=="live")? true : false,
             channel
         )
     }
