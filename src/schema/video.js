@@ -1,7 +1,7 @@
 import {get_convert_cantidad, get_time_elapsed, get_duration_video, get_description} from '../logic/functions.js';
 
 export default class Schema_video_presentation{
-    constructor(id,title,url_imagen,duration,time_elapsed,description,license,view_count,channel){
+    constructor(id,title,url_imagen,duration,time_elapsed,description,license,view_count,live,channel){
         this.id = id;
         this.title = title;
         this.url_imagen = url_imagen;
@@ -10,6 +10,7 @@ export default class Schema_video_presentation{
         this.description = description;
         this.license = license;
         this.view_count = view_count;
+        this.live = live;
         this.channel = channel;
     }
     static push(video,channel){
@@ -22,6 +23,7 @@ export default class Schema_video_presentation{
             video.snippet.localized.description,
             video.contentDetails.licensedContent,
             get_convert_cantidad(video.statistics.viewCount)+" de visitas",
+            (video.liveStreamingDetails!=undefined)? true : false,
             channel
         )
     }
@@ -42,7 +44,7 @@ export class Schema_video_watch{
             video.snippet.channelId,
             get_convert_cantidad(video.statistics.likeCount),
             get_description(video.snippet.localized.description),
-            get_convert_cantidad(video.statistics.commentCount)
+            get_convert_cantidad(video.statistics.commentCount),
         )  
     }
 }

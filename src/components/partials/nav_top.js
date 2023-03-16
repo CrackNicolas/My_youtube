@@ -11,9 +11,9 @@ export default function ComponentNavTop({search_query}){
     const [styles, setStyles] = useState(Schema_styles_nav_top.model);
     const [action_menu,setAction_menu] = useState(true);
     const [name_selected_icon, setName_selected_icon] = useState();
-
+    
     const view_menu = () => {
-        setStyles( Schema_styles_nav_top.format( (action_menu)? 1 : 2));
+        setStyles(Schema_styles_nav_top.format( (action_menu)? 1 : 2));
         setAction_menu(!action_menu);
     }
     const prevent_event = (e) => {
@@ -28,10 +28,7 @@ export default function ComponentNavTop({search_query}){
         setName_selected_icon(e.target.name);
     }
     const get_style = (name) => {
-        if(name === name_selected_icon){
-            return {visibility : "visible"};
-        }
-        return {};
+        return (name === name_selected_icon)? {visibility : "visible"} : {};
     }
 
     return (

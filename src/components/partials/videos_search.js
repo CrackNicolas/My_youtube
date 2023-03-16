@@ -95,6 +95,15 @@ export default function ComponentSearchVideos({videos}){
                                     <p className="description-video">
                                         {video.description}
                                     </p>
+                                    {
+                                        (video.live==true)?
+                                        <div className="live">
+                                            <ion-icon name="radio-outline"></ion-icon>
+                                            <span>EN DIRECTO</span>
+                                        </div>
+                                        : 
+                                        ""
+                                    }
                                 </div>
                                 <div className="icon-options" onClick={(e) => visibility_option(e,index)}>
                                     <ion-icon style={get_style_icon_option(index)} name="ellipsis-vertical"></ion-icon>
