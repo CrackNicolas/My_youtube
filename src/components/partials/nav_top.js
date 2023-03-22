@@ -52,17 +52,26 @@ export default function ComponentNavTop({search_query}){
                 <ion-icon onClick={(e) => visibility_options(e)} class="micro" name={(name_selected_icon==="mic-outline")? "mic":"mic-outline"} title="Haz búsquedas por voz"></ion-icon>
             </form>
             <ComponentSearchMicro get_style={get_style} visibility_options={visibility_options}/>            
-            <div className="icons">
-                <div className="create-video">
-                    <ion-icon onClick={(e) => visibility_options(e)} name={(name_selected_icon==="videocam-outline")? "videocam":"videocam-outline" } title="Crear"></ion-icon>
+            {
+                (name_selected_icon!=undefined)?
+                    <div className="load-icons">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                :
+                <div className="icons">
+                    <div className="create-video">
+                        <ion-icon onClick={(e) => visibility_options(e)} name={(name_selected_icon==="videocam-outline")? "videocam":"videocam-outline" } title="Crear"></ion-icon>
+                    </div>
+                    <ComponentNavOptionsCreateVideo get_style={get_style}/>
+                    <div className="notification">
+                        <ion-icon onClick={(e) => visibility_options(e)} name={(name_selected_icon==="notifications-outline")? "notifications":"notifications-outline" } title="Notificaciones"></ion-icon>
+                    </div>
+                    <img className="perfil" src="/images/my_perfil.jpg" alt=""/>                
+                    <ComponentNavOptionsNotification get_style={get_style}/>
                 </div>
-                <ComponentNavOptionsCreateVideo get_style={get_style}/>
-                <div className="notification">
-                    <ion-icon onClick={(e) => visibility_options(e)} name={(name_selected_icon==="notifications-outline")? "notifications":"notifications-outline" } title="Notificaciones"></ion-icon>
-                </div>
-                <img className="perfil" src="/images/my_perfil.jpg" alt=""/>                
-                <ComponentNavOptionsNotification get_style={get_style}/>
-            </div>
+            }
         </nav>
     );
 }
