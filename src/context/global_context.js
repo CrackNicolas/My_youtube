@@ -31,7 +31,7 @@ export default function GlobalContextProvider({children}){
         }
         const load_videos = async () => {
             try{
-                let new_videos = await Load_videos(search_query,categorie_selected,10);
+                let new_videos = await Load_videos(search_query,categorie_selected,3);
                 setVideos(new_videos);
             }catch(error){
                 if(!error.response){
@@ -43,7 +43,7 @@ export default function GlobalContextProvider({children}){
         if(search_query===null){
             load_categories();
         }
-        load_videos(search_query);
+        load_videos();
 
     },[categorie_selected])
 

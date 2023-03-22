@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 
 import { get_url_player_presentation } from '../../logic/functions.js';
 import ComponentNavOptionsVideo from './nav_options_video';
+import ComponentVideosLoad from './videos_load.js';
 
 export default function ComponentVideosLayouts({videos}){
   let set_time;
@@ -33,6 +34,7 @@ export default function ComponentVideosLayouts({videos}){
 
   return (
     <section className="videos">
+      { (videos.length===0)? <ComponentVideosLoad/> : "" }
       {
         videos.map((video,index) => {
           return (
