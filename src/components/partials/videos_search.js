@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 
 import {get_url_player_presentation} from '../../logic/functions.js';
-import ComponentNavOptionsVideoSearch from './nav_options_video_search.js';
+import ComponentNavOptionsVideoSearch from './menus/nav_options_video_search.js';
 
 export default function ComponentSearchVideos({videos}){
     let set_time;

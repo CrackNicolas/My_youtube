@@ -16,7 +16,7 @@ export default class Schema_channel{
             channel.id,
             channel.snippet.channelTitle,
             channel.snippet.title,
-            get_convert_cantidad(channel.statistics.subscriberCount) + " de suscriptores",
+            get_convert_cantidad(channel.statistics.subscriberCount) + " suscriptores",
             channel.snippet.thumbnails.default.url,
             get_convert_cantidad(channel.statistics.viewCount) + " de visitas",
             get_time_elapsed(channel.snippet.publishedAt),

@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-import { Load_videos_related } from "../../controllers/videos.js";
-import Load_id_playlist from '../../controllers/playlists.js';
+import { Load_videos_related } from "../../../controllers/videos.js";
+import Load_id_playlist from '../../../controllers/playlists.js';
 
-import ComponentNavOptionsVideo from './nav_options_video.js';
+import ComponentNavOptionsVideo from '../menus/nav_options_video.js';
 
 export default function ComponentListVideosRelated({id_playlist}){
     let {id} = useParams();

@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import { get_url_player_presentation } from '../../logic/functions.js';
-import ComponentNavOptionsVideo from './nav_options_video';
-import ComponentVideosLoad from './videos_load.js';
+import ComponentNavOptionsVideo from './menus/nav_options_video';
+import ComponentVideosLoad from './load/videos_load.js';
 
 export default function ComponentVideosLayouts({videos}){
   let set_time;
@@ -31,6 +31,13 @@ export default function ComponentVideosLayouts({videos}){
       setKey_video_selected(key)
     }, 1700);
   }
+
+  useEffect(() => {
+    const element = window.document.querySelector(".videos");
+    element.addEventListener("click", () => {
+      setOption_selected(undefined);
+    })
+  },[])
 
   return (
     <section className="videos">

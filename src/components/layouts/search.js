@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 
 import ComponentSinInternet from './sin_internet.js';
-import ComponentNavTop from '../partials/nav_top.js';
-import ComponentNavLeft from '../partials/nav_left.js';
+import ComponentNavTop from '../partials/menus/nav_top.js';
+import ComponentNavLeft from '../partials/menus/nav_left.js';
 import ComponentSearchVideos from "../partials/videos_search.js";
 
 import { Global_context } from "../../context/global_context.js";

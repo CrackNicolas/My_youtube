@@ -2,10 +2,10 @@ import React, { useState } from "react";
 
 import ComponentNavToggler from "./nav_toggler.js";
 import ComponentNavOptionsCreateVideo from './nav_options_create_video.js';
-import ComponentSearchMicro from './search_micro.js';
+import ComponentSearchMicro from '../search_micro.js';
 import ComponentNavOptionsNotification from "./nav_options_notification.js";
 
-import Schema_styles_nav_top from '../../styles/schema/styles_nav_top.js';
+import Schema_styles_nav_top from '../../../styles/schema/styles_nav_top.js';
 
 export default function ComponentNavTop({search_query}){
     const [styles, setStyles] = useState(Schema_styles_nav_top.model);

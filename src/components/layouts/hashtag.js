@@ -2,10 +2,10 @@ import React, { useContext, useEffect, useState }  from "react"
 
 import { useParams } from "react-router-dom";
 
-import ComponentNavTop from '../partials/nav_top.js';
-import ComponentNavLeft from '../partials/nav_left.js';
+import ComponentNavTop from '../partials/menus/nav_top.js';
+import ComponentNavLeft from '../partials/menus/nav_left.js';
 import ComponentVideosLayouts from '../partials/videos.js';
-import ComponentHeaderHashtag from '../partials/header_hashtag.js';
+import ComponentHeaderHashtag from '../partials/headers/header_hashtag.js';
 import ComponentSinInternet from './sin_internet.js';
 
 import Load_videos from '../../controllers/videos.js';
