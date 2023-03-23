@@ -23,9 +23,13 @@ export default function ComponentNavCategories({categories,categorie_selected}){
 
   return (
       <React.Fragment>
-        <button className="prev" title="Anterior" style={styles.prev} onClick={(e) => scroll(e)}>
-            <ion-icon className="icon-prev" style={styles.icon_prev} name="chevron-back-outline"></ion-icon>
-        </button>
+        {
+          (categories.length>0)?
+            <button className="prev" title="Anterior" style={styles.prev} onClick={(e) => scroll(e)}>
+                <ion-icon className="icon-prev" style={styles.icon_prev} name="chevron-back-outline"></ion-icon>
+            </button>
+          : ""
+        }
         <nav className="nav-categories" style={styles.scroll_x}>
           {
             categories.map((categorie,index) => {
@@ -37,9 +41,13 @@ export default function ComponentNavCategories({categories,categorie_selected}){
             })
           }
         </nav>
-        <button className="next" style={styles.next} title="Siguiente" onClick={(e) => scroll(e)}>
-            <ion-icon className="icon-next" style={styles.icon_next} name="chevron-forward-outline"></ion-icon>
-        </button>
+        {
+          (categories.length>0)?
+            <button className="next" style={styles.next} title="Siguiente" onClick={(e) => scroll(e)}>
+                <ion-icon className="icon-next" style={styles.icon_next} name="chevron-forward-outline"></ion-icon>
+            </button>
+          : ""
+        }
       </React.Fragment>
     )
 }

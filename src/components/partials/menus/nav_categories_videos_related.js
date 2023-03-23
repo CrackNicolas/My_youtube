@@ -31,9 +31,13 @@ export default function ComponentNavCategoriesVideosRelated({categories_playlist
 
     return (
         <article className="nav-categories-two" style={styles.content_slider_nav_categories}>
-            <button className="prev-two" title="Anterior" style={styles.prev} onClick={(e) => scroll(e)}>
-                <ion-icon name="chevron-back-outline"></ion-icon>
-            </button>
+            {
+                (categories_playlists.length>0)?
+                    <button className="prev-two" title="Anterior" style={styles.prev} onClick={(e) => scroll(e)}>
+                        <ion-icon name="chevron-back-outline"></ion-icon>
+                    </button>
+                : ""
+            }
             <article className="categories">
                 {
                     categories_playlists.map((categorie,index) => {
@@ -45,9 +49,13 @@ export default function ComponentNavCategoriesVideosRelated({categories_playlist
                     })
                 }
             </article>
-            <button className="next-two" title="Siguiente" style={styles.next} onClick={(e) => scroll(e)}>
-                <ion-icon name="chevron-forward-outline"></ion-icon>
-            </button>
+            {
+                (categories_playlists.length>0)?
+                    <button className="next-two" title="Siguiente" style={styles.next} onClick={(e) => scroll(e)}>
+                        <ion-icon name="chevron-forward-outline"></ion-icon>
+                    </button>
+                : ""
+            }
         </article>
     )
 }

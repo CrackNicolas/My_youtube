@@ -76,3 +76,11 @@ export async function Load_videos_related(id_playlist){
     }
     return new_videos;
 }
+export async function Load_suggestions(search){
+    let new_suggestions = [];
+    const result_suggestions = await Service_videos.get_suggestions(search);
+    for(let suggestion of result_suggestions.data.items){
+        new_suggestions.push(suggestion.snippet.title.toLowerCase().substring(0,70));
+    }
+    return new_suggestions;
+}

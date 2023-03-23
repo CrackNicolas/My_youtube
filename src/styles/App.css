@@ -104,6 +104,62 @@ body::-webkit-scrollbar-thumb{
 .nav-top .search input:focus ~ .buscador-oculto{
     visibility: visible;
 }
+
+/**---------Search suggestions-------**/
+.search-suggestions{
+    visibility: hidden;
+    position: fixed;
+    display: block;
+    background-color: var(--color-text-icon-youtube);
+    color: var(--color-font-primary);
+    top: 60px;
+    border-radius: 10px;
+    margin-right: 105px;
+    width: 532px;
+    padding-top: 10px;
+}
+.search-suggestions a{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 8px 17px;
+    text-decoration: none;
+    color: var(--color-font-primary);
+}
+.search-suggestions a:hover{
+    cursor: pointer;
+    background-color: var(--color-font-hover-buttons);
+    opacity: 0.99;
+}
+.search-suggestions a ion-icon{
+    min-width: 16px;
+    max-width: 16px;
+    height: 16px;
+    color: var(--color-font-primary);
+}
+.search-suggestions a p{
+    font-size: 13.5px;
+    font-weight: 500;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.search-suggestions .denunciar{
+    text-align: end;
+    padding: 7px 10px;
+    font-size: 11px;
+    font-weight: 500;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--color-font-button-likes);
+}
+.search-suggestions .message{
+    text-align: center;
+    margin-top: -7px;
+    padding: 0 10px 7px 10px;
+    font-size: 10px;
+    font-weight: 400;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--color-font-button-likes);
+}
+/**----------------------------------**/
 .nav-top .buscador-oculto{
     visibility: hidden;
     order: 1;

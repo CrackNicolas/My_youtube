@@ -12,6 +12,10 @@ export default class Service_videos{
         }
         return promise;
     }
+    static async get_suggestions(search){
+        let promise = await axios.get(get_petition_url("search?part=snippet&q="+search+"&type=video&hl=es&regionCode=ES&maxResults=12"));
+        return promise;
+    }
     static get_all_id(id){
         let promise = axios.get(get_petition_url("videos?part=snippet&part=contentDetails&part=statistics&id="+id+"&maxResults=1"));
         return promise;
