@@ -48,7 +48,7 @@ export async function Load_video(id_video){
 export async function Load_videos_related(id_playlist){
     let new_videos = [], promises = [];
     const new_playlists = await Service_playlists.get_datails_playlits(id_playlist);
-    
+
     for(let playlist of new_playlists.data.items){
         let search_video = Service_videos.get_all_id(playlist.snippet.resourceId.videoId);
         promises.push(search_video);

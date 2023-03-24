@@ -89,7 +89,7 @@ body::-webkit-scrollbar-thumb{
     border-bottom-left-radius: 20px;
     outline: none;
     background-color: var(--color-font-primary);
-    border: 1.7px solid rgb(40, 38, 38);
+    border: 1.59px solid rgb(40, 38, 38);
     padding: 10px 5px 10px 15px;   
     letter-spacing: 1px;
     font-size: 15px;
@@ -497,6 +497,7 @@ body::-webkit-scrollbar-thumb{
     border-radius: 11px;
     width: 200px;
     padding: 5px 2px 5px 7px;
+    margin-bottom: 3px;
 }
 .nav-top .items .linea-item{
     margin: -6px 0 10px 0;
@@ -574,6 +575,21 @@ body::-webkit-scrollbar-thumb{
     100%{
         left: -235px;
     }
+}
+.nav-top .icon-triangulo, .nav-top .icon-cuadrado{
+    padding-left: 0px;
+}
+.nav-top .icon-triangulo::before, .nav-top .icon-cuadrado::before{
+    margin-left: -15px;
+    content: "►";
+    color: var(--color-text-primary);
+    font-size: 7px;
+}
+.nav-top .icon-triangulo::before{
+    transform: translate(35.5px, 2.5px);
+}
+.nav-top .icon-cuadrado::before{
+    transform: translate(37.5px, 2.4px);
 }
 /**--------------------------------**/
 

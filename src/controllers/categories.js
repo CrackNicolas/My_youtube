@@ -21,7 +21,7 @@ export async function Load_categories_playlist(channel_id){
                     new_categories.push(Schema_categorie.push_categorie_playlist(new_categorie_playlist));
                 }
                 no_repeat = new_categorie_playlist.data.items[0].snippet.channelTitle
-            }                
+            }            
         }
     }
     new_categories.push(new Schema_categorie("0","Relacionados","no-selected"));

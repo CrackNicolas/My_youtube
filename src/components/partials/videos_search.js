@@ -31,7 +31,6 @@ export default function ComponentSearchVideos({videos}){
         }, 1700);
     }
 
-
     return (
         <section className="search-videos">
             <section className="filter">
