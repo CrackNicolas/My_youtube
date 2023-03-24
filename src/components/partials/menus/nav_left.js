@@ -7,7 +7,7 @@ export default function ComponentNavLeft(){
                 <ion-icon name="home"></ion-icon>
                 <p>Inicio</p>
             </a>
-            <a className="icon icon-triangulo" title="Shorts">
+            <a className="icon icon-triangulo" href="/shorts" title="Shorts">
                 <ion-icon name="triangle-outline"></ion-icon>
                 <p>Shorts</p>
             </a>
