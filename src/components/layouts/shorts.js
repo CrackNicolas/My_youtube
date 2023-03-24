@@ -5,7 +5,7 @@ import ComponentNavLeft from '../partials/menus/nav_left.js';
 import ComponentVideosShorts from '../partials/videos_shorts.js';
 import ComponentSinInternet from './sin_internet.js';
 
-import Load_videos from '../../controllers/videos.js';
+import {Load_videos_shorts} from '../../controllers/videos.js';
 
 import {Global_context} from '../../context/global_context.js';
 
@@ -16,7 +16,7 @@ export default function ComponentShorts(){
 
     useEffect(() => {
         const load_videos = async () => {
-            let new_videos = await Load_videos("shorts","",10);
+            let new_videos = await Load_videos_shorts("shorts",3);
             setVideos(new_videos);
         }   
         load_videos();    

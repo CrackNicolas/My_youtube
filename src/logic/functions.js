@@ -10,6 +10,9 @@ export function get_search_param(search){
 export function get_url_player(id){
     return "https://www.youtube.com/embed/"+id+"?autoplay=1";
 }
+export function get_url_player_short(id,activado){
+    return "https://www.youtube.com/embed/"+id+"?autoplay="+activado+"&mute=1&fs=0&rel=0&showinfo=0&controls=1&modestbranding=1&cc_load_policy=1&iv_load_policy=3";
+}
 export function get_url_player_presentation(id){
     return "https://www.youtube.com/embed/"+id+"?autoplay=1&mute=1&fs=0&rel=0&showinfo=0&controls=1&modestbranding=1&cc_load_policy=1&iv_load_policy=3";
 }

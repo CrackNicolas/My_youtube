@@ -48,3 +48,19 @@ export class Schema_video_watch{
         )  
     }
 }
+export class Schema_video_short{
+    constructor(id,likes,comments_count,channel){
+        this.id = id;
+        this.likes = likes;
+        this.comments_count = comments_count;
+        this.channel = channel;
+    }
+    static push(video,channel){
+        return new Schema_video_short(
+            video.id,
+            get_convert_cantidad(video.statistics.likeCount),
+            get_convert_cantidad(video.statistics.commentCount),
+            channel
+        )
+    }   
+}

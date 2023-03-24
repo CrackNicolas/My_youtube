@@ -1,8 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 
-import {get_url_player_presentation} from '../../logic/functions.js';
+import {get_url_player_short} from '../../logic/functions.js';
 
 export default function ComponentVideosShorts({videos}){
+    const [video_selected, setVideo_selected] = useState(0);
+
+    const selected_player = (index) => {
+        return video_selected == index;
+    }
+    const mouse_over = (key) => {
+        setVideo_selected(key);
+    }
+
     return (
         <section className="videos-shorts">
             <article className="videos">
@@ -11,13 +20,13 @@ export default function ComponentVideosShorts({videos}){
                         return (
                             <div className="video" key={index}>
                                 <div className="image">
-                                    <iframe src={get_url_player_presentation(video.id)}></iframe>
+                                    <iframe allow='autoplay *' src={get_url_player_short(video.id, selected_player(index)?  1 : 0) } onMouseOver={() => mouse_over(index)} ></iframe>
                                 </div>
                                 <div className="cont-options">
                                     <div className="options">
                                         <div className="option" title="Me gusta este video">
                                             <ion-icon name="thumbs-up"></ion-icon>
-                                            <p>111</p>
+                                            <p>{video.likes}</p>
                                         </div>
                                         <div className="option" title="No me gusta este video">
                                             <ion-icon name="thumbs-down"></ion-icon>
@@ -25,7 +34,7 @@ export default function ComponentVideosShorts({videos}){
                                         </div>
                                         <div className="option" title="Comentarios">
                                             <ion-icon name="chatbox-ellipses"></ion-icon>
-                                            <p>167</p>
+                                            <p>{video.comments_count}</p>
                                         </div>
                                         <div className="option" title="Compartir">
                                             <ion-icon name="arrow-redo"></ion-icon>
