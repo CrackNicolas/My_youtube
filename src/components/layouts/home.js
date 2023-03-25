@@ -16,7 +16,7 @@ export default function ComponentHome(){
       <React.Fragment>
         <ComponentNavTop search_query={context_global.search_query}/>
         <ComponentNavCategories categorie_selected={context_global.capture_id_categorie} categories={context_global.categories}/>
-        <ComponentNavLeft/>
+        <ComponentNavLeft capture_icono_nav_left={context_global.capture_id_categorie} item_selected="0"/>
         <ComponentVideosLayouts videos={context_global.videos}/>
       </React.Fragment>
     :

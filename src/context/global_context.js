@@ -48,7 +48,7 @@ export default function GlobalContextProvider({children}){
     },[categorie_selected])
 
     let capture_id_categorie = (id) => {
-        setCategorie_selected((id==0)? undefined : id);
+        (id==-1)? window.location.href = "/shorts" : setCategorie_selected((id==0)? undefined : id);
     }
 
     return (

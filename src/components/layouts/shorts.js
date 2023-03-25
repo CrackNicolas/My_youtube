@@ -13,6 +13,7 @@ export default function ComponentShorts(){
     const context_global = useContext(Global_context);
 
     const [videos,setVideos] = useState([]);
+    const [name_icono_selected_nav_left,setName_icono_selected_nav_left] = useState(-1);
 
     useEffect(() => {
         const load_videos = async () => {
@@ -20,13 +21,17 @@ export default function ComponentShorts(){
             setVideos(new_videos);
         }   
         load_videos();    
-    },[]);
+    },[name_icono_selected_nav_left]);
+
+    let capture_icono_nav_left = (id) => {
+        (id==0)? window.location.href = "/" : setName_icono_selected_nav_left(id);
+    }
 
     return (
         (context_global.internet)? 
             <React.Fragment>
                 <ComponentNavTop search_query={context_global.search_query}/>
-                <ComponentNavLeft/>
+                <ComponentNavLeft capture_icono_nav_left={capture_icono_nav_left} item_selected={name_icono_selected_nav_left}/>
                 <ComponentVideosShorts videos={videos}/>
             </React.Fragment>
         :
