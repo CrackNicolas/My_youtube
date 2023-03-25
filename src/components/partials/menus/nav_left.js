@@ -12,7 +12,7 @@ export default function ComponentNavLeft({capture_icono_nav_left,item_selected})
                 <p>Shorts</p>
             </a>
             <a onClick={() => capture_icono_nav_left(-2)} className="icon" title="Supscripciones">
-                <ion-icon name={(item_selected!=-2)? "copy-outline":"copy"}></ion-icon>
+                <ion-icon name={(item_selected!=-2)? "albums-outline":"albums"}></ion-icon>
                 <p>Supscripciones</p>
             </a>
             <a onClick={() => capture_icono_nav_left(-3)} className="icon" title="Biblioteca">

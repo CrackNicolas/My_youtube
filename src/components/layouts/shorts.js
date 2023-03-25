@@ -17,7 +17,7 @@ export default function ComponentShorts(){
 
     useEffect(() => {
         const load_videos = async () => {
-            let new_videos = await Load_videos_shorts("shorts",3);
+            let new_videos = await Load_videos_shorts("shorts",1);
             setVideos(new_videos);
         }   
         load_videos();    
