@@ -62,7 +62,7 @@ export default function ComponentNavTop({search_query}){
                     <ion-icon name="search-outline"></ion-icon>
                 </button>
                 <ComponentSearchSuggestions suggestion_selected={suggestion_selected} list_suggestions={list_suggestions} style={style_seggestions}/>
-                <ion-icon onClick={(e) => visibility_options(e)} className="micro" name={(name_selected_icon==="mic-outline")? "mic":"mic-outline"} title="Haz búsquedas por voz"></ion-icon>
+                <ion-icon onClick={(e) => visibility_options(e)} class="micro" name={(name_selected_icon==="mic-outline")? "mic":"mic-outline"} title="Haz búsquedas por voz"></ion-icon>
             </form>
             <ComponentSearchMicro get_style={get_style} visibility_options={visibility_options}/>            
             {
