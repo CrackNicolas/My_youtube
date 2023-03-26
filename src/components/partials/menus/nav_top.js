@@ -81,7 +81,7 @@ export default function ComponentNavTop({search_query}){
                     <div className="notification">
                         <ion-icon onClick={(e) => visibility_options(e)} name={(name_selected_icon==="notifications-outline")? "notifications":"notifications-outline" } title="Notificaciones"></ion-icon>
                     </div>
-                    <img className="perfil" src="/images/my_perfil.jpg" alt=""/>                
+                    <img className="perfil" src="/images/my_perfil.jpg" alt="Perfil del autor"/>                
                     <ComponentNavOptionsNotification get_style={get_style}/>
                 </div>
             }

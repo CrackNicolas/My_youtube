@@ -576,21 +576,6 @@ body::-webkit-scrollbar-thumb{
         left: -235px;
     }
 }
-.nav-top .icon-triangulo, .nav-top .icon-cuadrado{
-    padding-left: 0px;
-}
-.nav-top .icon-triangulo::before, .nav-top .icon-cuadrado::before{
-    margin-left: -15px;
-    content: "►";
-    font-size: 7px;
-    color: var(--color-text-primary);
-}
-.nav-top .icon-triangulo::before{
-    transform: translate(35.5px, 2.5px);
-}
-.nav-top .icon-cuadrado::before{
-    transform: translate(37.5px, 2.4px);
-}
 /**--------------------------------**/
 
 /**---------Nav categories---------**/
@@ -1258,7 +1243,95 @@ body::-webkit-scrollbar-thumb{
     height: 32px;
     border-radius: 5px;
 }
-/**--------------------------------**/
+.videos-shorts .nav-options{
+    visibility: hidden;
+    position: absolute;
+    display: block;
+    width: 260px;
+    border-radius: 10px;
+    background-color: var(--color-font-secondary);
+    color: var(--color-text-primary);
+    z-index: 20;
+    padding: 7px 0px;
+    transform: translate(292px,-285px);
+}
+.videos-shorts .nav-options .option{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-left: 7px;
+    color: var(--color-text-icon-youtube);
+}
+.videos-shorts .nav-options .option ion-icon{
+    width: 24px;
+    height: 24px;
+    padding: 5px;
+    background-color: transparent;
+}
+.videos-shorts .nav-options .option p{
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    padding-top: 1.5px;
+}
+.videos-shorts .nav-options .option:hover{
+    cursor: pointer;
+    background-color: var(--color-font-cuartiary);
+}
+/**--------Comentarios de los shorts---------**/
+.comments-shorts{
+    width: 450px;
+    height: 410px;
+    background-color: var(--color-font-quintuary);
+    visibility: hidden;
+    position: absolute;
+    display: block;
+    border-radius: 15px;
+    color: var(--color-text-primary);
+    padding: 10px 10px 0px 15px;
+    z-index: 20;
+    transform: translate(-140px,-537px);
+}
+.comments-shorts .header{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+}
+.comments-shorts .header .name{
+    display: flex;
+    gap: 10px;
+    width: 75%;
+    font-size: 18px;
+}
+.comments-shorts .header .name p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    color: var(--color-text-primary);
+}
+.comments-shorts .header .name span{
+    font-family: Helvetica, sans-serif;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+}
+.comments-shorts .header .icons{
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    width: 25%;
+}
+.comments-shorts .header .icons ion-icon{
+    width: 28px;
+    height: 28px;
+    padding: 5px;
+    border-radius: 50%;
+}
+.comments-shorts .header .icons ion-icon:hover{
+    cursor: pointer;
+    background-color: var(--color-font-button-likes);
+}
+/**------------------------------------------**/
+
 /**-------Load video selected------**/
 .video-selected-load{
     background-color: var(--color-font-primary);
@@ -1511,7 +1584,8 @@ body::-webkit-scrollbar-thumb{
     width: 25px;
     height: 25px;
 }
-.view_videos .comments .top .nav_filter_comments{
+/**-------Nav comments-------**/
+.nav_filter_comments{
     position: absolute;
     visibility: hidden;
     display: block;
@@ -1522,7 +1596,7 @@ body::-webkit-scrollbar-thumb{
     padding: 7px 0px;
     transform: translate(175px,73px);
 }
-.view_videos .comments .top .nav_filter_comments .option{
+.nav_filter_comments .option{
     display: flex;
     align-items: center;
     gap: 12px;
@@ -1532,10 +1606,18 @@ body::-webkit-scrollbar-thumb{
     padding: 13px;
     color: var(--color-text-icon-youtube);
 }
-.view_videos .comments .top .nav_filter_comments .option:hover{
+.nav_filter_comments .option:hover{
     cursor: pointer;
     background-color: var(--color-font-cuartiary);
 }
+.view_videos .comments .top .nav_filter_comments{
+    transform: translate(175px,73px);
+}
+.comments-shorts .nav_filter_comments{
+    transform: translate(330px,-7px);
+}
+/**-----------------------**/
+
 .view_videos .comments .body{
     margin-top: 20px;
 }

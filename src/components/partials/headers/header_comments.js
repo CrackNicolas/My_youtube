@@ -1,5 +1,7 @@
 import React, { useState } from "react"
 
+import ComponentNavOptionsComments from '../menus/nav_options_comments.js';
+
 export default function ComponentHeaderComments({comments_count}){
     const [options_selected,setOptions_selected] = useState(false);
     
@@ -18,14 +20,7 @@ export default function ComponentHeaderComments({comments_count}){
                     <ion-icon name={(options_selected)? "options":"options-outline" }></ion-icon>
                     Ordenar por
                 </button>
-                <div className="nav_filter_comments" style={get_style()}>
-                    <div className="option">
-                        Mejores comentarios
-                    </div>
-                    <div className="option">
-                        Más recientes primero
-                    </div>
-                </div>
+                <ComponentNavOptionsComments get_style={get_style}/>
             </div>
             <div className="body">
                 <div className="add-comment">

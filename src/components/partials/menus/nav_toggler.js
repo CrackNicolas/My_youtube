@@ -17,11 +17,11 @@ export default function ComponentNavToggler({styles}){
                     <ion-icon name="home"></ion-icon>
                     <a href="/">Inicio</a>
                 </div>
-                <div className="item icon-triangulo">
-                    <ion-icon name="triangle-outline"></ion-icon>
-                    <a>Shorts</a>
+                <div className="item">
+                    <ion-icon name="color-filter-outline"></ion-icon>
+                    <a href="/shorts">Shorts</a>
                 </div>
-                <div className="item icon-cuadrado">
+                <div className="item">
                     <ion-icon name="copy-outline"></ion-icon>
                     <a>Supscripciones</a>
                 </div>

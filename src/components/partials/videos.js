@@ -33,8 +33,7 @@ export default function ComponentVideosLayouts({videos}){
   }
 
   useEffect(() => {
-    const element = window.document.querySelector(".videos");
-    element.addEventListener("click", () => {
+    window.document.querySelector(".videos").addEventListener("click", () => {
       setOption_selected(undefined);
     })
   },[])
