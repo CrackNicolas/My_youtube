@@ -1,0 +1,51 @@
+.comments-shorts{
+    width: 450px;
+    height: 410px;
+    background-color: var(--color-font-quintuary);
+    visibility: hidden;
+    position: absolute;
+    display: block;
+    border-radius: 15px;
+    color: var(--color-text-primary);
+    padding: 10px 10px 0px 15px;
+    z-index: 20;
+    transform: translate(-140px,-537px);
+}
+.comments-shorts .header{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+}
+.comments-shorts .header .name{
+    display: flex;
+    gap: 10px;
+    width: 75%;
+    font-size: 18px;
+}
+.comments-shorts .header .name p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    color: var(--color-text-primary);
+}
+.comments-shorts .header .name span{
+    font-family: Helvetica, sans-serif;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+}
+.comments-shorts .header .icons{
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    width: 25%;
+}
+.comments-shorts .header .icons ion-icon{
+    width: 28px;
+    height: 28px;
+    padding: 5px;
+    border-radius: 50%;
+}
+.comments-shorts .header .icons ion-icon:hover{
+    cursor: pointer;
+    background-color: var(--color-font-button-likes);
+}

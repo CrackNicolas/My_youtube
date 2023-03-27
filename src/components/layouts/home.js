@@ -1,9 +1,9 @@
 import React, { useContext } from 'react'
 
-import ComponentNavTop from '../partials/menus/nav_top.js';
-import ComponentNavCategories from '../partials/menus/nav_categories.js';
-import ComponentNavLeft from '../partials/menus/nav_left.js';
-import ComponentVideosLayouts from '../partials/videos.js';
+import ComponentNavTop from '../partials/menus/top.js';
+import ComponentNavCategories from '../partials/menus/categories_home.js';
+import ComponentNavLeft from '../partials/menus/left.js';
+import ComponentVideosLayouts from '../partials/videos/home.js';
 import ComponentSinInternet from './sin_internet.js';
 
 import {Global_context} from '../../context/global_context.js';

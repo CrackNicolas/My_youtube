@@ -4,7 +4,7 @@ import ComponentSearch from './components/layouts/search.js';
 import ComponentHashtag from './components/layouts/hashtag.js';
 import ComponentShorts from './components/layouts/shorts.js';
 import ComponentSinInternet from './components/layouts/sin_internet.js';
-import './styles/App.css';
+import './styles/global.css';
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 

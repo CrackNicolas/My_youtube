@@ -1,0 +1,84 @@
+.icon-notification{
+    position: absolute;
+    visibility: hidden;
+    color: var(--color-text-icon-youtube);
+    background-color: var(--color-font-secondary);
+    width: 475px;
+    height: 600px;
+    border-radius: 15px;
+    transform: translate(-120px,0px);
+}
+.icon-notification .header{
+    display: flex;
+    align-items: center;
+    padding: 3px 10px 10px 17px;
+    margin-bottom: -18px;
+}
+.icon-notification .header p:nth-child(1){
+    width: 50%;
+    font-size: 15px;
+    font-weight: 500;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 0.5px;
+}
+.icon-notification .header p:nth-child(2){
+    width: 50%;
+    text-align: end;
+}
+.items-notification{
+    display: block;
+}
+.items-notification .item-notification{
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    margin-top: -7px;
+    padding: 20px 10px;
+}
+.items-notification .item-notification:hover{
+    cursor: pointer;
+    background-color: var(--color-font-cuartiary);
+}
+.items-notification .item-notification:hover p:nth-child(5){
+    visibility: visible;
+}
+.items-notification .item-notification p:nth-child(1){
+    font-size: 25px;
+    font-weight: bold;
+    margin: 3px auto;
+    color: var(--color-border-input-search);
+}
+.items-notification .item-notification p:nth-child(2) img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.items-notification .item-notification p:nth-child(3){
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: 13.5px;
+    padding: 0 5px;
+}
+.items-notification .item-notification p:nth-child(3) span{
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+}
+.items-notification .item-notification p:nth-child(4){
+    padding-right: 15px;
+}
+.items-notification .item-notification p:nth-child(4) img{
+    width: 85px;
+    height: 50px;
+    border-radius: 5px;
+}
+.items-notification .item-notification p:nth-child(5){
+    text-align: center;
+    visibility: hidden;
+}
+.items-notification .item-notification p:nth-child(5) ion-icon{
+    width: 18px;
+    height: 18px;
+    margin-top: -8px;
+}

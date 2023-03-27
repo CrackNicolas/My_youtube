@@ -1,0 +1,201 @@
+.search-videos{
+    background-color: var(--color-font-primary);
+    padding: 70px 40px 50px 110px;
+    height: 100%;
+    display: block;
+    flex-wrap: wrap;
+    gap: 15px;
+    color: var(--color-text-primary);
+}
+.search-videos .filter{
+    background-color: var(--color-font-primary);
+    padding: 2px 0px;
+    border-bottom: 0.1px solid var(--color-font-hover-buttons);
+}
+.search-videos .filter button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    outline: none;
+    border: none;
+    padding: 5px 15px;
+    background-color: transparent;
+}
+.search-videos .filter button:hover{
+    cursor: pointer;
+    border-radius: 20px;
+    background-color: var(--color-font-button-likes);
+}
+.search-videos .filter button p{
+    padding-top: 2px;
+    color: var(--color-text-primary);
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.search-videos .filter button ion-icon{
+    color: var(--color-text-primary);
+    width: 25px;
+    height: 25px;
+}
+.search-videos .videos{
+    display: block;
+    padding: 15px 10px 1px 10px;
+    background-color: var(--color-font-primary);
+}
+.search-videos .videos .video{
+    display: flex;
+    width: 100%;
+    gap: 15px;
+    max-height: 203px;
+    min-height: 203px;
+    margin-bottom: 15px;
+    text-decoration: none;
+    color: var(--color-text-primary);
+}
+.search-videos .videos .video .imagen_frame{
+    border: none;
+    margin-bottom: 10px;
+    min-width: 32.5%;
+    max-width: 32.5%;
+    max-height: 203px;
+    min-height: 203px;
+}
+.search-videos .videos .video .imagen .icon-player{
+    visibility: hidden;
+    display: flex;
+    justify-content: center;
+    transform: translateY(-194px);
+}
+.search-videos .videos .video .imagen .icon-player ion-icon{
+    color: var(--color-text-primary);
+    opacity: 0.8;
+    width: 38px;
+    height: 38px;
+}
+.search-videos .videos .video .imagen .content-icons{
+    position: relative;
+    z-index: 5;
+    width: 100%;
+    visibility: hidden;
+    display: flex;
+    justify-content: flex-end;
+    transform: translateY(-199px);
+}
+.search-videos .videos .video .imagen .content-icons .icons{
+    margin-right: 5.5px;
+}
+.search-videos .videos .video .imagen .icons ion-icon{
+    margin-bottom: 5px;
+    border-radius: 3px;
+    padding: 1px;
+    width: 25px;
+    height: 25px;
+    display: block;
+    background-color: var(--color-font-primary);
+    color: var(--color-text-primary);
+}
+.search-videos .videos .video button{
+    outline: none;
+    border: none;
+    display: flex;
+    align-items: flex-start;
+    width: 1.8%;
+    background-color: var(--color-font-primary);
+}
+.search-videos .videos .video button ion-icon{
+    visibility: hidden;
+    width: 20px;
+    height: 20px;
+    color: var(--color-text-primary);
+}
+.search-videos .videos .video .imagen{
+    min-width: 32.5%;
+    max-width: 32.5%;
+}
+.search-videos .videos .video .imagen:hover .content-icons{
+    cursor: pointer;
+    visibility: visible;
+}
+.search-videos .videos .video .imagen:hover .icon-player{
+    cursor: pointer;
+    animation: animate_icon_player 0.5s;
+}
+@keyframes animate_icon_player{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 0.8;
+    }
+}
+.search-videos .videos .video .imagen .duration{
+    transform: translateY(-128px);
+}
+.search-videos .videos .video .imagen .duration span{
+    color: var(--color-text-primary);
+    font-size: 12.3px;
+}
+.search-videos .videos .video .imagen img{
+    width: 100%;
+    height: 100%;
+}
+.search-videos .videos .video .description{
+    background-color: var(--color-font-primary);
+    min-width: 63%;
+    max-width: 66.5%;
+    padding-top: 5px;
+}
+.search-videos .videos .video .description .title{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+}
+.search-videos .videos .video .description .visualizaciones{
+    padding-top: 1px;
+    padding-left: 2px;
+}
+.search-videos .videos .video .description .icon-autor{
+    position: relative;
+    margin-top: 13px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.search-videos .videos .video .description .icon-autor img{
+    min-width: 24px;
+    max-width: 24px;
+    min-height: 24px;
+    max-height: 24px;
+    border-radius: 50%;
+}
+.search-videos .videos .video .description .icon-autor p{
+    padding-top: 3px;
+    font-size: 12px;
+    font-weight: normal;
+    color: var(--color-text-secondary);
+    letter-spacing: normal;
+}
+.search-videos .videos .video .description .description-video{
+    margin-top: 17px;
+    color: var(--color-text-secondary);
+    letter-spacing: normal;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.search-videos .videos .icon-options{
+    visibility: hidden;
+    width: 5%;
+    text-align: center;
+}
+.search-videos .videos .icon-options ion-icon{
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    padding: 8px;
+    margin-top: -8px;
+}

@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react'
 
-import ComponentNavTop from '../partials/menus/nav_top.js';
-import ComponentNavLeft from '../partials/menus/nav_left.js';
-import ComponentVideosShorts from '../partials/videos_shorts.js';
+import ComponentNavTop from '../partials/menus/top.js';
+import ComponentNavLeft from '../partials/menus/left.js';
+import ComponentVideosShorts from '../partials/videos/shorts.js';
 import ComponentSinInternet from './sin_internet.js';
 
 import {Load_videos_shorts} from '../../controllers/videos.js';

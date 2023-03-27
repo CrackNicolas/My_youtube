@@ -1,0 +1,113 @@
+.view_videos .comments .top{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-top: 30px;
+    color: var(--color-text-primary);
+}
+.view_videos .comments .top .order{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    gap: 7px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    color: var(--color-text-primary);
+}
+.view_videos .comments .top .order:hover{
+    cursor: pointer;
+}
+.view_videos .comments .top ion-icon{
+    width: 25px;
+    height: 25px;
+}
+.view_videos .comments .body{
+    margin-top: 20px;
+}
+.view_videos .comments .body .add-comment{
+    width: 715px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.view_videos .comments .body .add-comment img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    max-width: 5.6%;
+    min-width: 5.6%;
+}
+.view_videos .comments .body .add-comment textarea{
+    outline: none;
+    margin-left: 15px;
+    width: 92.3%;
+    height: 25px;
+    border: none;
+    border-bottom: 1.1px solid var(--color-text-secondary);
+    background-color: var(--color-font-primary);
+    color: var(--color-text-primary);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: 13.3px;
+    letter-spacing: 0.6px;
+    resize:none;
+    padding-top: 4px;
+}
+.view_videos .comments .body .push-comment{
+    display: flex;
+    margin-left: 6.8%;
+    margin-top: -7px;
+    width: 100%;
+    visibility: hidden;
+    padding: 2px 0px;
+}
+.view_videos .comments .body .push-comment ion-icon{
+    width: 22px;
+    height: 22px;
+    padding: 6px 4px;
+    color: var(--color-text-primary);
+    width: 4%;
+    margin: auto;
+}
+.view_videos .comments .body .push-comment .buttons{
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    width: 96%;
+}
+.view_videos .comments .body .push-comment .buttons .add{
+    color: var(--color-text-cuartiary);
+    background-color: var(--color-font-button-likes);
+}
+.view_videos .comments .body .push-comment .buttons .close{
+    background-color: transparent;
+    color: var(--color-text-primary);
+}
+.view_videos .comments .body .push-comment .buttons .add:hover{
+    cursor: pointer;
+    background-color: var(--color-border-input-search);
+    color: var(--color-text-primary)
+}
+.view_videos .comments .body .push-comment .buttons .close:hover{
+    cursor: pointer;
+    background-color: var(--color-font-button-likes);
+}
+.view_videos .comments .body .push-comment ion-icon:hover{
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: var(--color-font-button-likes);
+}
+.view_videos .comments .body .push-comment button{
+    height: 35px;
+    border-radius: 25px;
+    padding: 5px 15px;
+    letter-spacing: 1px;
+    border: none;
+    outline: none;
+    font-weight: 600;
+}
+.view_videos .comments .body .add-comment textarea:focus ~ .push-comment{
+    visibility: visible;
+}

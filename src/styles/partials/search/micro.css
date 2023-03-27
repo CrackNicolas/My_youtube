@@ -1,0 +1,55 @@
+.search-video-micro{
+    position: absolute;
+    visibility: hidden;
+    min-width: 610px;
+    max-width: 610px;
+    height: 400px;
+    background-color: var(--color-font-quintuary);
+    transform: translate(-50px,178px);
+    padding: 10px 40px;
+}
+.search-video-micro p:nth-child(1){
+    text-align: end;
+    margin-right: -27px;
+}
+.search-video-micro p:nth-child(1) ion-icon{
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    color: var(--color-text-primary);
+    padding: 5px;
+    border-radius: 50%;
+}
+.search-video-micro p:nth-child(1) ion-icon:hover{
+    cursor: pointer;
+    background-color: var(--color-font-tertiary);
+}
+.search-video-micro p:nth-child(2){
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    margin-top: 5px;
+    margin-bottom: 25px;
+}
+.search-video-micro p:nth-child(3){
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0.3px;
+    color: var(--color-text-secondary);
+}
+.search-video-micro p:nth-child(4){
+    text-align: center;
+}
+.search-video-micro p:nth-child(4) ion-icon{
+    width: 45px;
+    height: 45px;
+    margin-top: 140px;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: var(--color-font-button-likes);
+}
+.search-video-micro p:nth-child(4) ion-icon:hover{
+    cursor: pointer;
+}

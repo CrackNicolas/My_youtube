@@ -1,0 +1,209 @@
+.list-comments{
+    margin-top: 20px;
+    width: 715px;
+    display: block;
+}
+.list-comments .datails-comment{
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+.list-comments .datails-comment .icon{
+    width: 7.5%;
+}
+.list-comments .datails-comment img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.list-comments .datails-comment:hover .option-comment{
+    visibility: visible;
+}
+.list-comments .datails-comment .option-comment{
+    width: 20px;
+    height: 20px;
+    color: var(--color-text-primary);
+    margin-right: -5px;
+    visibility: hidden;
+}
+.list-comments .datails-comment img:hover{
+    cursor: pointer;
+}
+.list-comments .datails-comment .description{
+    width: 92.5%;
+    color: var(--color-text-primary);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: 13.5px;
+    line-height: 18px;
+    font-weight: bold;
+}
+.list-comments .datails-comment .description p:nth-child(1){
+    margin-bottom: 5px;
+    color: var(--color-text-cuartiary);
+    font-size: 12.7px;
+    font-weight: 500;
+}
+.list-comments .datails-comment .description p:nth-child(1):hover{
+    cursor: pointer;
+    color: var(--color-text-primary);
+}
+.list-comments .datails-comment .description p strong:nth-child(1){
+    color: var(--color-text-primary);
+    margin-right: 5px;
+}
+.list-comments .datails-comment .description .btns-comment{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    height: 35px;
+}
+.list-comments .datails-comment .description .btns-comment span{
+    margin-left: -10px;
+    font-size: 13px;
+    color: var(--color-text-secondary);
+}
+.list-comments .datails-comment .description .btns-comment ion-icon{
+    width: 20px;
+    height: 20px;
+    color: var(--color-text-primary);
+    padding: 6px;
+    border-radius: 50%;
+}
+.list-comments .datails-comment .description .btns-comment ion-icon:hover{
+    cursor: pointer;
+    background-color: var(--color-font-hover-buttons);
+}
+.list-comments .datails-comment .description .btns-comment button{
+    outline: none;
+    border: none;
+    background-color: transparent;
+    color: var(--color-text-primary);
+    margin-left: 15px;
+    padding: 8px 11px;
+}
+.list-comments .datails-comment .description .btns-comment button:hover{
+    cursor: pointer;
+    border-radius: 20px;
+    background-color: var(--color-font-hover-buttons);
+}
+.list-comments .view-replies{
+    display: flex;
+    align-items: center;
+    margin: 0 0px 10px 7.3%;
+    font-weight: bold;
+    outline: none;
+    border: none;
+    font-size: 12.5px;
+    padding-left: 5px;
+    padding-right: 17px;
+    letter-spacing: 0.5px;
+    border-radius: 20px;
+    background-color: transparent;
+    color: var(--color-border-input-search);
+}
+.list-comments .view-replies:hover{
+    cursor: pointer;
+    background-color: var(--color-font-hover-button-reintentar);
+}
+.list-comments .view-replies ion-icon{
+    color: var(--color-border-input-search);
+    width: 20px;
+    height: 20px;
+    padding: 7px;
+}
+.list-comments .replies{
+    display: none;
+}
+.list-comments .watch_replies{
+    display: block;
+}
+.list-comments .datails-comment-replies{
+    width: 92%;
+    display: flex;
+    margin-left: 8%;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+.list-comments .datails-comment-replies .icon{
+    width: 7.5%;
+}
+.list-comments .datails-comment-replies img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+.list-comments .datails-comment-replies:hover .option-comment{
+    visibility: visible;
+}
+.list-comments .datails-comment-replies .option-comment{
+    width: 20px;
+    height: 20px;
+    color: var(--color-text-primary);
+    margin-right: -5px;
+    visibility: hidden;
+}
+.list-comments .datails-comment-replies img:hover{
+    cursor: pointer;
+}
+.list-comments .datails-comment-replies .description{
+    width: 92.5%;
+    color: var(--color-text-primary);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: 13.5px;
+    line-height: 18px;
+    font-weight: bold;
+}
+.list-comments .datails-comment-replies .description p:nth-child(1){
+    margin-bottom: 5px;
+    color: var(--color-text-cuartiary);
+    font-size: 12.7px;
+    font-weight: 500;
+}
+.list-comments .datails-comment-replies .description p:nth-child(1):hover{
+    cursor: pointer;
+    color: var(--color-text-primary);
+}
+.list-comments .datails-comment-replies .description p strong:nth-child(1){
+    color: var(--color-text-primary);
+    margin-right: 5px;
+}
+.list-comments .datails-comment-replies .description .btns-comment{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    height: 35px;
+}
+.list-comments .datails-comment-replies .description .btns-comment span{
+    margin-left: -10px;
+    font-size: 13px;
+    color: var(--color-text-secondary);
+}
+.list-comments .datails-comment-replies .description .btns-comment ion-icon{
+    width: 20px;
+    height: 20px;
+    color: var(--color-text-primary);
+    padding: 6px;
+    border-radius: 50%;
+}
+.list-comments .datails-comment-replies .description .btns-comment ion-icon:hover{
+    cursor: pointer;
+    background-color: var(--color-font-hover-buttons);
+}
+.list-comments .datails-comment-replies .description .btns-comment button{
+    outline: none;
+    border: none;
+    background-color: transparent;
+    color: var(--color-text-primary);
+    margin-left: 15px;
+    padding: 8px 11px;
+}
+.list-comments .datails-comment-replies .description .btns-comment button:hover{
+    cursor: pointer;
+    border-radius: 20px;
+    background-color: var(--color-font-hover-buttons);
+}

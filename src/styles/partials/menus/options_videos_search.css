@@ -1,0 +1,35 @@
+.search-videos .options{
+    visibility: hidden;
+    position: absolute;
+    display: block;
+    width: 285px;
+    border-radius: 10px;
+    background-color: var(--color-font-secondary);
+    color: var(--color-text-primary);
+    padding: 7px 0px;
+    z-index: 20;
+    transform: translate(815px,20px);
+}
+.search-videos .options .option{
+    display: flex;
+    align-items: center;
+    gap: 13.5px;
+    padding: 5.3px 14px;
+}
+.search-videos .options .option:hover{
+    cursor: pointer;
+    background-color: var(--color-font-cuartiary);
+}
+.search-videos .options .option p{
+    width: 100%;
+    padding-top: 1.5px;
+    padding-right: 3px;
+    font-size: 13px;
+    font-weight: 500;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--color-text-icon-youtube);
+}
+.search-videos .options .option ion-icon{
+    width: 27px;
+    height: 27px;
+}

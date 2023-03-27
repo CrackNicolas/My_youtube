@@ -1,7 +1,9 @@
 import React from 'react'
 
-import ComponentNavTop from '../partials/menus/nav_top.js';
-import ComponentNavLeft from '../partials/menus/nav_left.js';
+import ComponentNavTop from '../partials/menus/top.js';
+import ComponentNavLeft from '../partials/menus/left.js';
+
+import '../../styles/layouts/sin_internet.css';
 
 export default function ComponentSinInternet(){
     return (

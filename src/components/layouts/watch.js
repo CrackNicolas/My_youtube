@@ -4,12 +4,12 @@ import { useParams } from "react-router-dom";
 import {Global_context} from '../../context/global_context.js';
 
 import ComponentSinInternet from './sin_internet.js';
-import ComponentNavTop from '../partials/menus/nav_top.js';
-import ComponentHeaderVideoSelected from '../partials/headers/header_video_selected.js';
-import ComponentHeaderComments from "../partials/headers/header_comments.js";
-import ComponentListComments from "../partials/lists/list_comments.js";
-import ComponentNavCategoriesVideosRelated from '../partials/menus/nav_categories_videos_related.js';
-import ComponentListVideosRelated from '../partials/lists/list_videos_related.js';
+import ComponentNavTop from '../partials/menus/top.js';
+import ComponentHeaderVideoSelected from '../partials/headers/video_selected_home.js';
+import ComponentHeaderComments from "../partials/headers/comments.js";
+import ComponentListComments from "../partials/lists/comments_home.js";
+import ComponentNavCategoriesVideosRelated from '../partials/menus/categories_videos_related.js';
+import ComponentListVideosRelated from '../partials/lists/videos_related_home.js';
 
 import {Load_video} from "../../controllers/videos.js";
 import Load_channel from "../../controllers/channel.js";

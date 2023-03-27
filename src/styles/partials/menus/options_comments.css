@@ -1,0 +1,31 @@
+.nav_filter_comments{
+    position: absolute;
+    visibility: hidden;
+    display: block;
+    width: 180px;
+    border-radius: 10px;
+    background-color: var(--color-font-secondary);
+    color: var(--color-text-primary);
+    padding: 7px 0px;
+    transform: translate(175px,73px);
+}
+.nav_filter_comments .option{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13.5px;
+    font-weight: 500;
+    padding: 13px;
+    color: var(--color-text-icon-youtube);
+}
+.nav_filter_comments .option:hover{
+    cursor: pointer;
+    background-color: var(--color-font-cuartiary);
+}
+.view_videos .comments .top .nav_filter_comments{
+    transform: translate(175px,73px);
+}
+.comments-shorts .nav_filter_comments{
+    transform: translate(330px,-7px);
+}
