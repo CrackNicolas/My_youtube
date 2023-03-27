@@ -49,3 +49,79 @@
     cursor: pointer;
     background-color: var(--color-font-button-likes);
 }
+.comments-shorts .body{
+    margin: 15px 10px;
+}
+.comments-shorts .body .add-comment img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    max-width: 9.5%;
+    min-width: 9.5%;
+}
+.comments-shorts .body .add-comment{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.comments-shorts .body .add-comment textarea{
+    position: relative;
+    outline: none;
+    margin-left: 15px;
+    width: 85%;
+    height: 25px;
+    border: none;
+    border-bottom: 1.1px solid var(--color-text-secondary);
+    background-color: var(--color-font-quintuary);
+    color: var(--color-text-primary);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: 13.3px;
+    letter-spacing: 0.6px;
+    resize:none;
+    padding-top: 4px;
+}
+.comments-shorts .body .push-comment{
+    display: flex;
+    margin-left: 12%;
+    margin-top: -7px;
+    width: 100%;
+    visibility: hidden;
+    padding: 2px 0px;
+}
+.comments-shorts .body .push-comment .buttons{
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    width: 100%;
+    margin-right: 7px;
+}
+.comments-shorts .body .push-comment .buttons .add{
+    color: var(--color-text-cuartiary);
+    background-color: var(--color-font-button-likes);
+}
+.comments-shorts .body .push-comment .buttons .close{
+    background-color: transparent;
+    color: var(--color-text-primary);
+}
+.comments-shorts .body .push-comment .buttons .add:hover{
+    cursor: pointer;
+    background-color: var(--color-border-input-search);
+    color: var(--color-text-primary)
+}
+.comments-shorts .body .push-comment .buttons .close:hover{
+    cursor: pointer;
+    background-color: var(--color-font-button-likes);
+}
+.comments-shorts .body .push-comment button{
+    height: 35px;
+    border-radius: 25px;
+    padding: 5px 15px;
+    letter-spacing: 1px;
+    border: none;
+    outline: none;
+    font-weight: 600;
+}
+.comments-shorts .body .add-comment textarea:focus ~ .push-comment{
+    visibility: visible;
+}

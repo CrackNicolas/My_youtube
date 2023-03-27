@@ -27,6 +27,18 @@ export default function ComponentListCommentsShorts({video,get_style_option,inde
                 </div>
             </article>
             <ComponentNavOptionsComments get_style={get_style}/>
+            <article className="body">
+                <div className="add-comment">
+                    <img src="/images/my_perfil.jpg" alt="Imagen de perfil del autor de la cuenta youtube"/>
+                    <textarea type="text" placeholder="Añade un comentario..."></textarea>
+                    <div className="push-comment">
+                        <div className="buttons">
+                            <button className="close" title="Cancelar" name="Cancelar">Cancelar</button>
+                            <button className="add" title="Comentar" name="Comentar">Comentar</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
         </section>
     )
 }
