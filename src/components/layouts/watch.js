@@ -16,6 +16,8 @@ import Load_channel from "../../controllers/channel.js";
 import {Load_categories_playlist} from "../../controllers/categories.js";
 import Load_comments from "../../controllers/comments.js";
 
+import '../../styles/layouts/watch.css';
+
 export default function ComponentWatch(){
     const context_global = useContext(Global_context);
 

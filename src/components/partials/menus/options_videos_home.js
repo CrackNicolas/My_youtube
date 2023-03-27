@@ -1,3 +1,5 @@
+import '../../../styles/partials/menus/options_videos_home.css';
+
 export default function ComponentNavOptionsVideo({get_style_option,index}){
     return (
         <div className="options" style={get_style_option(index)}>

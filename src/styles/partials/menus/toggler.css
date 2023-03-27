@@ -94,3 +94,19 @@
     height: 12px;
     margin-top: -4px;
 }
+@keyframes animate_nav_items_menu_view{
+    0%{
+        left: -235px;
+    }
+    100%{
+        left: 0px;
+    }
+}
+@keyframes animate_nav_items_menu_hidden{
+    0%{
+        left: 0px;
+    }
+    100%{
+        left: -235px;
+    }
+}

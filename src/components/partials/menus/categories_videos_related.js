@@ -2,6 +2,8 @@ import {useState} from 'react';
 
 import Schema_styles_nav_categories_two from '../../../styles/schema/styles_nav_categories_two.js';
 
+import '../../../styles/partials/menus/categories_videos_related.css';
+
 export default function ComponentNavCategoriesVideosRelated({categories_playlists,selected_categorie}){
     const [styles, setStyles] = useState(Schema_styles_nav_categories_two.model);
     const [playlist_selecteds, setPlaylist_selecteds] = useState(0);

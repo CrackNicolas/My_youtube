@@ -4,6 +4,8 @@ import { get_url_player_presentation } from '../../../logic/functions.js';
 import ComponentNavOptionsVideo from '../menus/options_videos_home.js';
 import ComponentVideosLoad from '../before_load/videos_home.js';
 
+import '../../../styles/partials/videos/home.css';
+
 export default function ComponentVideosLayouts({videos}){
   let set_time;
   const [option_selected, setOption_selected] = useState();

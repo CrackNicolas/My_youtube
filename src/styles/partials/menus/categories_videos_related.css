@@ -1,0 +1,31 @@
+.nav-categories-two .categories .categori{
+    text-align: center;
+}
+.prev-two, .next-two{
+    position: relative;
+    background-color: var(--color-font-primary);
+    width: 45px;
+    z-index: 15;
+    border: none;
+    outline: none;
+}
+.prev-two{
+    display: none;
+    margin-top: 2.5px;
+    box-shadow: 8px -10px 45px 6px var(--color-font-primary);
+}
+.next-two{
+    margin-top: 4px;
+    box-shadow: -8px -10px 45px 6px var(--color-font-primary);
+}
+.prev-two ion-icon, .next-two ion-icon{
+    color: var(--color-text-primary);
+    width: 20px;
+    height: 20px;
+    padding: 8.5px;
+    border-radius: 50%;
+}
+.prev-two ion-icon:hover, .next-two ion-icon:hover{
+    cursor: pointer;
+    background-color: var(--color-font-hover-buttons);
+}

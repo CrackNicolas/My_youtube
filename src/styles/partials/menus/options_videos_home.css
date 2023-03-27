@@ -1,0 +1,34 @@
+.videos .video .icon-autor .options{
+    visibility: hidden;
+    position: absolute;
+    display: block;
+    width: 285px;
+    border-radius: 10px;
+    background-color: var(--color-font-secondary);
+    color: var(--color-text-primary);
+    padding: 7px 0px;
+    z-index: 20;
+    transform: translate(330px,-338px);
+}
+.videos .video .icon-autor .option{
+    display: flex;
+    align-items: center;
+    gap: 13.5px;
+    padding: 5.3px 14px;
+}
+.videos .video .icon-autor .option p{
+    width: 100%;
+    padding-top: 1.5px;
+    padding-right: 3px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--color-text-icon-youtube);
+}
+.videos .video .icon-autor .option ion-icon{
+    width: 27px;
+    height: 27px;
+}
+.videos .video .icon-autor .option:hover{
+    cursor: pointer;
+    background-color: var(--color-font-cuartiary);
+}

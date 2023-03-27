@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 
 import Schema_styles_nav_categories from '../../../styles/schema/styles_nav_categories.js';
 
+import '../../../styles/partials/menus/categories_home.css';
+
 export default function ComponentNavCategories({categories,categorie_selected}){
   const [styles, setStyles] = useState(Schema_styles_nav_categories.model);
 
