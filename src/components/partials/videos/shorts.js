@@ -45,28 +45,28 @@ export default function ComponentVideosShorts({videos}){
                                     <div className="image">
                                         <iframe allow='autoplay *' src={get_url_player_short(video.id, (video_selected == index)?  1 : 0) } onMouseOver={() => setVideo_selected(index)} ></iframe>
                                     </div>
-                                    <div className="cont-options">
-                                        <div className="options">
-                                            <div onClick={() => capture_selected_likes(1)} className="option" title="Me gusta este video">
+                                    <div className="cont-functions">
+                                        <div className="functions">
+                                            <div onClick={() => capture_selected_likes(1)} className="function" title="Me gusta este video">
                                                 <ion-icon style={get_style(1)} name="thumbs-up"></ion-icon>
                                                 <p>{video.likes}</p>
                                             </div>
-                                            <div onClick={() => capture_selected_likes(2)} className="option" title="No me gusta este video">
+                                            <div onClick={() => capture_selected_likes(2)} className="function" title="No me gusta este video">
                                                 <ion-icon style={get_style(2)} name="thumbs-down"></ion-icon>
                                                 <p>No me gusta</p>
                                             </div>
-                                            <div className="option" title="Comentarios">
+                                            <div className="function" title="Comentarios">
                                                 <ion-icon onClick={(e) => visibility_option(e,(index+1))} name="chatbox-ellipses"></ion-icon>
                                                 <p>{video.comments_count}</p>
                                             </div>
-                                            <div className="option" title="Compartir">
+                                            <div className="function" title="Compartir">
                                                 <ion-icon name="arrow-redo"></ion-icon>
                                                 <p>Compartir</p>
                                             </div>
-                                            <div className="option">
+                                            <div className="function">
                                                 <ion-icon onClick={(e) => visibility_option(e,(index-index*2))} name="ellipsis-horizontal"></ion-icon>
                                             </div>
-                                            <div className="option" title="Sonido original">
+                                            <div className="function" title="Sonido original">
                                                 <img src={video.channel.logo}/>
                                             </div>
                                         </div>

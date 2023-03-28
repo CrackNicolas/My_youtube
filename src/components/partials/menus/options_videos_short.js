@@ -2,7 +2,7 @@ import '../../../styles/partials/menus/options_videos_short.css';
 
 export default function ComponentNavOptionsVideoShort({get_style_option,index}){
     return (
-        <div className="nav-options" style={get_style_option(index)}>
+        <div className="options" style={get_style_option(index)}>
             <div className="option">
                 <ion-icon name="reorder-four-outline"></ion-icon>
                 <p>Descripción</p>

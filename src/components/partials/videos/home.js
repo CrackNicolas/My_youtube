@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 
 import { get_url_player_presentation } from '../../../logic/functions.js';
 import ComponentNavOptionsVideo from '../menus/options_videos_home.js';
@@ -34,12 +34,6 @@ export default function ComponentVideosLayouts({videos}){
     }, 1700);
   }
 
-  useEffect(() => {
-    window.document.querySelector(".videos").addEventListener("click", () => {
-      setOption_selected(undefined);
-    })
-  },[])
-
   return (
     <section className="videos">
       { (videos.length===0)? <ComponentVideosLoad/> : "" }
@@ -71,8 +65,8 @@ export default function ComponentVideosLayouts({videos}){
                 <div className="icon-autor">
                   <img src={video.channel.logo} alt={video.channel.title}/>
                   <p>{video.title}</p>
-                  <div className="icon-options" onClick={(e) => visibility_option(e,index)}>
-                    <ion-icon style={get_style_icon_option(index)} name="ellipsis-vertical"></ion-icon>
+                  <div className="icon-options">
+                    <ion-icon onClick={(e) => visibility_option(e,index)} style={get_style_icon_option(index)} name="ellipsis-vertical"></ion-icon>
                   </div>
                   <ComponentNavOptionsVideo get_style_option={get_style_option} index={index}/>
                 </div>

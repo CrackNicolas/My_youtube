@@ -1,35 +1,13 @@
-.nav-options{
-    visibility: hidden;
-    position: absolute;
-    display: block;
+.videos-shorts .options{
     width: 260px;
-    border-radius: 10px;
-    background-color: var(--color-font-secondary);
-    color: var(--color-text-primary);
-    z-index: 20;
-    padding: 7px 0px;
     transform: translate(292px,-285px);
 }
-.nav-options .option{
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding-left: 7px;
-    color: var(--color-text-icon-youtube);
+.videos-shorts .options .option ion-icon{
+    width: 22px;
+    height: 22px;
 }
-.nav-options .option:hover{
-    cursor: pointer;
-    background-color: var(--color-font-cuartiary);
-}
-.nav-options .option ion-icon{
-    width: 24px;
-    height: 24px;
-    padding: 5px;
-    background-color: transparent;
-}
-.nav-options .option p{
+.videos-shorts .options .option p{
     font-size: 13px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 500;
-    padding-top: 1.5px;
 }

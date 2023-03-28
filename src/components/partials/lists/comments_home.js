@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 
+import ComponentNavOptionsComments from '../menus/options_comments.js';
+
 import '../../../styles/partials/lists/comments_home.css';
 
 export default function ComponentListComments({comments,icono}){
     const [replies_selecteds,setReplies_selecteds] = useState([]);
+    const [options_selected,setOptions_selected] = useState();
 
     const check_icon_replie = (index) => {
         if(replies_selecteds.includes(index)){
@@ -23,6 +26,13 @@ export default function ComponentListComments({comments,icono}){
         return (!replies_selecteds.includes(index))? {display : "none"} : {display : "block"};
     }
     
+    const options_comment = (index) => {
+        setOptions_selected((index===options_selected)? undefined : index);
+    }
+    const get_style = (index) => {
+        return (index===options_selected)? {visibility: "visible"} : {visibility: "hidden"};
+    }
+
     return (
         <div className="list-comments">
             {
@@ -49,7 +59,13 @@ export default function ComponentListComments({comments,icono}){
                                     </div>
                                 </div>
                                 <div className="option-comment">
-                                    <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+                                    <ion-icon onClick={() => options_comment(index)} name="ellipsis-vertical-outline"></ion-icon>
+                                </div>
+                                <div className="options" style={get_style(index)}>
+                                    <div className="option">
+                                        <ion-icon name="flag-outline"></ion-icon>
+                                        <p>Denunciar</p>
+                                    </div>
                                 </div>
                             </div>
                             {

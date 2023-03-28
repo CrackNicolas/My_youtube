@@ -4,16 +4,14 @@
     margin-top: 10px;
 }
 .videos-favorites .options{
-    visibility: hidden;
-    position: absolute;
-    display: block;
     width: 270px;
-    border-radius: 10px;
-    background-color: var(--color-font-secondary);
-    color: var(--color-text-primary);
-    padding: 7px 0px;
-    z-index: 20;
     transform: translate(92px,20px);
+}
+.videos-favorites .option p{
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    font-weight: 500;
 }
 .videos-favorites .icon-options{
     visibility: hidden;
@@ -25,29 +23,6 @@
     width: 17px;
     height: 17px;
     border-radius: 50%;
-}
-.videos-favorites .option{
-    display: flex;
-    align-items: center;
-    gap: 13.5px;
-    padding: 5.3px 14px;
-}
-.videos-favorites .option:hover{
-    cursor: pointer;
-    background-color: var(--color-font-cuartiary);
-}
-.videos-favorites .option p{
-    width: 100%;
-    padding-top: 1.5px;
-    padding-right: 3px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--color-text-icon-youtube);
-}
-.videos-favorites .option ion-icon{
-    width: 27px;
-    height: 27px;
 }
 .videos-favorites .player-favorite:hover .icon-options ion-icon{
     visibility: visible;

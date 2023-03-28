@@ -24,21 +24,21 @@
     height: 100%;
     border: none;
 }
-.videos-shorts .videos .video .cont-options{
+.videos-shorts .videos .video .cont-functions{
     display: flex;
     justify-content: center;
     align-items: flex-end;
     width: 17.5%;
     background-color: var(--color-font-primary);
 }
-.videos-shorts .videos .video .options{
+.videos-shorts .videos .video .functions{
     display: block;
 }
-.videos-shorts .videos .video .option{
+.videos-shorts .videos .video .function{
     margin-top: 20px;
     text-align: center;
 }
-.videos-shorts .videos .video .option p{
+.videos-shorts .videos .video .function p{
     color: var(--color-text-primary);
     font-size: 11px;
     font-family: Arial, Helvetica, sans-serif;
@@ -46,18 +46,19 @@
     letter-spacing: 0.7px;
     line-height: 16px;
 }
-.videos-shorts .videos .video .option ion-icon{
+.videos-shorts .videos .video .function ion-icon{
+    visibility: visible;
     width: 19px;
     height: 19px;
     padding: 10px;
     background-color: var(--color-font-cuartiary);
     border-radius: 50%;
 }
-.videos-shorts .videos .video .option ion-icon:hover{
+.videos-shorts .videos .video .function ion-icon:hover{
     cursor: pointer;
     background-color: var(--color-font-button-likes);
 }
-.videos-shorts .videos .video .option img{
+.videos-shorts .videos .video .function img{
     width: 34px;
     height: 32px;
     border-radius: 5px;

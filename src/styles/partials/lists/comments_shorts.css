@@ -148,6 +148,7 @@
 }
 .comments-shorts .comments{
     position: relative;
+    overflow-x: hidden;
     overflow-y: scroll;
     margin-right: -7px;
     height: 85.3%;

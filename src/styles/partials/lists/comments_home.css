@@ -212,3 +212,12 @@
     border-radius: 20px;
     background-color: var(--color-font-hover-buttons);
 }
+.list-comments .options{
+    width: 150px;
+    padding: 6.8px 0px;
+    transform: translate(690px,25px);
+}
+.list-comments .option p{
+    width: 100%;
+    font-size: 13px;
+}

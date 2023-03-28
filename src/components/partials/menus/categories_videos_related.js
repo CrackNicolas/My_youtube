@@ -34,7 +34,7 @@ export default function ComponentNavCategoriesVideosRelated({categories_playlist
     return (
         <article className="nav-categories-two" style={styles.content_slider_nav_categories}>
             {
-                (categories_playlists.length>0)?
+                (categories_playlists.length>3)?
                     <button className="prev-two" title="Anterior" style={styles.prev} onClick={(e) => scroll(e)}>
                         <ion-icon name="chevron-back-outline"></ion-icon>
                     </button>
@@ -52,7 +52,7 @@ export default function ComponentNavCategoriesVideosRelated({categories_playlist
                 }
             </article>
             {
-                (categories_playlists.length>0)?
+                (categories_playlists.length>3)?
                     <button className="next-two" title="Siguiente" style={styles.next} onClick={(e) => scroll(e)}>
                         <ion-icon name="chevron-forward-outline"></ion-icon>
                     </button>

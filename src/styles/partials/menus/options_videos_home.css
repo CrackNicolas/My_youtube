@@ -1,4 +1,4 @@
-.videos .video .icon-autor .options{
+.options{
     visibility: hidden;
     position: absolute;
     display: block;
@@ -10,7 +10,7 @@
     z-index: 20;
     transform: translate(330px,-338px);
 }
-.videos .video .icon-autor .option{
+.option{
     display: flex;
     align-items: center;
     gap: 13.5px;
@@ -24,11 +24,11 @@
     font-weight: 500;
     color: var(--color-text-icon-youtube);
 }
-.videos .video .icon-autor .option ion-icon{
+.option ion-icon{
     width: 27px;
     height: 27px;
 }
-.videos .video .icon-autor .option:hover{
+.option:hover{
     cursor: pointer;
     background-color: var(--color-font-cuartiary);
 }
