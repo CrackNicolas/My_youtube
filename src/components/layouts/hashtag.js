@@ -32,7 +32,7 @@ export default function ComponentHashtag(){
         (context_global.internet)?
             <React.Fragment>
                 <ComponentNavTop search_query={context_global.search_query}/>
-                <ComponentNavLeft/>
+                <ComponentNavLeft capture_icono_nav_left={context_global.capture_id_categorie} item_selected="0"/>
                 <ComponentHeaderHashtag videos={videos} name_hashtag={name}/>
                 <ComponentVideosLayouts videos={videos}/>
             </React.Fragment>

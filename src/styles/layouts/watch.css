@@ -227,7 +227,11 @@
 .view_videos .description-view-video button:hover{
     cursor: pointer;
 }
-.view_videos .description-view-video #hidden_description{
+.view_videos .description-view-video .hidden_description{
+    display: -webkit-box;
+    overflow: hidden;
+}
+.view_videos .description-view-video .description{
     display: -webkit-box;
     overflow: hidden;
     -webkit-line-clamp: 2;

@@ -5,7 +5,7 @@ import { get_url_player } from "../../../logic/functions.js";
 import ComponentVideoSelectedLoad from '../before_load/video_selected_home.js';
 
 export default function ComponentHeaderVideoSelected({video,channel}){
-    const [name_id_description,setName_id_description] = useState("hidden_description");
+    const [name_id_description,setName_id_description] = useState("description");
 
     const hidden_description = () => {
         setName_id_description((name_id_description==="hidden_description")? "description":"hidden_description");
@@ -13,13 +13,13 @@ export default function ComponentHeaderVideoSelected({video,channel}){
 
     useEffect(() => {
         const replace_description = () => {
-            let element = window.document.getElementById(name_id_description);
+            let element = window.document.querySelector("."+name_id_description);
             if(element!=null){
                 element.innerHTML = video.description;
             }
         }
         replace_description();
-    },[video.description]);
+    },[video,channel]);
 
     return (
         <React.Fragment>
@@ -65,8 +65,8 @@ export default function ComponentHeaderVideoSelected({video,channel}){
                         </article>
                         <article className="description-view-video">
                             <p>{channel.view_count} .{channel.time_elapsed}</p>
-                            <p id={name_id_description}></p>
-                            <button onClick={() => hidden_description()}>Mostrar {(name_id_description==="hidden_description")? "más":"menos"}</button>
+                            <p className={name_id_description}></p>
+                            <button onClick={() => hidden_description()}>Mostrar {(name_id_description==="hidden_description")? "menos" : "más"}</button>
                         </article>
                     </React.Fragment>    
             }
