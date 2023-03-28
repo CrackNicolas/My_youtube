@@ -67,7 +67,7 @@ export default function ComponentWatch(){
                         <ComponentHeaderVideoSelected video={video_selected} channel={channel_video_selected}/>      
                         <article className="comments">
                             <ComponentHeaderComments comments_count={video_selected.comments_count}/>
-                            <ComponentListComments comments={comments_video_selected}/>
+                            <ComponentListComments comments={comments_video_selected} icono="chevron"/>
                         </article>
                     </section>
                     <section className="views-videos-related">

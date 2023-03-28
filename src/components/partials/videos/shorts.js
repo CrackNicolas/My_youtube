@@ -56,7 +56,7 @@ export default function ComponentVideosShorts({videos}){
                                                 <p>No me gusta</p>
                                             </div>
                                             <div className="option" title="Comentarios">
-                                                <ion-icon onClick={(e) => visibility_option(e,"2")} name="chatbox-ellipses"></ion-icon>
+                                                <ion-icon onClick={(e) => visibility_option(e,(index+1))} name="chatbox-ellipses"></ion-icon>
                                                 <p>{video.comments_count}</p>
                                             </div>
                                             <div className="option" title="Compartir">
@@ -64,7 +64,7 @@ export default function ComponentVideosShorts({videos}){
                                                 <p>Compartir</p>
                                             </div>
                                             <div className="option">
-                                                <ion-icon onClick={(e) => visibility_option(e,"1")} name="ellipsis-horizontal"></ion-icon>
+                                                <ion-icon onClick={(e) => visibility_option(e,(index-index*2))} name="ellipsis-horizontal"></ion-icon>
                                             </div>
                                             <div className="option" title="Sonido original">
                                                 <img src={video.channel.logo}/>
@@ -72,8 +72,8 @@ export default function ComponentVideosShorts({videos}){
                                         </div>
                                     </div>
                                 </div>
-                                <ComponentNavOptionsVideoShort get_style_option={get_style_option} index="1"/>
-                                <ComponentListCommentsShorts video={video} get_style_option={get_style_option} index="2" visibility_option={visibility_option}/>
+                                <ComponentNavOptionsVideoShort get_style_option={get_style_option} index={(index-index*2)}/>
+                                <ComponentListCommentsShorts video={video} get_style_option={get_style_option} index={(index+1)} visibility_option={visibility_option}/>
                             </React.Fragment>
                         )
                     })

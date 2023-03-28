@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import '../../../styles/partials/lists/comments_home.css';
 
-export default function ComponentListComments({comments}){
+export default function ComponentListComments({comments,icono}){
     const [replies_selecteds,setReplies_selecteds] = useState([]);
 
     const check_icon_replie = (index) => {
@@ -31,7 +31,7 @@ export default function ComponentListComments({comments}){
                         <div key={index}>
                             <div className="datails-comment">
                                 <div className="icon">
-                                    <img src={comment.logo} alt="Logo del autor principal de comentario"/>
+                                    <img src={comment.logo} alt=""/>
                                 </div>
                                 <div className="description">
                                     <p>
@@ -48,14 +48,16 @@ export default function ComponentListComments({comments}){
                                         <button>Responder</button>
                                     </div>
                                 </div>
-                                <ion-icon className="option-comment" name="ellipsis-vertical-outline"></ion-icon>
+                                <div className="option-comment">
+                                    <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+                                </div>
                             </div>
                             {
                                 comment.replies_count !== undefined ?
                                     <React.Fragment>
                                         <button className="view-replies" onClick={() => check_icon_replie(index)}>
-                                            <ion-icon style={ disguise_icon_repli_selected(index) } name="chevron-up-outline"></ion-icon>
-                                            <ion-icon style={ watch_icon_repli_selected(index) } name="chevron-down-outline"></ion-icon>
+                                            <ion-icon style={ disguise_icon_repli_selected(index) } name={icono+"-up-outline"}></ion-icon>
+                                            <ion-icon style={ watch_icon_repli_selected(index) } name={icono+"-down-outline"}></ion-icon>
                                             {comment.replies_count}
                                         </button>
                                         <div className={ watch_replie_selected(index) }>
@@ -64,7 +66,7 @@ export default function ComponentListComments({comments}){
                                                     return (
                                                         <div className="datails-comment-replies" key={index}>
                                                             <div className="icon">
-                                                                <img src={replies.logo} alt="Logo del autor del comentario"/>
+                                                                <img src={replies.logo} alt=""/>
                                                             </div>
                                                             <div className="description">
                                                                 <p><strong>{replies.autor}</strong>{replies.time_elapsed}</p>

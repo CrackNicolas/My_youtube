@@ -21,11 +21,16 @@
     visibility: visible;
 }
 .list-comments .datails-comment .option-comment{
-    width: 20px;
-    height: 20px;
     color: var(--color-text-primary);
-    margin-right: -5px;
     visibility: hidden;
+    text-align: end;
+}
+.list-comments .datails-comment .option-comment:hover{
+    cursor: pointer;
+}
+.list-comments .datails-comment .option-comment ion-icon{
+    width: 18px;
+    height: 18px;
 }
 .list-comments .datails-comment img:hover{
     cursor: pointer;

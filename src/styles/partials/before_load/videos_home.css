@@ -3,14 +3,13 @@
     height: 100%;
     display: flex;
     flex-wrap: wrap;
-    gap: 23px;
+    gap: 37px 23px;
     padding-left: 10px;
     color: var(--color-text-primary);
 }
 .videos-load .video{
     background-color: var(--color-font-secondary);
     width: 357px;
-    margin-bottom: 60px; 
     height: 200px;
     border-radius: 10px;
 }

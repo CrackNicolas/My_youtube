@@ -125,3 +125,37 @@
 .comments-shorts .body .add-comment textarea:focus ~ .push-comment{
     visibility: visible;
 }
+.comments-shorts .list-comments{
+    width: 100%;
+    padding: 0px 20px 10px 10px;
+    margin-top: 5px;
+}
+.comments-shorts .list-comments .datails-comment .icon{
+    width: 15%;
+}
+.comments-shorts .list-comments .datails-comment .description{
+    width: 85%;
+}
+.comments-shorts .list-comments .view-replies{
+    margin-left: 15%;
+}
+.comments-shorts .list-comments .datails-comment-replies{
+    width: 85%;
+    margin-left: 15%;
+}
+.comments-shorts .list-comments .datails-comment-replies .icon{
+    width: 15%;
+}
+.comments-shorts .comments{
+    position: relative;
+    overflow-y: scroll;
+    margin-right: -7px;
+    height: 85.3%;
+}
+.comments-shorts .comments::-webkit-scrollbar{
+    width: 9px;
+}
+.comments-shorts .comments::-webkit-scrollbar-thumb{
+    background: var(--color-text-secondary);
+    border-radius: 30px;
+}

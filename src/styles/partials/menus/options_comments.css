@@ -8,6 +8,7 @@
     color: var(--color-text-primary);
     padding: 7px 0px;
     transform: translate(175px,73px);
+    z-index: 30;
 }
 .nav_filter_comments .option{
     display: flex;
