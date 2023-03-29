@@ -10,7 +10,8 @@ export default function ComponentHeaderVideoSelected({video,channel}){
     const [name_id_description,setName_id_description] = useState("description");
     const [options_selected_video,setOptions_selected_video] = useState(false);
     const [option_selected_share,setOption_selected_share] = useState(false);
-
+    const [selected_like,setSelected_like] = useState(0);
+    
     const hidden_description = () => {
         setName_id_description((name_id_description==="hidden_description")? "description":"hidden_description");
     }
@@ -40,6 +41,10 @@ export default function ComponentHeaderVideoSelected({video,channel}){
         setOption_selected_share( (index===option_selected_share)? undefined : index);
     }
 
+    const capture_selected_likes = (item) => {
+        setSelected_like((selected_like==item)? 0 : item);
+    }
+
     return (
         <React.Fragment>
             <article className="player">
@@ -66,12 +71,12 @@ export default function ComponentHeaderVideoSelected({video,channel}){
                                 </button>
                             </div>
                             <div className="btns-der">
-                                <button className="btn-likes">
-                                    <ion-icon name="thumbs-up-outline"></ion-icon>
+                                <button onClick={() => capture_selected_likes(1)} className="btn-likes">
+                                    <ion-icon name={(selected_like===1)? "thumbs-up" : "thumbs-up-outline"}></ion-icon>
                                     <p>{video.likes}</p>
                                 </button>
-                                <button className="btn-no-likes">
-                                    <ion-icon name="thumbs-down-outline"></ion-icon>
+                                <button onClick={() => capture_selected_likes(2)} className="btn-no-likes">
+                                    <ion-icon name={(selected_like===2)? "thumbs-down" : "thumbs-down-outline"}></ion-icon>
                                 </button>
                                 <button className="share" onClick={(e) => visibility_option_share(e,video.id)}>
                                     <ion-icon name="arrow-redo-outline"></ion-icon>
