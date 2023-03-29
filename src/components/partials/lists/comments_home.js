@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useEffect,useState } from "react";
 
 import '../../../styles/partials/lists/comments_home.css';
 
@@ -28,8 +28,8 @@ export default function ComponentListComments({comments,icono}){
         setOptions_selected((index===options_selected)? undefined : index);
     }
     const get_style = (index) => {
-        return (index===options_selected)? {visibility: "visible"} : {visibility: "hidden"};
-    }
+        return (index===options_selected)? { animation: "animate_options linear 3s" } : { visibility: "hidden" };
+    };
 
     return (
         <div className="list-comments">

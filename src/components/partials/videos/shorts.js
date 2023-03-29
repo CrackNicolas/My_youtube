@@ -4,9 +4,9 @@ import {get_url_player_short} from '../../../logic/functions.js';
 
 import ComponentNavOptionsVideoShort from '../menus/options_videos_short.js';
 import ComponentListCommentsShorts from '../lists/comments_shorts.js';
+import ComponentShareVideo from "../menus/share_video.js";
 
 import '../../../styles/partials/videos/shorts.css';
-import ComponentShareVideo from "../menus/share_video.js";
 
 export default function ComponentVideosShorts({videos}){
     const [video_selected, setVideo_selected] = useState(0);

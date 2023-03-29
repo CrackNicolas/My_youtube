@@ -18,7 +18,12 @@
     border-radius: 50%;
 }
 .list-comments .datails-comment:hover .option-comment{
-    visibility: visible;
+    animation: animate_options linear 3s;
+}
+@keyframes animate_options{
+    0%,100%{
+        visibility: visible;
+    }
 }
 .list-comments .datails-comment .option-comment{
     color: var(--color-text-primary);

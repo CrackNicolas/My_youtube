@@ -43,7 +43,7 @@ export default function ComponentListCommentsShorts({video,get_style_option,inde
                     <ion-icon onClick={(e) => close(e) } name="close-outline"></ion-icon>
                 </div>
             </article>
-            <ComponentNavOptionsComments get_style={get_style}/>
+            <ComponentNavOptionsComments get_style={get_style} index={index}/>
             <article className="comments">
                 <ComponentAddComment icono={false}/>
                 <ComponentListComments comments={comments_video_selected} icono="caret"/>
