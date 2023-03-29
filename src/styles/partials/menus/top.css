@@ -16,12 +16,12 @@
     margin-left: 18px;
     color: var(--color-text-primary);
 }
-.nav-top .menu ion-icon{
+.nav-top .logo .menu #icon-menu{
     width: 27px;
     height: 27px;
     padding: 5px;
 }
-.nav-top .menu ion-icon:hover{
+.nav-top .menu #icon-menu:hover{
     cursor: pointer;
     border-radius: 50px;
     background-color: var(--color-font-tertiary);

@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 
-import ComponentNavOptionsComments from '../menus/options_comments.js';
-
 import '../../../styles/partials/lists/comments_home.css';
 
 export default function ComponentListComments({comments,icono}){
@@ -59,9 +57,9 @@ export default function ComponentListComments({comments,icono}){
                                     </div>
                                 </div>
                                 <div className="option-comment">
-                                    <ion-icon onClick={() => options_comment(index)} name="ellipsis-vertical-outline"></ion-icon>
+                                    <ion-icon onClick={() => options_comment(index+1)} name="ellipsis-vertical-outline"></ion-icon>
                                 </div>
-                                <div className="options" style={get_style(index)}>
+                                <div className="options" style={get_style(index+1)}>
                                     <div className="option">
                                         <ion-icon name="flag-outline"></ion-icon>
                                         <p>Denunciar</p>
@@ -69,7 +67,7 @@ export default function ComponentListComments({comments,icono}){
                                 </div>
                             </div>
                             {
-                                comment.replies_count !== undefined ?
+                                comment.replies_count !== undefined?
                                     <React.Fragment>
                                         <button className="view-replies" onClick={() => check_icon_replie(index)}>
                                             <ion-icon style={ disguise_icon_repli_selected(index) } name={icono+"-up-outline"}></ion-icon>
@@ -94,7 +92,15 @@ export default function ComponentListComments({comments,icono}){
                                                                     <button>Responder</button>
                                                                 </div>
                                                             </div>
-                                                            <ion-icon className="option-comment" name="ellipsis-vertical-outline"></ion-icon>
+                                                            <div className="option-comment">
+                                                                <ion-icon onClick={() => options_comment(index-index*2)} name="ellipsis-vertical-outline"></ion-icon>
+                                                            </div>
+                                                            <div className="options" style={get_style(index-index*2)}>
+                                                                <div className="option">
+                                                                    <ion-icon name="flag-outline"></ion-icon>
+                                                                    <p>Denunciar</p>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     )
                                                 })

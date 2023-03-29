@@ -27,11 +27,12 @@
 .items-menu .item{
     display: flex;
     align-items: center;
-    gap: 15px;
     border-radius: 11px;
     width: 200px;
-    padding: 5px 2px 5px 7px;
+    padding: 9px 2px 9px 7px;
     margin-bottom: 3px;
+    text-decoration: none;
+    color: var(--color-text-primary);
 }
 .items-menu .item:hover{
     cursor: pointer;
@@ -40,23 +41,21 @@
 .items-menu .item:nth-child(1){
     background-color: var(--color-font-cuartiary);
 }
-.items-menu .item a{
-    text-decoration: none;
+.items-menu .item span{
     font-size: 14px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 500;
     color: var(--color-text-primary);
+    margin-left: 16px;
 }
 .items-menu .items .linea-item{
     margin: -6px 0 10px 0;
     color: var(--color-font-hover-buttons);
 }
 .items-menu .item ion-icon{
-    width: 22px;
-    height: 22px;
-}
-.items-menu .item ion-icon:hover{
-    background-color: transparent;
+    width: 23px;
+    height: 23px;
+    margin-left: 8px;
 }
 .items-menu .sub-title-item{
     padding: 5px 2px 5px 7px;
@@ -69,6 +68,7 @@
     width: 25px;
     height: 25px;
     border-radius: 50%;
+    margin-left: 6px;
 }
 .items-menu .sub-title-footer-item{
     color: var(--color-text-secondary);

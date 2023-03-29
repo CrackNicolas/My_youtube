@@ -1,0 +1,138 @@
+.share-video{
+    position: absolute;
+    width: 520px;
+    height: 270px;
+    border-radius: 10px;
+    background-color: var(--color-font-secondary);
+    color: var(--color-text-icon-youtube);
+    padding: 18px;
+    transform: translate(-170px,-415px);
+}
+.share-video .header{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.share-video .header p:nth-child(1){
+    width: 90%;
+    padding-left: 3px;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.share-video .header p:nth-child(2){
+    width: 10%;
+    text-align: end;
+    padding: 5px;
+}
+.share-video .header p:nth-child(2) ion-icon{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+.share-video .header p:nth-child(2) ion-icon:hover{
+    cursor: pointer;
+    opacity: 0.5;
+}
+.share-video .slider{
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+    padding: 5px 5px 10px 5px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+.share-video .slider::-webkit-scrollbar{
+    height: 7px;
+}
+.share-video .slider::-webkit-scrollbar-thumb{
+    background: var(--color-border-input-search);
+    border-radius: 30px;
+}
+.share-video .slider .item{
+    display: block;
+    text-align: center;
+}
+.share-video .slider .item:hover{
+    cursor: pointer;
+    opacity: 0.7;
+    transition-duration: 1s;
+    transform: translateY(-2px);
+}
+.share-video .slider .item .imagen{
+    width: 62px;
+    height: 62px;
+    border-radius: 50%;
+    margin-bottom: 5px;
+}
+.share-video .slider .item:nth-child(1) .imagen{
+    background-color: #008000;
+}
+.share-video .slider .item:nth-child(2) .imagen{
+    background-color: #2a2ac5;
+}
+.share-video .slider .item:nth-child(3) .imagen{
+    background-color: #1674c5;
+}
+.share-video .slider .item:nth-child(4) .imagen{
+    background-color: #ffffff6f;
+}
+.share-video .slider .item:nth-child(5) .imagen{
+    background-color: #1673c5e1;
+}
+.share-video .slider .item:nth-child(6) .imagen{
+    background: radial-gradient(circle farthest-corner at 35% 90%, #fec564, transparent 50%), radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%), radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent), linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%);
+}
+.share-video .slider .item:nth-child(7) .imagen{
+    background-color: #ff0000;
+}
+.share-video .slider .item:nth-child(8) .imagen{
+    background-color: rgb(53, 53, 87);
+}
+.share-video .slider .item:nth-child(9) .imagen{
+    background-color: rgb(211, 54, 54);
+}
+.share-video .slider .item:nth-child(10) .imagen{
+    background-color: #2a679de1;
+}
+.share-video .slider .item .imagen ion-icon{
+    width: 35px;
+    height: 35px;
+    margin-top: 13px;
+    margin-left: 1px;
+}
+.share-video .slider .item p{
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+}
+.share-video .url{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--color-font-primary);
+    border-radius: 10px;
+    margin-top: 40px;
+    margin-top: 40px;
+    padding: 10px;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    border: 0.1px solid var(--color-font-hover-buttons);
+}
+.share-video .url a{
+    text-decoration: none;
+    border-radius: 20px;
+    padding: 8px 15px;
+    color: var(--color-font-primary);
+    background-color: var(--color-border-input-search);
+}
+.share-video .url a:hover{
+    cursor: pointer;
+    opacity: 0.7;
+}
+.share-video .url p{
+    padding-left: 7px;
+}

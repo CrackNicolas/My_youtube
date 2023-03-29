@@ -146,6 +146,18 @@
 .comments-shorts .list-comments .datails-comment-replies .icon{
     width: 15%;
 }
+.comments-shorts .list-comments .options{
+    width: 120px;
+    z-index: 30;
+    padding: 0px;
+    transform: translate(270px,20px);
+}
+.comments-shorts .list-comments .option:hover{
+    border-radius: 8px;
+}
+.comments-shorts .list-comments .datails-comment-replies .options{
+    transform: translate(215px,20px);
+}
 .comments-shorts .comments{
     position: relative;
     overflow-x: hidden;

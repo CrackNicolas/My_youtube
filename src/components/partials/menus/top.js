@@ -49,7 +49,7 @@ export default function ComponentNavTop({search_query}){
         <nav className="nav-top">
             <div className="logo">
                 <div className="menu" onClick={() => view_menu()}>
-                    <ion-icon name="menu-outline"></ion-icon>
+                    <ion-icon id="icon-menu" name="menu-outline"></ion-icon>
                     <ComponentNavToggler styles={styles}/>
                 </div>
                 <a href="/">

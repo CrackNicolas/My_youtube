@@ -6,6 +6,7 @@ import ComponentNavOptionsVideoShort from '../menus/options_videos_short.js';
 import ComponentListCommentsShorts from '../lists/comments_shorts.js';
 
 import '../../../styles/partials/videos/shorts.css';
+import ComponentShareVideo from "../menus/share_video.js";
 
 export default function ComponentVideosShorts({videos}){
     const [video_selected, setVideo_selected] = useState(0);
@@ -40,8 +41,8 @@ export default function ComponentVideosShorts({videos}){
                 {
                     videos.map((video,index) => {
                         return (
-                            <React.Fragment>
-                                <div className="video" key={index}>
+                            <React.Fragment key={index}>
+                                <div className="video">
                                     <div className="image">
                                         <iframe allow='autoplay *' src={get_url_player_short(video.id, (video_selected == index)?  1 : 0) } onMouseOver={() => setVideo_selected(index)} ></iframe>
                                     </div>
@@ -60,7 +61,7 @@ export default function ComponentVideosShorts({videos}){
                                                 <p>{video.comments_count}</p>
                                             </div>
                                             <div className="function" title="Compartir">
-                                                <ion-icon name="arrow-redo"></ion-icon>
+                                                <ion-icon onClick={(e) => visibility_option(e,video.id)} name="arrow-redo"></ion-icon>
                                                 <p>Compartir</p>
                                             </div>
                                             <div className="function">
@@ -74,6 +75,7 @@ export default function ComponentVideosShorts({videos}){
                                 </div>
                                 <ComponentNavOptionsVideoShort get_style_option={get_style_option} index={(index-index*2)}/>
                                 <ComponentListCommentsShorts video={video} get_style_option={get_style_option} index={(index+1)} visibility_option={visibility_option}/>
+                                <ComponentShareVideo get_style_option={get_style_option} index={video.id} visibility_option={visibility_option}/>
                             </React.Fragment>
                         )
                     })

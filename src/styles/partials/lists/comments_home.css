@@ -150,6 +150,9 @@
     margin-right: -5px;
     visibility: hidden;
 }
+.list-comments .datails-comment-replies .option-comment ion-icon:hover{
+    cursor: pointer;
+}
 .list-comments .datails-comment-replies img:hover{
     cursor: pointer;
 }
@@ -220,4 +223,7 @@
 .list-comments .option p{
     width: 100%;
     font-size: 13px;
+}
+.list-comments .datails-comment-replies .options{
+    transform: translate(635px,25px);
 }
