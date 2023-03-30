@@ -1,0 +1,20 @@
+.videos-hashtag{
+    background-color: var(--color-font-primary);
+    padding: 137px 0px 50px 95px;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    color: var(--color-text-primary);
+}
+.videos-hashtag .video{
+    background-color: red;
+    width: 185px;
+    height: 350px;
+    border-radius: 12px;
+} 
+.videos-hashtag .video img{
+    border-radius: 12px;
+    width: 100%;
+    height: 100%;
+}
