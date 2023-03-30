@@ -120,5 +120,3 @@ export async function Load_videos_shorts(search_query,count_video){
     }
     return new_videos;
 }
-
-

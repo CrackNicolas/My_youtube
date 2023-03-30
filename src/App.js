@@ -56,6 +56,13 @@ function App() {
             </GlobalContextProvider>
           } 
         />
+        <Route exact path="/shorts/:name/:id" element=
+          { 
+            <GlobalContextProvider>
+              <ComponentShorts/>
+            </GlobalContextProvider>
+          } 
+        />
         <Route path="*" element={ <ComponentSinInternet/>} />
       </Routes>
     </BrowserRouter>

@@ -39,7 +39,7 @@ export default function ComponentHashtag(){
                     (shorts===undefined)?
                         <ComponentVideosLayouts videos={videos}/>
                     :
-                        <ComponentVideosHashtagShorts videos={videos}/>
+                        <ComponentVideosHashtagShorts videos={videos} name={name}/>
                 }
             </React.Fragment>
         :
