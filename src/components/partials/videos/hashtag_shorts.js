@@ -1,21 +1,21 @@
-import ComponentNavOptionsVideo from '../menus/options_videos_home.js';
-import ComponentVideosLoad from '../before_load/videos_home.js';
+import ComponentVideosLoadShorts from '../before_load/videos_shorts';
 
 import '../../../styles/partials/videos/hashtag_shorts.css';
 
-import {get_url_player_short} from '../../../logic/functions.js';
-
 export default function ComponentVideosHashtagShorts({videos}){
+  const get_view_count = (view) => {
+    return view.replace(" de visitas","");
+  }
+
   return (
     <section className="videos-hashtag">
-      { (videos.length===0)? <ComponentVideosLoad/> : "" }
+      { (videos.length===0)? <ComponentVideosLoadShorts/> : "" }
       {
         videos.map((video,index) => {
           return (
-            <a className="video" key={index}>
-              <video style={{ background: "transparent url('"+video.url_imagen+"') 50% 50% / cover no-repeat" }}>
-                <source src="" type="video/mp4"/>
-              </video>
+            <a href="/" className="video" key={index}>
+              <video style={{ background: "transparent url('"+video.url_imagen+"') 50% 50% / cover no-repeat" }}></video>
+              <p>{get_view_count(video.view_count)} visualizaciones</p>
             </a>
           )
         })

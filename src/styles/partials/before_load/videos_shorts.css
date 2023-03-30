@@ -1,0 +1,14 @@
+.videos-load-shorts{
+    background-color: var(--color-font-primary);
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4.4px;
+    color: var(--color-text-primary);
+}
+.videos-load-shorts .video{
+    background-color: var(--color-font-secondary);
+    width: 190px;
+    height: 350px;
+    border-radius: 10px;
+}
