@@ -84,7 +84,7 @@ export async function Load_suggestions(search){
     }
     return new_suggestions;
 }
-export async function Load_videos_shorts(search_query,count_video){
+export async function Load_videos_shorts(search_query,count_video,id_video_primary){
     let new_videos = [], promises = [], channel;
     const videos_search = await Service_videos.get_all(search_query,"",count_video);
             
@@ -96,9 +96,15 @@ export async function Load_videos_shorts(search_query,count_video){
     promises = [];
 
     if(videos_search.data.items[0].contentDetails === undefined){
-        for(let video of videos_search.data.items){
-            const new_video = Service_videos.get_all_id(video.id.videoId); 
+        if(id_video_primary!=undefined){
+            const new_video = Service_videos.get_all_id(id_video_primary); 
             promises.push(new_video);
+        }
+        for(let video of videos_search.data.items){
+            if(video.id.videoId!=id_video_primary){
+                const new_video = Service_videos.get_all_id(video.id.videoId); 
+                promises.push(new_video);
+            }
         }
         const result_promises_videos = await Promise.all(promises);
               
