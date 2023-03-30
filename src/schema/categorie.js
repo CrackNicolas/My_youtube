@@ -12,11 +12,18 @@ export default class Schema_categorie{
                 (id===0 || id===undefined)? "selected" : "no-selected"
             )
         :
-            new Schema_categorie(
-                categorie.id,
-                categorie.snippet.title.split(" ")[0],
-                (categorie.id === id)? "selected" : "no-selected"
-            )
+            (categorie===null)?
+                new Schema_categorie(
+                    -10,
+                    "En directo",
+                    (id===-10)? "selected" : "no-selected"
+                )
+            :
+                new Schema_categorie(
+                    categorie.id,
+                    categorie.snippet.title.split(" ")[0],
+                    (categorie.id === id)? "selected" : "no-selected"
+                )
     }
     static push_categorie_playlist(new_categorie_playlist){
         return new Schema_categorie(

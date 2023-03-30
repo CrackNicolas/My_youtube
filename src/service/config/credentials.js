@@ -1,8 +1,8 @@
 //Cuenta Nicolas
-
+/*
 export const key = "AIzaSyDgJcdDk41JxkJZvmPfPgl5E8fdbzuZOm4";
 export const url = "https://youtube.googleapis.com/youtube/v3/";
-
+*/
 //Cuenta alejo
 
 /*
@@ -11,10 +11,10 @@ export const url = "https://youtube.googleapis.com/youtube/v3/";
 */
 
 //Cuenta del otro Nicolas
-/*
+
 export const key = "AIzaSyC0WhgzDQO010Zy4igk7g1x2v0NyoRiOks";
 export const url = "https://youtube.googleapis.com/youtube/v3/";
-*/
+
 
 /**-----------Clave de google autocomplete------------------**/
 /*

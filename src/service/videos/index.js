@@ -4,11 +4,15 @@ import {get_petition_url} from '../../logic/functions.js';
 export default class Service_videos{
     static async get_all(search,id_categorie,cantidad){
         let promise;
-        if(search==="" || search===undefined || search===null){
-            let id = (id_categorie!==undefined)? "&videoCategoryId="+id_categorie : "";
-            promise = await axios.get(get_petition_url("videos?part=status&part=statistics&part=snippet&part=contentDetails"+id+"&chart=mostPopular&hl=es&regionCode=ES&maxResults="+cantidad));
+        if(id_categorie===-10){
+            promise = await axios.get(get_petition_url("search?part=snippet&q="+search+"&eventType=live&type=video&hl=es&regionCode=ES&maxResults="+cantidad));
         }else{
-            promise = await axios.get(get_petition_url("search?part=snippet&q="+search+"&type=video&hl=es&regionCode=ES&maxResults="+cantidad));
+            if(search==="" || search===undefined || search===null){
+                let id = (id_categorie!==undefined)? "&videoCategoryId="+id_categorie : "";
+                promise = await axios.get(get_petition_url("videos?part=status&part=statistics&part=snippet&part=contentDetails"+id+"&chart=mostPopular&hl=es&regionCode=ES&maxResults="+cantidad));
+            }else{
+                promise = await axios.get(get_petition_url("search?part=snippet&q="+search+"&type=video&hl=es&regionCode=ES&maxResults="+cantidad));
+            }
         }
         return promise;
     }
