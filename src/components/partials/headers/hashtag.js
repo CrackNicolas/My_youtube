@@ -10,7 +10,7 @@ export default function ComponentHeaderHashtag({videos,name_hashtag,option_selec
     useEffect(() => {
         const hidden_header_hashtag = () => {
             let ubicacion_actual = window.pageYOffset;
-            setStyle((ubicacion_actual==0)? { position: "relative", top: "85px" } : { position: "fixed", top: "-30px" });
+            setStyle((ubicacion_actual==0)? { position: "relative", top: "60px" } : { position: "fixed", top: "-30px" });
         }
         window.addEventListener('scroll',hidden_header_hashtag);
     },[window.pageYOffset]);

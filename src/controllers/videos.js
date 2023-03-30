@@ -5,7 +5,7 @@ import Service_playlists from '../service/playlists/index.js';
 import Schema_video_presentation, {Schema_video_watch, Schema_video_short} from '../schema/video.js';
 import Schema_channel from '../schema/channel.js';
 
-export default async function Load_videos(search_query,categorie_selected,count_video){
+export default async function Load_videos(search_query,categorie_selected,count_video,format_imagen){
     let new_videos = [], promises = [], channel;
     const videos_search = await Service_videos.get_all(search_query,categorie_selected,count_video);
             
@@ -28,7 +28,7 @@ export default async function Load_videos(search_query,categorie_selected,count_
                 channel = Schema_channel.push(item)
             ))
             result_promises_videos[new_videos.length].data.items.find(item => (
-                new_videos.push(Schema_video_presentation.push(item,channel))
+                new_videos.push(Schema_video_presentation.push(item,channel,format_imagen))
             ))
         }
     }else{
@@ -36,7 +36,7 @@ export default async function Load_videos(search_query,categorie_selected,count_
             result_promises_channels[new_videos.length].data.items.find(item => (
                 channel = Schema_channel.push(item)
             ))
-            new_videos.push(Schema_video_presentation.push(video,channel));
+            new_videos.push(Schema_video_presentation.push(video,channel,format_imagen));
         }
     }
     return new_videos;
@@ -71,7 +71,7 @@ export async function Load_videos_related(id_playlist){
             for(let result_channel of result_search_channels){
                 channel = Schema_channel.push(result_channel.data.items[0]);
             }
-            new_videos.push(Schema_video_presentation.push(video,channel));
+            new_videos.push(Schema_video_presentation.push(video,channel,"medium"));
         }
     }
     return new_videos;

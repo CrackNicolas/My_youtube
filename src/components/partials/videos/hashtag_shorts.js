@@ -3,6 +3,8 @@ import ComponentVideosLoad from '../before_load/videos_home.js';
 
 import '../../../styles/partials/videos/hashtag_shorts.css';
 
+import {get_url_player_short} from '../../../logic/functions.js';
+
 export default function ComponentVideosHashtagShorts({videos}){
   return (
     <section className="videos-hashtag">
@@ -10,10 +12,10 @@ export default function ComponentVideosHashtagShorts({videos}){
       {
         videos.map((video,index) => {
           return (
-            <a href={("/watch/"+video.id)} key={index}>
-              <article className="video">
-                
-              </article>
+            <a className="video" key={index}>
+              <video style={{ background: "transparent url('"+video.url_imagen+"') 50% 50% / cover no-repeat" }}>
+                <source src="" type="video/mp4"/>
+              </video>
             </a>
           )
         })

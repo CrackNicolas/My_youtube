@@ -23,7 +23,7 @@ export default function ComponentHashtag(){
     useEffect(() => {
         const load_videos = async () => {
             let search = (shorts!=undefined)? name+" "+shorts : name;
-            let new_videos = await Load_videos(search,"",10);
+            let new_videos = await Load_videos(search,"",10,(shorts!=undefined)? "standard":"medium");
             setVideos(new_videos);
         }   
         load_videos();    

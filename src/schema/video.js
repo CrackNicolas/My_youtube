@@ -13,11 +13,11 @@ export default class Schema_video_presentation{
         this.live = live;
         this.channel = channel;
     }
-    static push(video,channel){
+    static push(video,channel,format_imagen){
         return new Schema_video_presentation(
             video.id,
             video.snippet.title,
-            video.snippet.thumbnails.medium.url,
+            (format_imagen==="medium")? video.snippet.thumbnails.medium.url : video.snippet.thumbnails.standard.url,
             get_duration_video(video.contentDetails.duration),
             get_time_elapsed(video.snippet.publishedAt),
             video.snippet.localized.description,
