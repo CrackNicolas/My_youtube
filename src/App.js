@@ -27,6 +27,13 @@ function App() {
             </GlobalContextProvider>
           } 
         />
+        <Route exact path="/:channel_user" element=
+          { 
+            <GlobalContextProvider>
+              <ComponentHome/> 
+            </GlobalContextProvider>
+          } 
+        />
         <Route exact path="/results" element=
           { 
             <GlobalContextProvider>
