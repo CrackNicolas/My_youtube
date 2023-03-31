@@ -67,26 +67,13 @@ export default function ComponentNavTop({search_query}){
                 <ion-icon onClick={(e) => visibility_options(e)} class="micro" name={(name_selected_icon==="mic-outline")? "mic":"mic-outline"} title="Haz búsquedas por voz"></ion-icon>
             </form>
             <ComponentSearchMicro get_style={get_style} visibility_options={visibility_options}/>            
-            {
-                (name_selected_icon!=undefined)?
-                    <div className="load-icons">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                :
-                <div className="icons">
-                    <div className="create-video">
-                        <ion-icon onClick={(e) => visibility_options(e)} name={(name_selected_icon==="videocam-outline")? "videocam":"videocam-outline" } title="Crear"></ion-icon>
-                    </div>
-                    <ComponentNavOptionsCreateVideo get_style={get_style}/>
-                    <div className="notification">
-                        <ion-icon onClick={(e) => visibility_options(e)} name={(name_selected_icon==="notifications-outline")? "notifications":"notifications-outline" } title="Notificaciones"></ion-icon>
-                    </div>
-                    <img className="perfil" src="/images/my_perfil.jpg" alt="Perfil del autor"/>                
-                    <ComponentNavOptionsNotification get_style={get_style}/>
-                </div>
-            }
+            <div className="acceder">
+                <ion-icon className="option" name="ellipsis-vertical-outline"></ion-icon>
+                <a href="/logaut">
+                    <ion-icon name="person-circle-outline"></ion-icon>
+                    <span>Acceder</span>
+                </a>
+            </div>
         </nav>
     );
 }

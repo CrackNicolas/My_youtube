@@ -1,3 +1,7 @@
+//**BORRAR ANTES DE HACER EL DEPLOY**//
+//**Id unico de mi canal --->  UCctJ1hstsPfgfqXPlRsH7QQ   **//
+
+
 //Cuenta Nicolas
 /*
 export const key = "AIzaSyDgJcdDk41JxkJZvmPfPgl5E8fdbzuZOm4";

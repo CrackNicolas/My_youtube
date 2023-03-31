@@ -1,0 +1,125 @@
+.logaut{
+    margin: 0px;
+    padding-top: 40px;
+    height: 100vh;
+    width: 100%;
+    background: var(--color-text-icon-youtube);
+}
+.logaut .main{
+    width: 450px;
+    height: 510px;
+    margin: auto;
+    padding: 50px 37.5px 60px 37.5px;
+    border-radius: 10px;
+    border: 0.1px solid var(--color-font-hover-buttons);
+}
+.logaut .main p:nth-child(1), .logaut .main p:nth-child(2), .logaut .main p:nth-child(3){
+    text-align: center;
+    line-height: 35px;
+}
+.logaut .main p:nth-child(1){
+    font-size: 23px;
+    margin-bottom: 5px;
+    color: var(--color-text-primary-logaut);
+}
+.logaut .main p:nth-child(1) img{
+    width: 75px;
+    height: 25px;
+}
+.logaut .main p:nth-child(2){
+    font-size: 24px;
+    letter-spacing: 0.5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+}
+.logaut .main p:nth-child(3){
+    font-family: Arial, Helvetica, sans-serif;
+}
+.logaut .main input{
+    margin: 30px 0px 10px 0px;
+    font-size: 15px;
+    width: 100%;
+    border-radius: 5px;
+    border: 0.1px solid var(--color-font-hover-buttons);
+    padding: 20px 15px;
+    color: var(--color-text-secondary);
+}
+.logaut .main input:hover{
+    border: 1px solid var(--color-text-primary-logaut);
+}
+.logaut .main span{
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    color: var(--color-text-primary-logaut);
+}
+.logaut .main .description{
+    margin-top: 40px;
+    font-weight: 500;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--color-font-primary);
+    opacity: 0.7;
+    line-height: 20px;
+}
+.logaut .main .description strong{
+    padding: 2px 3px;
+    margin-left: 3px;
+    color: var(--color-text-primary-logaut);
+}
+.logaut .main .description strong:hover{
+    cursor: pointer;
+    box-shadow: 0 1px 5px 1px var(--color-text-primary-logaut);
+    border-radius: 2px;
+}
+.logaut .main .buttons{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+.logaut .main .buttons a:nth-child(1){
+    font-size: 14px;
+    color: var(--color-text-primary-logaut);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+.logaut .main .buttons a:nth-child(2){
+    padding: 10px 25px;
+    border-radius: 5px;
+    font-size: 14px;
+    letter-spacing: 0.3px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    background-color: var(--color-text-primary-logaut);
+}
+.logaut .main .buttons a:nth-child(1):hover, .logaut .main .buttons a:nth-child(2):hover{
+    cursor: pointer;
+    opacity: 0.9;
+}
+.logaut .footer{
+    width: 450px;
+    height: 50px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    opacity: 0.9;
+}
+.logaut .footer a{
+    text-decoration: none;
+    padding: 10px 5px;
+    font-size: 12.5px;
+    font-weight: 500;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.logaut .footer a:nth-child(1){
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+
+

@@ -1,4 +1,5 @@
 import ComponentHome from './components/layouts/home.js';
+import ComponentLogaut from './components/layouts/logaut.js';
 import ComponentWatch from './components/layouts/watch.js';
 import ComponentSearch from './components/layouts/search.js';
 import ComponentHashtag from './components/layouts/hashtag.js';
@@ -14,6 +15,11 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route exact path="/logaut" element=
+          { 
+            <ComponentLogaut/>
+          } 
+        />
         <Route exact path="/" element=
           { 
             <GlobalContextProvider>
