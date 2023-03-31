@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 
 import { useLocation, useParams } from 'react-router-dom';
 
+import Load_channel_user from '../controllers/config.js';
 import Load_categories_general from '../controllers/categories.js';
 import Load_videos from '../controllers/videos.js';
 
@@ -21,9 +22,10 @@ export default function GlobalContextProvider({children}){
     const [videos,setVideos] = useState([]);
 
     useEffect(() => {
-        const load_user = async () => {
+        const load_user = async (channel) => {
             try{
-                
+                let new_channel_user = await Load_channel_user(channel);
+                setUser(new_channel_user);
             }catch(error){
                 if(!error.response){
                     setInternet(false);
@@ -54,7 +56,9 @@ export default function GlobalContextProvider({children}){
         if(search_query===null){
             load_categories();
         }
-        load_user(channel_user);
+        if(channel_user!=undefined){
+            load_user(channel_user);
+        }
         load_videos();
 
     },[categorie_selected])
