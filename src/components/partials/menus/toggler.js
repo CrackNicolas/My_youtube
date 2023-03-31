@@ -1,6 +1,7 @@
+import React from 'react';
 import '../../../styles/partials/menus/toggler.css';
 
-export default function ComponentNavToggler({styles}){
+export default function ComponentNavToggler({styles,user}){
     return (
         <div className="items-menu" style={styles}>
             <div className="logo">
@@ -21,45 +22,71 @@ export default function ComponentNavToggler({styles}){
                     <ion-icon name="color-filter-outline"></ion-icon>
                     <span>Shorts</span>
                 </a>
-                <a className="item">
+                <a href="/feed/subscriptions" className="item">
                     <ion-icon name="albums-outline"></ion-icon>
                     <span>Supscripciones</span>
                 </a>
                 <div className="linea-item">__________________________</div>
-                <a className="item">
-                    <ion-icon name="library-outline"></ion-icon>
-                    <span>Mi biblioteca</span>
-                </a>
-                <a className="item">
-                    <ion-icon name="stopwatch-outline"></ion-icon>
-                    <span>Historial</span>
-                </a>
-                <a className="item">
-                    <ion-icon name="caret-forward-circle-outline"></ion-icon>
-                    <span>Mis videos</span>
-                </a>
-                <a className="item">
-                    <ion-icon name="alarm-outline"></ion-icon>
-                    <span>Ver mas tarde</span>
-                </a>
-                <a className="item">
-                    <ion-icon name="thumbs-up-outline"></ion-icon>
-                    <span>Videos que me gus...</span>
-                </a>
-                <a className="item">
-                    <ion-icon name="play-circle-outline"></ion-icon>
-                    <span>Videos importantes</span>
-                </a>
-                <div className="linea-item">__________________________</div>
-                <p className="sub-title-item">Suscripciones</p>
-                <a className="item item-subscription">
-                    <img src="/images/my_perfil.jpg" alt=""/>
-                    <span>Canales</span>
-                </a>
-                <a className="item item-subscription">
-                    <img src="/images/my_perfil.jpg" alt=""/>
-                    <span>Canales</span>
-                </a>
+                {
+                    (user==undefined)?
+                        <React.Fragment>
+                            <a href="/feed/library" className="item">
+                                <ion-icon name="library-outline"></ion-icon>
+                                <span>Biblioteca</span>
+                            </a>
+                            <a className="item">
+                                <ion-icon name="stopwatch-outline"></ion-icon>
+                                <span>Historial</span>
+                            </a>
+                            <div className="linea-item">__________________________</div>
+                            <div className="acceder-toggle">
+                                <p>
+                                    Accede para dar "Me gusta" a los videos, realizar comentarios y suscribirte.
+                                </p>
+                                <a href="/logaut">
+                                    <ion-icon name="person-circle-outline"></ion-icon>
+                                    <span>Acceder</span>
+                                </a>
+                            </div>
+                        </React.Fragment>
+                    :
+                        <React.Fragment>
+                            <a className="item">
+                                <ion-icon name="library-outline"></ion-icon>
+                                <span>Mi biblioteca</span>
+                            </a>
+                            <a className="item">
+                                <ion-icon name="stopwatch-outline"></ion-icon>
+                                <span>Historial</span>
+                            </a>
+                            <a className="item">
+                                <ion-icon name="caret-forward-circle-outline"></ion-icon>
+                                <span>Mis videos</span>
+                            </a>
+                            <a className="item">
+                                <ion-icon name="alarm-outline"></ion-icon>
+                                <span>Ver mas tarde</span>
+                            </a>
+                            <a className="item">
+                                <ion-icon name="thumbs-up-outline"></ion-icon>
+                                <span>Videos que me gus...</span>
+                            </a>
+                            <a className="item">
+                                <ion-icon name="play-circle-outline"></ion-icon>
+                                <span>Videos importantes</span>
+                            </a>
+                            <div className="linea-item">__________________________</div>
+                            <p className="sub-title-item">Suscripciones</p>
+                            <a className="item item-subscription">
+                                <img src="/images/my_perfil.jpg" alt=""/>
+                                <span>Canales</span>
+                            </a>
+                            <a className="item item-subscription">
+                                <img src="/images/my_perfil.jpg" alt=""/>
+                                <span>Canales</span>
+                            </a>
+                        </React.Fragment>
+                }
                 <div className="linea-item">__________________________</div>
                 <p className="sub-title-item">Explorar</p>
                 <a className="item">

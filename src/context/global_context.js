@@ -64,7 +64,10 @@ export default function GlobalContextProvider({children}){
     },[categorie_selected])
 
     let capture_id_categorie = (id) => {
-        (id==-1)? window.location.href = "/shorts" : setCategorie_selected((id==0)? undefined : id);
+        (id==0)?
+            setCategorie_selected(id)
+        :
+            window.location.href = (id==-1)? "/shorts" : (id==-2)? "/feed/subscriptions" : "/feed/library";
     }
 
     return (

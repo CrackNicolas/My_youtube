@@ -13,7 +13,7 @@ export default function ComponentSearch(){
     return (
         (context_global.internet)? 
             <React.Fragment>
-                <ComponentNavTop search_query={context_global.search_query}/>
+                <ComponentNavTop search_query={context_global.search_query} user={context_global.user}/>
                 <ComponentNavLeft capture_icono_nav_left={context_global.capture_id_categorie} item_selected="0"/>
                 <ComponentSearchVideos videos={context_global.videos}/>
             </React.Fragment>

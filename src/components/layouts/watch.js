@@ -61,7 +61,7 @@ export default function ComponentWatch(){
     return (
         (context_global.internet)? 
             <React.Fragment>
-                <ComponentNavTop search_query={context_global.search_query}/>
+                <ComponentNavTop search_query={context_global.search_query} user={context_global.user}/>
                 <section className="section-view-video">
                     <section className="view_videos">
                         <ComponentHeaderVideoSelected video={video_selected} channel={channel_video_selected}/>      

@@ -4,6 +4,8 @@ import ComponentWatch from './components/layouts/watch.js';
 import ComponentSearch from './components/layouts/search.js';
 import ComponentHashtag from './components/layouts/hashtag.js';
 import ComponentShorts from './components/layouts/shorts.js';
+import ComponentSubscriptions from './components/layouts/subscriptions.js';
+import ComponentLibrary from './components/layouts/library.js';
 import ComponentSinInternet from './components/layouts/sin_internet.js';
 import './styles/global.css';
 
@@ -73,6 +75,20 @@ function App() {
           { 
             <GlobalContextProvider>
               <ComponentShorts/>
+            </GlobalContextProvider>
+          } 
+        />
+        <Route exact path="/feed/subscriptions" element=
+          { 
+            <GlobalContextProvider>
+              <ComponentSubscriptions/>
+            </GlobalContextProvider>
+          } 
+        />
+        <Route exact path="/feed/library" element=
+          { 
+            <GlobalContextProvider>
+              <ComponentLibrary/>
             </GlobalContextProvider>
           } 
         />

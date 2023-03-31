@@ -50,7 +50,7 @@ export default function ComponentNavTop({search_query,user}){
             <div className="logo">
                 <div className="menu" onClick={() => view_menu()}>
                     <ion-icon id="icon-menu" name="menu-outline"></ion-icon>
-                    <ComponentNavToggler styles={styles}/>
+                    <ComponentNavToggler styles={styles} user={user}/>
                 </div>
                 <a href="/">
                     <img src="/images/youtube.png" title="Página de inicio de YouTube"/>

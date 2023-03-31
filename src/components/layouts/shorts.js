@@ -28,13 +28,16 @@ export default function ComponentShorts(){
     },[name_icono_selected_nav_left]);
 
     let capture_icono_nav_left = (id) => {
-        (id==0)? window.location.href = "/" : setName_icono_selected_nav_left(id);
+        (id==-1)?
+            setName_icono_selected_nav_left(id)
+        :
+            window.location.href = (id==0)? "/" : (id==-2)? "/feed/subscriptions": "/feed/library";
     }
 
     return (
         (context_global.internet)? 
             <React.Fragment>
-                <ComponentNavTop search_query={context_global.search_query}/>
+                <ComponentNavTop search_query={context_global.search_query} user={context_global.user}/>
                 <ComponentNavLeft capture_icono_nav_left={capture_icono_nav_left} item_selected={name_icono_selected_nav_left}/>
                 <ComponentVideosShorts videos={videos}/>
             </React.Fragment>
