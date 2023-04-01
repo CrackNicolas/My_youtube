@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+import ComponentNavManagement from './management.js';
 import ComponentNavToggler from "./toggler.js";
 import ComponentNavOptionsCreateVideo from './options_create_video.js';
 import ComponentSearchMicro from '../search/micro.js';
@@ -19,6 +20,7 @@ export default function ComponentNavTop({search_query,user}){
     const [style_seggestions,setStyle_seggestions] = useState();
     const [list_suggestions,setList_suggestions] = useState([]);
     const [search,setSearch] = useState();
+    const [visibility_management,setVisibility_management] = useState(false);
 
     const view_menu = () => {
         setStyles(Schema_styles_nav_top.format( (action_menu)? 1 : 2));
@@ -43,6 +45,9 @@ export default function ComponentNavTop({search_query,user}){
     }
     const suggestion_selected = (search) => {
         setSearch(search);
+    }
+    const style_management = () => {
+        return (visibility_management)? {visibility : "visible"} : {visibility : "hidden"};
     }
 
     return (
@@ -85,7 +90,8 @@ export default function ComponentNavTop({search_query,user}){
                         <div className="notification">
                             <ion-icon onClick={(e) => visibility_options(e)} name={(name_selected_icon==="notifications-outline")? "notifications":"notifications-outline" } title="Notificaciones"></ion-icon>
                         </div>
-                        <img className="perfil" src={user.logo} alt="Perfil del autor"/>                
+                        <img onClick={() => setVisibility_management(!visibility_management)} className="perfil" src={user.logo} alt="Perfil del autor"/>          
+                        <ComponentNavManagement style={style_management}/>     
                         <ComponentNavOptionsNotification get_style={get_style}/>
                     </div>
             }

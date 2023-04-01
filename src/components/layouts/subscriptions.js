@@ -10,8 +10,6 @@ import Load_subscriptions from '../../controllers/subscriptions.js';
 
 import {Global_context} from '../../context/global_context.js';
 
-import '../../styles/layouts/subscriptions.css';
-
 export default function ComponentSubscriptions(){
     const context_global = useContext(Global_context);
 

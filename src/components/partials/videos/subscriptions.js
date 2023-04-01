@@ -13,7 +13,9 @@ export default function ComponentVideosSubscriptions({videos}){
             </article>
             <article className="videos">
                 {
-                    videos.map((video,index) => {
+                    (videos!=undefined)?
+                
+                        videos.map((video,index) => {
                         return (
                             <a href={"/watch/"+video.id} className="video" key={index}>
                                 <div className="imagen">
@@ -42,6 +44,7 @@ export default function ComponentVideosSubscriptions({videos}){
                             </a>
                         )
                     })
+                    :""
                 }
             </article>
         </section>

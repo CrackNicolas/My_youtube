@@ -1,6 +1,6 @@
 .subscriptions{
     background-color: var(--color-font-primary);
-    padding: 80px 50px 50px 130px;
+    padding: 70px 50px 50px 130px;
     color: var(--color-text-primary);
 }
 .subscriptions .header{
@@ -16,7 +16,7 @@
 }
 .subscriptions .header .iconos{
     display: flex;
-    gap: 18px;
+    gap: 4px;
     align-items: center;
 }
 .subscriptions .header .iconos span{
@@ -25,22 +25,35 @@
     font-weight: 600;
     letter-spacing: 0.5px;
     color: var(--color-border-input-search);
+    padding: 10px 16px;
+    border-radius: 20px;
+}
+.subscriptions .header .iconos span:hover{
+    cursor: pointer;
+    background-color: var(--color-font-hover-button-reintentar);
 }
 .subscriptions .header .iconos ion-icon{
     width: 21px;
     height: 21px;
+    padding: 9px;
+    border-radius: 50%;
+}
+.subscriptions .header .iconos ion-icon:hover{
+    cursor: pointer;
+    background-color: var(--color-font-button-likes);
 }
 
 /**-------Videos--------**/
 .subscriptions .videos{
-    margin-top: 20px;
+    margin-top: 12px;
     display: flex;
     flex-wrap: wrap;
     padding: 0px;
     gap: 5px;
 }
 .subscriptions .videos .video{
-    width: 214.25px;
+    min-width: 216px;
+    max-width: 216px;
     height: 210px;
     padding: 0px;
     border-radius: 12px;
