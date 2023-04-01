@@ -6,6 +6,7 @@ import ComponentHashtag from './components/layouts/hashtag.js';
 import ComponentShorts from './components/layouts/shorts.js';
 import ComponentSubscriptions from './components/layouts/subscriptions.js';
 import ComponentLibrary from './components/layouts/library.js';
+import ComponentChannels from './components/layouts/channels.js';
 import ComponentSinInternet from './components/layouts/sin_internet.js';
 import './styles/global.css';
 
@@ -89,6 +90,13 @@ function App() {
           { 
             <GlobalContextProvider>
               <ComponentLibrary/>
+            </GlobalContextProvider>
+          } 
+        />
+        <Route exact path="/feed/channels" element=
+          { 
+            <GlobalContextProvider>
+              <ComponentChannels/>
             </GlobalContextProvider>
           } 
         />

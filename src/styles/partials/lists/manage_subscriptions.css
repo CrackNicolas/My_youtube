@@ -1,0 +1,57 @@
+.list-subscriptions{
+    padding: 80px 50px 50px 95px;
+    height: 100%;
+    display: block;
+    color: var(--color-text-primary);
+}
+.list-subscriptions .subscription{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 30px 0px 150px;
+    margin-bottom: 15px;
+}
+.list-subscriptions .subscription img{
+    width: 135px;
+    height: 135px;
+    border-radius: 50%;
+}
+.list-subscriptions .subscription .description{
+    line-height: 30px;
+    width: 422px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: -10px;
+}
+.list-subscriptions .subscription .description p:nth-child(1){
+    font-size: 18px;
+    font-weight: 500;
+}
+.list-subscriptions .subscription .description p:nth-child(2){
+    font-size: 12.5px;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+}
+.list-subscriptions .subscription .button{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 7px 10px;
+    border-radius: 20px;
+    background-color: var(--color-font-tertiary);
+}
+.list-subscriptions .subscription .button:hover{
+    cursor: pointer;
+    background-color: var(--color-font-hover-buttons);
+}
+.list-subscriptions .subscription .button span{
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.list-subscriptions .subscription .button ion-icon{
+    width: 21.5px;
+    height: 21.5px;
+}
+
+
