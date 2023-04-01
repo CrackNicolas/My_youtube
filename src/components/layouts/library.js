@@ -5,7 +5,6 @@ import ComponentNavLeft from '../partials/menus/left.js';
 import ComponentCover from '../partials/session_cover/cover.js';
 import ComponentSinInternet from './sin_internet.js';
 
-
 import {Global_context} from '../../context/global_context.js';
 
 export default function ComponentLibrary(){
@@ -14,10 +13,20 @@ export default function ComponentLibrary(){
     const [name_icono_selected_nav_left,setName_icono_selected_nav_left] = useState(-3);
 
     let capture_icono_nav_left = (id) => {
-        (id===-3)?
-            setName_icono_selected_nav_left(id)
-        :
-            window.location.href = (id==0)? "/" : (id==-1)? "/shorts" : "/feed/subscriptions";
+        switch(id){
+            case 0:
+                window.location.href = "/";
+            break;
+            case -1:
+                window.location.href = "/shorts";
+            break;
+            case -2:
+                window.location.href = "/feed/subscriptions";
+            break;
+            default:
+                setName_icono_selected_nav_left((id==0)? undefined : id);
+            break;
+        }
     }
 
     return (

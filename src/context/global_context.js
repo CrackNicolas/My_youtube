@@ -2,9 +2,9 @@ import React, {useState, useEffect} from "react";
 
 import { useLocation, useParams } from 'react-router-dom';
 
-import Load_channel_user from '../controllers/config.js';
 import Load_categories_general from '../controllers/categories.js';
 import Load_videos from '../controllers/videos.js';
+import Load_channel_user from '../controllers/config.js';
 
 import {get_search_param} from '../logic/functions.js';
 
@@ -15,7 +15,7 @@ export default function GlobalContextProvider({children}){
     let {channel_user} = useParams();
     let search_query = get_search_param(search);
 
-    const [user,setUser] = useState();
+    const [user,setUser] = useState(JSON.parse(localStorage.getItem('token')));
     const [internet,setInternet] = useState(true);
     const [categories,setCategories] = useState([]);
     const [categorie_selected,setCategorie_selected] = useState();
@@ -23,14 +23,9 @@ export default function GlobalContextProvider({children}){
 
     useEffect(() => {
         const load_user = async (channel) => {
-            try{
-                let new_channel_user = await Load_channel_user(channel);
-                setUser(new_channel_user);
-            }catch(error){
-                if(!error.response){
-                    setInternet(false);
-                }
-            }
+            let new_channel_user = await Load_channel_user(channel);
+            localStorage.setItem('token',JSON.stringify(new_channel_user));
+            setUser(new_channel_user);
         }
         const load_categories = async () => {
             try{
@@ -60,14 +55,23 @@ export default function GlobalContextProvider({children}){
             load_user(channel_user);
         }
         load_videos();
-
     },[categorie_selected])
 
     let capture_id_categorie = (id) => {
-        (id==0)?
-            setCategorie_selected(id)
-        :
-            window.location.href = (id==-1)? "/shorts" : (id==-2)? "/feed/subscriptions" : "/feed/library";
+        switch(id){
+            case -1:
+                window.location.href = "/shorts";
+            break;
+            case -2:
+                window.location.href = "/feed/subscriptions";
+            break;
+            case -3:
+                window.location.href = "/feed/library";
+            break;
+            default:
+                setCategorie_selected((id==0)? undefined : id);
+            break;
+        }
     }
 
     return (

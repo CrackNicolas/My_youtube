@@ -28,10 +28,20 @@ export default function ComponentShorts(){
     },[name_icono_selected_nav_left]);
 
     let capture_icono_nav_left = (id) => {
-        (id==-1)?
-            setName_icono_selected_nav_left(id)
-        :
-            window.location.href = (id==0)? "/" : (id==-2)? "/feed/subscriptions": "/feed/library";
+        switch(id){
+            case 0:
+                window.location.href = "/";
+            break;
+            case -2:
+                window.location.href = "/feed/subscriptions";
+            break;
+            case -3:
+                window.location.href = "/feed/library";
+            break;
+            default:
+                setName_icono_selected_nav_left((id==0)? undefined : id);
+            break;
+        }
     }
 
     return (
