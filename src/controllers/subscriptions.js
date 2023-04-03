@@ -4,7 +4,7 @@ import Service_channels from '../service/channels/index.js';
 import Service_search from '../service/searches/index.js';
 
 import Schema_video_presentation from '../schema/video.js';
-import Schema_channel from '../schema/channel.js';
+import Schema_channel, {Schema_channel_subscriptions} from '../schema/channel.js';
 
 export default async function Load_subscriptions(channel_id){
     let videos = [], promises = [];
@@ -12,8 +12,7 @@ export default async function Load_subscriptions(channel_id){
     let search_subscriptions = await Service_subscriptions.get_all(channel_id);
     if(search_subscriptions.data.items!=undefined){
         for(let subscription of search_subscriptions.data.items){
-            let channel_subcription = subscription.snippet.resourceId.channelId;
-            let channel = Service_channels.get_id(channel_subcription);
+            let channel = Service_channels.get_id(subscription.snippet.resourceId.channelId);
             promises.push(channel);
         }
 
@@ -43,4 +42,15 @@ export default async function Load_subscriptions(channel_id){
         }
     }
     return videos;
+}
+export async function Load_channels_subscriptions(channel_id){
+    let channels = [];
+    let search_subscriptions = await Service_subscriptions.get_all(channel_id);
+    if(search_subscriptions.data.items!=undefined){
+        for(let subscription of search_subscriptions.data.items){
+            let channel = await Service_channels.get_id(subscription.snippet.resourceId.channelId);
+            channels.push(Schema_channel_subscriptions.push(channel.data.items[0]));
+        }
+    }
+    return channels;
 }
