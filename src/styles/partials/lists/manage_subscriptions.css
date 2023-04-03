@@ -31,6 +31,12 @@
     font-weight: 500;
     color: var(--color-text-secondary);
 }
+.list-subscriptions .subscription .description p:nth-child(3){
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
 .list-subscriptions .subscription .button{
     display: flex;
     gap: 10px;

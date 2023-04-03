@@ -34,7 +34,7 @@ export class Schema_channel_subscriptions{
     static push(channel){
         return new Schema_channel_subscriptions(
             channel.id,
-            channel.snippet.channelTitle,
+            channel.snippet.title,
             channel.snippet.thumbnails.default.url,
             get_convert_cantidad(channel.statistics.subscriberCount) + " suscriptores",
             get_convert_cantidad(channel.statistics.videoCount) + " videos",
