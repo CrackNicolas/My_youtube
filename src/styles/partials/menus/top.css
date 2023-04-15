@@ -314,6 +314,9 @@
     }
 }
 @media (max-width : 600px){
+    .nav-top{
+        background-color: red;
+    }
     .nav-top .logo .menu, .nav-top .logo a p::after{
         display: none;
     }
