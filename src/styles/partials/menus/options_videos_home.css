@@ -31,3 +31,8 @@
     cursor: pointer;
     background-color: var(--color-font-cuartiary);
 }
+@media (max-width : 600px){
+    .options{
+        transform: translate(35px,-30px);
+    }            
+}
