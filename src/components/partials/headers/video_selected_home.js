@@ -82,6 +82,14 @@ export default function ComponentHeaderVideoSelected({video,channel}){
                                     <ion-icon name="arrow-redo-outline"></ion-icon>
                                     <p title="Compartir" name="Compartir">Compartir</p>
                                 </button>
+                                <button className="dowload">
+                                    <ion-icon name="download-outline"></ion-icon>
+                                    <p title="Descargar" name="Descargar">Descargar</p>
+                                </button>
+                                <button className="tranks">
+                                    <ion-icon name="heart-circle-outline"></ion-icon>
+                                    <p title="Muestra tu apodo con super Tranks" name="Muestra tu apodo con super Tranks">Gracias</p>
+                                </button>
                                 <button className="video-option" onClick={() => options_video()}>
                                     <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
                                 </button>

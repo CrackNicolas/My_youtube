@@ -39,3 +39,14 @@
     height: 16.5px;
     border-radius: 3px;
 }
+@media (max-width : 600px){
+    .videos-load{
+        gap: 60px;
+        justify-content: center;
+    }
+}
+@media (max-width : 400px){
+    .videos-load .video{
+        border-radius: 0px;
+    }
+}

@@ -61,7 +61,6 @@
     gap: 12px;
     margin-top: -7px;
 }
-
 .videos .video .icon-autor .icon-options{
     visibility: hidden;
     width: 5%;
@@ -127,4 +126,25 @@
     letter-spacing: 0.4px;
     font-family: Arial, Helvetica, sans-serif;
     color: var(--color-text-secondary);
+}
+/**-----------Celulares---------------**/
+@media (max-width : 600px){
+    .videos{
+        justify-content: center;
+        padding: 101px 0px 0px 0px;
+    }   
+    .videos a{
+        padding-left: 0px;
+    }
+}
+@media (max-width : 400px){
+    .videos a, .videos .video{
+        width: 100%;
+    }
+    .videos .video{
+        margin-bottom: 7px; 
+    } 
+    .videos .video .imagen, .videos .video .imagen img{
+        border-radius: 0px;
+    }
 }

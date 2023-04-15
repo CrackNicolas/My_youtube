@@ -35,3 +35,8 @@
 .nav-left ion-icon{
     color: var(--color-text-primary);
 }
+@media (max-width : 600px){
+    .nav-left{
+        display: none;
+    }
+}

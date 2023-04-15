@@ -96,15 +96,33 @@
 }
 .nav-top .search .micro{
     order: 4;
-    width: 23px;
-    height: 23px;
+    max-width: 23px;
+    min-width: 23px;
+    min-height: 23px;
+    max-height: 23px;
     padding: 10px;
     margin-left: 7px;
 }
-.nav-top .search .micro:hover{
+.nav-top .search .micro:hover, .nav-top .icons .micro-oculto:hover{
     cursor: pointer;
     border-radius: 50%;
     background-color: var(--color-font-tertiary);
+}
+.nav-top .icons .micro-oculto, .nav-top .icons .icono-buscador-oculto, .nav-top .icons .connect-dispositivo{
+    display: none;
+    max-width: 23px;
+    min-width: 23px;
+    min-height: 23px;
+    max-height: 23px;
+    padding: 10px;
+}
+.nav-top .icons{
+    display: flex;
+    justify-content: flex-end;
+    width: 18%;
+    height: 42px;
+    gap: 10px;
+    padding: 0px;
 }
 .nav-top .icons ion-icon{
     width: 23px;
@@ -115,14 +133,6 @@
     cursor: pointer;
     border-radius: 50%;
     background-color: var(--color-font-tertiary);
-}
-.nav-top .icons{
-    display: flex;
-    justify-content: flex-end;
-    width: 18%;
-    height: 42px;
-    gap: 10px;
-    padding: 0px;
 }
 /**---------Load icons-----------**/
 .nav-top .load-icons{
@@ -262,4 +272,72 @@
     font-size: 14.5px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
+}
+@media (max-width : 1000px){
+    .nav-top .search{
+        width: 60%;
+    }
+    .nav-top .icons{
+        width: 15%;
+    }
+    .nav-top .logo{
+        width: 25%;
+    }
+}
+@media (max-width : 810px){
+    .nav-top .search{
+        width: 50%;
+    }
+    .nav-top .icons{
+        width: 20%;
+    }
+    .nav-top .logo{
+        width: 30%;
+    }
+}
+@media (max-width : 730px){
+    .nav-top .logo{
+        width: 70%;
+    }
+    .nav-top .icons{
+        gap: 0px;
+        width: 30%;
+    }
+    .nav-top .search{
+        display: none;
+    }
+    .nav-top .icons .micro-oculto{
+        display: block;
+    }
+    .nav-top .icons .icono-buscador-oculto{
+        display: block;
+    }
+}
+@media (max-width : 600px){
+    .nav-top .logo .menu, .nav-top .logo a p::after{
+        display: none;
+    }
+    .nav-top .logo a{
+        margin-left: 6px;
+    }
+    .nav-top .perfil{
+        margin: auto 16px auto 6px;
+    }
+    .nav-top .icons .connect-dispositivo{
+        order: 1;
+        display: block;
+    }
+    .nav-top .icons .notification{
+        order: 2;
+    }
+    .nav-top .icons .icono-buscador-oculto{
+        order: 3;
+        margin-left: 21px;
+    }
+    .nav-top .icons .perfil{
+        order: 4;
+    }
+    .nav-top .icons .create-video, .nav-top .icons .micro-oculto{
+        display: none;
+    }
 }

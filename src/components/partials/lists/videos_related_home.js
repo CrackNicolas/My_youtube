@@ -29,10 +29,6 @@ export default function ComponentListVideosRelated({id_playlist}){
         
     },[id_playlist]);
 
-    let watch_video = (id) => {
-        return "/watch/"+id;
-    }
-
     const visibility_option = (e,index) => {
         e.preventDefault();
         setOption_selected( (index===option_selected)? undefined : index);
@@ -49,7 +45,7 @@ export default function ComponentListVideosRelated({id_playlist}){
             {
                 playlists_channel_video_selected.map((video,index) => {
                     return (
-                        <a href={watch_video(video.id)} className="player-favorite" key={index}>
+                        <a href={"/watch/"+video.id} className="player-favorite" key={index}>
                             <div className="imagen">
                                 <img src={video.url_imagen} alt="Video relacionado con el video seleccionado para reproducir"/>
                                 <div className="icons">

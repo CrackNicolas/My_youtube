@@ -1,6 +1,6 @@
 .list-comments{
     margin-top: 20px;
-    width: 715px;
+    width: 100%;
     display: block;
 }
 .list-comments .datails-comment{
@@ -10,7 +10,8 @@
     margin-bottom: 10px;
 }
 .list-comments .datails-comment .icon{
-    width: 7.5%;
+    min-width: 55px;
+    max-width: 55px;
 }
 .list-comments .datails-comment img{
     width: 40px;
@@ -41,7 +42,7 @@
     cursor: pointer;
 }
 .list-comments .datails-comment .description{
-    width: 92.5%;
+    width: calc(100% - 55px);
     color: var(--color-text-primary);
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 500;

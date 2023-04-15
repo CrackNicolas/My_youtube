@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useContext } from "react";
+import { useMediaQuery } from 'react-responsive'
 import { useParams } from "react-router-dom";
 
 import {Global_context} from '../../context/global_context.js';
@@ -56,15 +57,21 @@ export default function ComponentWatch(){
 
     let capture_id_categorie = (id) => {
         setCategorie_selected((id==0)? undefined : id);
-    }
+    } 
+
+    const isMobile = useMediaQuery({query: '(max-width: 600px)'})
 
     return (
         (context_global.internet)? 
             <React.Fragment>
-                <ComponentNavTop search_query={context_global.search_query} user={context_global.user}/>
+                <ComponentNavTop search_query={context_global.search_query} user={context_global.user} style={(isMobile)? { visibility : "hidden"} : { visibility : "visible"}}/>
                 <section className="section-view-video">
                     <section className="view_videos">
                         <ComponentHeaderVideoSelected video={video_selected} channel={channel_video_selected}/>      
+                        <section className="views-videos-related-two">
+                            <ComponentNavCategoriesVideosRelated categories_playlists={categories} selected_categorie={capture_id_categorie} />
+                            <ComponentListVideosRelated id_playlist={categorie_selected}/>
+                        </section>
                         <article className="comments">
                             <ComponentHeaderComments comments_count={video_selected.comments_count}/>
                             <ComponentListComments comments={comments_video_selected} icono="chevron"/>

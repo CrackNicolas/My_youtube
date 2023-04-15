@@ -13,7 +13,7 @@ import {Load_suggestions} from '../../../controllers/videos.js';
 
 import '../../../styles/partials/menus/top.css';
 
-export default function ComponentNavTop({search_query,user}){
+export default function ComponentNavTop({search_query,user,style}){
     const [styles, setStyles] = useState(Schema_styles_nav_top.model);
     const [action_menu,setAction_menu] = useState(true);
     const [name_selected_icon, setName_selected_icon] = useState();
@@ -51,7 +51,7 @@ export default function ComponentNavTop({search_query,user}){
     }
 
     return (
-        <nav className="nav-top">
+        <nav className="nav-top" style={style}>
             <div className="logo">
                 <div className="menu" onClick={() => view_menu()}>
                     <ion-icon id="icon-menu" name="menu-outline"></ion-icon>
@@ -83,6 +83,9 @@ export default function ComponentNavTop({search_query,user}){
                     </div>
                 :
                     <div className="icons">
+                        <ion-icon class="connect-dispositivo" name="desktop-outline"></ion-icon>
+                        <ion-icon class="icono-buscador-oculto" name="search-outline"></ion-icon>
+                        <ion-icon onClick={(e) => visibility_options(e)} class="micro-oculto" name={(name_selected_icon==="mic-outline")? "mic":"mic-outline"} title="Haz búsquedas por voz"></ion-icon>
                         <div className="create-video">
                             <ion-icon onClick={(e) => visibility_options(e)} name={(name_selected_icon==="videocam-outline")? "videocam":"videocam-outline" } title="Crear"></ion-icon>
                         </div>

@@ -14,6 +14,9 @@
 .nav-categories::-webkit-scrollbar{
     height: 0px;
 }
+.nav-categories .explorar{
+    display: none;
+}
 .nav-categories #selected{
     background-color: var(--color-text-primary);
     color: var(--color-font-primary);
@@ -77,4 +80,35 @@
 }
 .next ion-icon{
     right: 25px;
+}
+@media (min-width : 1700px){
+    .next{
+        display: none;
+    }   
+}
+@media (max-width : 600px){
+    .prev,.next{
+        display: none;
+    }
+    .nav-categories{
+        width: 100%;
+        left: 0px;
+        padding: 5px 15px 5px 10px;
+    }
+    .nav-categories .explorar{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        border-radius: 1%;
+        padding-left: 3px;
+        padding-right: 7px;
+    }
+    .nav-categories .delimiter{
+        border-left: 1px solid var(--color-font-secondary);
+    }
+    .nav-categories .explorar ion-icon{
+        width: 20px;
+        height: 20px;
+    }
 }

@@ -28,21 +28,23 @@
     margin-top: 20px;
 }
 .view_videos .comments .body .add-comment{
-    width: 715px;
+    width: 100%;
     display: flex;
-    flex-wrap: wrap;
+    justify-content: space-between;
 }
 .view_videos .comments .body .add-comment img{
-    width: 40px;
-    height: 40px;
+    min-width: 40px;
+    max-width: 40px;
+    min-height: 40px;
+    max-height: 40px;
     border-radius: 50%;
-    max-width: 5.6%;
-    min-width: 5.6%;
+}
+.view_videos .comments .body .content-add-comment{
+    width: calc(100% - 55px);
 }
 .view_videos .comments .body .add-comment textarea{
     outline: none;
-    margin-left: 15px;
-    width: 92.3%;
+    width: 100%;
     height: 25px;
     border: none;
     border-bottom: 1.1px solid var(--color-text-secondary);
@@ -57,25 +59,22 @@
 }
 .view_videos .comments .body .push-comment{
     display: flex;
-    margin-left: 6.8%;
-    margin-top: -7px;
-    width: 100%;
+    margin-top: 4px;
     visibility: hidden;
     padding: 2px 0px;
 }
 .view_videos .comments .body .push-comment ion-icon{
     width: 22px;
     height: 22px;
-    padding: 6px 4px;
+    padding: 6px;
     color: var(--color-text-primary);
-    width: 4%;
     margin: auto;
 }
 .view_videos .comments .body .push-comment .buttons{
     display: flex;
     justify-content: flex-end;
     gap: 10px;
-    width: 96%;
+    width: 100%;
 }
 .view_videos .comments .body .push-comment .buttons .add{
     color: var(--color-text-cuartiary);

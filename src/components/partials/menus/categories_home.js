@@ -33,6 +33,11 @@ export default function ComponentNavCategories({categories,categorie_selected}){
           : ""
         }
         <nav className="nav-categories" style={styles.scroll_x}>
+          <a href="" className="categori explorar">
+            <ion-icon name="compass-outline"></ion-icon>
+            <span>Explorar</span>
+          </a>
+          <span className="delimiter"></span>
           {
             categories.map((categorie,index) => {
               return (
