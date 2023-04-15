@@ -68,3 +68,10 @@
     cursor: default;
     background: transparent;
 }
+@media (max-width : 600px){
+    .items-management{
+        width: 100%;
+        border-radius: 0px;
+        transform: translate(0px,-10px);
+    }
+}

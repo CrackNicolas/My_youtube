@@ -277,7 +277,7 @@
     .nav-top .search{
         width: 60%;
     }
-    .nav-top .icons{
+    .nav-top .icons, .nav-top .acceder{
         width: 15%;
     }
     .nav-top .logo{
@@ -288,7 +288,7 @@
     .nav-top .search{
         width: 50%;
     }
-    .nav-top .icons{
+    .nav-top .icons, .nav-top .acceder{
         width: 20%;
     }
     .nav-top .logo{
@@ -299,7 +299,7 @@
     .nav-top .logo{
         width: 70%;
     }
-    .nav-top .icons{
+    .nav-top .icons, .nav-top .acceder{
         gap: 0px;
         width: 30%;
     }
