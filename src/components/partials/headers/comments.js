@@ -12,7 +12,7 @@ export default function ComponentHeaderComments({comments_count}){
         setOptions_selected(!options_selected);
     }
     const get_style = () => {
-        return (options_selected)? {visibility: "visible"} : {visibility: "hidden"};
+        return (options_selected)? {display: "block"} : {display: "none"};
     }
     
     return (

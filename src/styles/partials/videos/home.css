@@ -142,7 +142,7 @@
         visibility: visible;
     }
 }
-@media (max-width : 500px){
+@media (max-width : 520px){
     .videos a, .videos .video{
         width: 100%;
     }

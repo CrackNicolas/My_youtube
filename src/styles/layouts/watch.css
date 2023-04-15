@@ -276,7 +276,8 @@
     margin-bottom: -15px;
 }
 .views-videos-related-two .videos-favorites{
-    height: 100vh;
+    height: auto;
+    margin-bottom: 80px;
 }
 .views-videos-related{
     width: 425px;
@@ -368,5 +369,13 @@
         overflow-x: hidden;
         width: 100%;
         padding: 0px;
+    }
+    .view_videos .description-view-video, .views-videos-related-two{
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .view_videos .title, .view_videos .details, .comments{
+        padding-left: 10px;
+        padding-right: 10px;
     }
 }

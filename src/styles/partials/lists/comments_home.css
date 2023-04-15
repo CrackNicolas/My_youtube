@@ -1,5 +1,6 @@
 .list-comments{
     margin-top: 20px;
+    margin-bottom: 30px;
     width: 100%;
     display: block;
 }
@@ -132,14 +133,14 @@
     display: block;
 }
 .list-comments .datails-comment-replies{
-    width: 92%;
+    width: calc(100% - 50px);
     display: flex;
     margin-left: 8%;
     align-items: flex-start;
     margin-bottom: 20px;
 }
 .list-comments .datails-comment-replies .icon{
-    width: 7.5%;
+    width: 50px;
 }
 .list-comments .datails-comment-replies img{
     width: 30px;

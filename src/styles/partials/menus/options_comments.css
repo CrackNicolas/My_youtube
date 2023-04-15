@@ -1,7 +1,6 @@
 .nav_filter_comments{
     position: absolute;
-    visibility: hidden;
-    display: block;
+    display: none;
     width: 180px;
     border-radius: 10px;
     background-color: var(--color-font-secondary);

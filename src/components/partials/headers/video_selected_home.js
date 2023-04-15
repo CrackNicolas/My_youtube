@@ -30,17 +30,16 @@ export default function ComponentHeaderVideoSelected({video,channel}){
         setOptions_selected_video(!options_selected_video);
     }
     const get_style_options_video = () => {
-        return (options_selected_video)? { visibility: "visible" } : { visibility: "hidden" };
+        return (options_selected_video)? { display: "block" } : { display: "none" };
     }
 
     const get_style_option_share = (index) => {
-        return (option_selected_share===index)? { visibility: "visible" } : { visibility: "hidden" };
+        return (option_selected_share===index)? { display: "block" } : { display: "none" };
     }
     const visibility_option_share = (e,index) => {
         e.preventDefault();
         setOption_selected_share( (index===option_selected_share)? undefined : index);
     }
-
     const capture_selected_likes = (item) => {
         setSelected_like((selected_like==item)? 0 : item);
     }

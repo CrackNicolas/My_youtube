@@ -36,3 +36,10 @@
         transform: translate(35px,-30px);
     }            
 }
+@media (max-width : 500px){
+    .options{
+        margin: 2px;
+        width: 99%;
+        transform: translate(0px,-30px);
+    } 
+}
