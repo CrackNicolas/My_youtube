@@ -79,9 +79,6 @@
         border-radius: 0px;
         transform: translate(0px,-10px);
     }
-    .items-management .items{
-        height: 100%;
-    }
     .items-management .close-management{
         display: block;
     }
