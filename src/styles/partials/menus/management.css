@@ -68,11 +68,18 @@
     cursor: default;
     background: transparent;
 }
+.items-management .close-management{
+    display: none;
+    width: 100%;
+}
 @media (max-width : 600px){
     .items-management{
         width: 100%;
         height: 100.3vh;
         border-radius: 0px;
         transform: translate(0px,-10px);
+    }
+    .items-management .close-management{
+        display: block;
     }
 }

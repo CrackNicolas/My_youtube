@@ -93,8 +93,8 @@ export default function ComponentNavTop({search_query,user,style}){
                         <div className="notification">
                             <ion-icon onClick={(e) => visibility_options(e)} name={(name_selected_icon==="notifications-outline")? "notifications":"notifications-outline" } title="Notificaciones"></ion-icon>
                         </div>
-                        <img onClick={() => setVisibility_management(!visibility_management)} className="perfil" src={user.logo} alt="Perfil del autor"/>          
-                        <ComponentNavManagement style={style_management}/>     
+                        <img onClick={() => setVisibility_management(true)} className="perfil" src={user.logo} alt="Perfil del autor"/>          
+                        <ComponentNavManagement style={style_management} setVisibility_management={setVisibility_management}/>     
                         <ComponentNavOptionsNotification get_style={get_style}/>
                     </div>
             }

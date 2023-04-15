@@ -1,8 +1,11 @@
 import '../../../styles/partials/menus/management.css';
 
-export default function ComponentNavManagement({style}){
+export default function ComponentNavManagement({style,setVisibility_management}){
     return (
         <section className="items-management" style={style()}>
+            <article onClick={() => setVisibility_management(false)} className='close-management'>
+                <ion-icon name="close-outline"></ion-icon>
+            </article>
             <article className="header">
                 <div>
                     <img src="/images/my_perfil.jpg"/>
