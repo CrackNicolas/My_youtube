@@ -78,9 +78,6 @@
         background: var(--color-font-button-likes);
     }
 }
-.videos .video:hover .icon-options{
-    visibility: visible;
-}
 .videos .video .icon-autor img{
     max-width: 35px;
     min-width: 35px;
@@ -128,6 +125,11 @@
     color: var(--color-text-secondary);
 }
 /**-----------Celulares---------------**/
+@media (min-width : 600px){
+    .videos .video:hover .icon-options{
+        visibility: visible;
+    }
+}
 @media (max-width : 600px){
     .videos{
         justify-content: center;
@@ -135,6 +137,9 @@
     }   
     .videos a{
         padding-left: 0px;
+    }
+    .videos .video .icon-autor .icon-options{
+        visibility: visible;
     }
 }
 @media (max-width : 400px){

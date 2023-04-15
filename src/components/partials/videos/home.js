@@ -6,14 +6,6 @@ import ComponentVideosLoad from '../before_load/videos_home.js';
 
 import '../../../styles/partials/videos/home.css';
 
-
-/*
-<ComponentNavOptionsVideo get_style_option={get_style_option} index={index}/>
-*/
-
-
-
-
 export default function ComponentVideosLayouts({videos}){
   let set_time;
   const [option_selected, setOption_selected] = useState();
@@ -24,7 +16,7 @@ export default function ComponentVideosLayouts({videos}){
     setOption_selected( (index===option_selected)? undefined : index);
   }
   const get_style_option = (index) => {
-    return (option_selected===index)? { visibility: "visible" } : { visibility: "hidden" };
+    return (option_selected===index)? { display: "block" } : { display: "none" };
   }
   const get_style_icon_option = (index) => {
     return (option_selected===index)? { animation: "animate_click_icon_options 0.2s" } : { };
@@ -76,6 +68,7 @@ export default function ComponentVideosLayouts({videos}){
                   <div className="icon-options">
                     <ion-icon onClick={(e) => visibility_option(e,index)} style={get_style_icon_option(index)} name="ellipsis-vertical"></ion-icon>
                   </div>
+                  <ComponentNavOptionsVideo get_style_option={get_style_option} index={index}/>
                 </div>
                 <div className="name-autor">
                   <p>{video.channel.title}</p>

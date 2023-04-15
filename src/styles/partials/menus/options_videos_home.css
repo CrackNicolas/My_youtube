@@ -1,7 +1,6 @@
 .options{
-    visibility: hidden;
+    display: none;
     position: absolute;
-    display: block;
     width: 285px;
     border-radius: 10px;
     background-color: var(--color-font-secondary);
