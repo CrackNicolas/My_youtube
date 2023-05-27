@@ -26,6 +26,7 @@ export default function GlobalContextProvider({children}){
             let new_channel_user = await Load_channel_user(channel);
             localStorage.setItem('token',JSON.stringify(new_channel_user));
             setUser(new_channel_user);
+            window.location.href = "/";
         }
         const load_categories = async () => {
             try{
