@@ -1,6 +1,12 @@
 import '../../../styles/partials/menus/management.css';
 
 export default function ComponentNavManagement({style,setVisibility_management,user}){
+    
+    const cesion_close = () => {
+        localStorage.removeItem('token');
+        window.location.href = "/";
+    }
+    
     return (
         <section className="items-management" style={style()}>
             <article onClick={() => setVisibility_management(false)} className='close-management'>
@@ -29,7 +35,7 @@ export default function ComponentNavManagement({style,setVisibility_management,u
                     <ion-icon name="id-card-outline"></ion-icon>
                     <span>Cambiar de cuenta</span>
                 </a>
-                <a href="" className="item">
+                <a onClick={() => cesion_close()} className="item">
                     <ion-icon name="log-in-outline"></ion-icon>
                     <span>Cerrar sesíon</span>
                 </a>

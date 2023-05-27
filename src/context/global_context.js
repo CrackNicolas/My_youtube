@@ -15,7 +15,7 @@ export default function GlobalContextProvider({children}){
     let {channel_user} = useParams();
     let search_query = get_search_param(search);
 
-    const [user,setUser] = useState(JSON.parse(localStorage.getItem('token')));
+    const [user,setUser] = useState((localStorage.getItem('token'))? JSON.parse(localStorage.getItem('token')) : undefined);
     const [internet,setInternet] = useState(true);
     const [categories,setCategories] = useState([]);
     const [categorie_selected,setCategorie_selected] = useState();
