@@ -57,7 +57,7 @@ export default function GlobalContextProvider({children}){
         load_videos();
     },[categorie_selected])
 
-    let capture_id_categorie = (id) => {
+    const capture_id_categorie = (id) => {
         switch(id){
             case -1:
                 window.location.href = "/shorts";

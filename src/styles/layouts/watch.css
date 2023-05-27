@@ -378,4 +378,12 @@
         padding-left: 10px;
         padding-right: 10px;
     }
+    .view_videos .details .btn-likes, .view_videos .details .btn-no-likes{
+        display: block;
+        height: 50px;
+    }
+    .view_videos .details .share, .view_videos .details .dowload, .view_videos .details .tranks{
+        display: block;
+        height: 50px;
+    }
 }

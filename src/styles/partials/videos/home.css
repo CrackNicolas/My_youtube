@@ -63,7 +63,6 @@
 }
 .videos .video .icon-autor .icon-options{
     visibility: hidden;
-    width: 5%;
     text-align: center;
 }
 .videos .video .icon-autor .icon-options ion-icon{
@@ -83,10 +82,9 @@
     min-width: 35px;
     height: 35px;
     border-radius: 50px;
-    width: 18%;
 }
 .videos .video .icon-autor p{
-    width: 75%;
+    width: calc(100% - 50px);
     line-height: 20px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 13.3px;

@@ -314,6 +314,9 @@
     }
 }
 @media (max-width : 600px){
+    .nav-top .logo, .nav-top .acceder{
+        width: 50%;
+    }
     .nav-top .logo .menu, .nav-top .logo a p::after{
         display: none;
     }

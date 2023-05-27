@@ -1,7 +1,8 @@
-import React from 'react';
+import { Fragment } from 'react';
 import '../../../styles/partials/menus/toggler.css';
 
 export default function ComponentNavToggler({styles,user}){
+    
     return (
         <div className="items-menu" style={styles}>
             <div className="logo">
@@ -29,7 +30,7 @@ export default function ComponentNavToggler({styles,user}){
                 <div className="linea-item">__________________________</div>
                 {
                     (user==undefined)?
-                        <React.Fragment>
+                        <Fragment>
                             <a href="/feed/library" className="item">
                                 <ion-icon name="library-outline"></ion-icon>
                                 <span>Biblioteca</span>
@@ -48,9 +49,9 @@ export default function ComponentNavToggler({styles,user}){
                                     <span>Acceder</span>
                                 </a>
                             </div>
-                        </React.Fragment>
+                        </Fragment>
                     :
-                        <React.Fragment>
+                        <Fragment>
                             <a className="item">
                                 <ion-icon name="library-outline"></ion-icon>
                                 <span>Mi biblioteca</span>
@@ -75,17 +76,7 @@ export default function ComponentNavToggler({styles,user}){
                                 <ion-icon name="play-circle-outline"></ion-icon>
                                 <span>Videos importantes</span>
                             </a>
-                            <div className="linea-item">__________________________</div>
-                            <p className="sub-title-item">Suscripciones</p>
-                            <a className="item item-subscription">
-                                <img src="/images/my_perfil.jpg" alt=""/>
-                                <span>Canales</span>
-                            </a>
-                            <a className="item item-subscription">
-                                <img src="/images/my_perfil.jpg" alt=""/>
-                                <span>Canales</span>
-                            </a>
-                        </React.Fragment>
+                        </Fragment>
                 }
                 <div className="linea-item">__________________________</div>
                 <p className="sub-title-item">Explorar</p>

@@ -1,6 +1,6 @@
 import '../../../styles/partials/menus/management.css';
 
-export default function ComponentNavManagement({style,setVisibility_management}){
+export default function ComponentNavManagement({style,setVisibility_management,user}){
     return (
         <section className="items-management" style={style()}>
             <article onClick={() => setVisibility_management(false)} className='close-management'>
@@ -8,11 +8,11 @@ export default function ComponentNavManagement({style,setVisibility_management})
             </article>
             <article className="header">
                 <div>
-                    <img src="/images/my_perfil.jpg"/>
+                    <img src={user.logo}/>
                 </div>
                 <div>
-                    <p>Alejo Beltran</p>
-                    <p>@alejobeltran</p>
+                    <p>{user.title}</p>
+                    <p>@</p>
                     <p>Gestionar tu cuenta de Google</p>
                 </div>
             </article>
