@@ -14,7 +14,7 @@ export default function ComponentNavOptionsNotification({get_style}){
                 <div className="item-notification">
                     <p>.</p>
                     <p>
-                        <img src="/images/my_perfil.jpg" alt=""></img>
+                        <img src="/images/youtube.png" alt=""></img>
                     </p>
                     <p>
                         Pedsdads   dad as ds ad sa ds ad sad sa d asd a sd sad as
@@ -24,7 +24,7 @@ export default function ComponentNavOptionsNotification({get_style}){
                         </span>
                     </p>
                     <p>
-                        <img src="/images/my_perfil.jpg" alt=""></img>
+                        <img src="/images/youtube.png" alt=""></img>
                     </p>
                     <p>
                         <ion-icon name="ellipsis-vertical"></ion-icon>
@@ -33,7 +33,7 @@ export default function ComponentNavOptionsNotification({get_style}){
                 <div className="item-notification">
                     <p>.</p>
                     <p>
-                        <img src="/images/my_perfil.jpg" alt=""></img>
+                        <img src="/images/youtube.png" alt=""></img>
                     </p>
                     <p>
                         Pedsdads   dad as ds ad sa ds ad sad sa d asd a sd sad as
@@ -43,7 +43,7 @@ export default function ComponentNavOptionsNotification({get_style}){
                         </span>
                     </p>
                     <p>
-                        <img src="/images/my_perfil.jpg" alt=""></img>
+                        <img src="/images/youtube.png" alt=""></img>
                     </p>
                     <p>
                         <ion-icon name="ellipsis-vertical"></ion-icon>

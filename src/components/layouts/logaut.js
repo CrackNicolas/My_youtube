@@ -13,29 +13,17 @@ export default function ComponentLogaut(){
         <section className="logaut">
             <article className="main">
                 <p>
-                    <img src="/images/google.png"></img>
+                    <img src="/images/youtube.png"></img>
                 </p>
                 <p>Acceder</p>
                 <p>Continuar con YouTube</p>
-                <input type="text" onChange={(e) => capture_channel(e)} placeholder="Correo electrónico o teléfono"></input>
-                <span>¿Olvidaste el correo electrónico?</span>
-                <p className="description">
-                    ¿Esta no es tu computadora? Usa el modo de invitado para navegar de forma privada.
-                    <strong>Más información</strong>
-                </p>
-                <div className='buttons'>
-                    <a href="">Crear cuenta</a>
-                    <a href={"/"+id_channel}>Siguiente</a>
+                <input type="text" onChange={(e) => capture_channel(e)} placeholder="Id de su canal..."></input>
+                <div className='button'>
+                    <a href={"/"+id_channel}>
+                        <ion-icon name="send-outline"></ion-icon>
+                        <span>Acceder</span>
+                    </a>
                 </div>
-            </article>
-            <article className="footer">
-                <a>
-                    <span>Español (Latinoamérica)</span>
-                    <ion-icon name="caret-down-outline"></ion-icon>
-                </a>
-                <a>Ayuda</a>
-                <a>Privacidad</a>
-                <a>Condiciones</a>
             </article>
         </section>
     )

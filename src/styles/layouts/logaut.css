@@ -1,17 +1,17 @@
 .logaut{
     margin: 0px;
-    padding-top: 40px;
+    padding-top: 50px;
     height: 100vh;
     width: 100%;
     background: var(--color-text-icon-youtube);
 }
 .logaut .main{
-    width: 450px;
-    height: 510px;
+    width: 400px;
+    height: 400px;
     margin: auto;
-    padding: 50px 37.5px 60px 37.5px;
+    padding: 30px 20px 60px 20px;
     border-radius: 10px;
-    border: 0.1px solid var(--color-font-hover-buttons);
+    border: 1px solid var(--color-font-hover-buttons);
 }
 .logaut .main p:nth-child(1), .logaut .main p:nth-child(2), .logaut .main p:nth-child(3){
     text-align: center;
@@ -23,8 +23,8 @@
     color: var(--color-text-primary-logaut);
 }
 .logaut .main p:nth-child(1) img{
-    width: 75px;
-    height: 25px;
+    width: 90px;
+    height: 90px;
 }
 .logaut .main p:nth-child(2){
     font-size: 24px;
@@ -41,87 +41,46 @@
     width: 100%;
     border-radius: 5px;
     border: 0.1px solid var(--color-font-hover-buttons);
-    padding: 20px 15px;
+    padding: 15px 15px;
+    outline: none;
     color: var(--color-text-secondary);
 }
 .logaut .main input:hover{
     border: 1px solid var(--color-text-primary-logaut);
 }
-.logaut .main span{
-    font-size: 14px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 500;
-    color: var(--color-text-primary-logaut);
+.logaut .main .button{
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px 0px;
 }
-.logaut .main .description{
-    margin-top: 40px;
-    font-weight: 500;
-    font-size: 14px;
-    font-family: Arial, Helvetica, sans-serif;
-    color: var(--color-font-primary);
-    opacity: 0.7;
-    line-height: 20px;
-}
-.logaut .main .description strong{
-    padding: 2px 3px;
-    margin-left: 3px;
-    color: var(--color-text-primary-logaut);
-}
-.logaut .main .description strong:hover{
-    cursor: pointer;
-    box-shadow: 0 1px 5px 1px var(--color-text-primary-logaut);
-    border-radius: 2px;
-}
-.logaut .main .buttons{
+.logaut .main .button a{
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    margin-top: 50px;
-}
-.logaut .main .buttons a:nth-child(1){
+    justify-content: center;
+    gap: 10px;
     text-decoration: none;
-    font-size: 14px;
-    color: var(--color-text-primary-logaut);
     font-family: Arial, Helvetica, sans-serif;
-    font-weight: 600;
-    letter-spacing: 0.3px;
-}
-.logaut .main .buttons a:nth-child(2){
-    text-decoration: none;
-    padding: 10px 25px;
+    padding: 7px 17px;
+    letter-spacing: 0.5px;
     border-radius: 5px;
-    font-size: 14px;
-    letter-spacing: 0.3px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 600;
-    color: var(--color-text-primary);
     background-color: var(--color-text-primary-logaut);
+    color: var(--color-text-icon-youtube);
 }
-.logaut .main .buttons a:nth-child(1):hover, .logaut .main .buttons a:nth-child(2):hover{
+.logaut .main .button a:hover{
     cursor: pointer;
     opacity: 0.9;
 }
-.logaut .footer{
-    width: 450px;
-    height: 50px;
-    margin: auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    opacity: 0.9;
+.logaut .main .button a ion-icon{
+    transition-duration: 300ms;
 }
-.logaut .footer a{
-    text-decoration: none;
-    padding: 10px 5px;
-    font-size: 12.5px;
-    font-weight: 500;
-    font-family: Arial, Helvetica, sans-serif;
-}
-.logaut .footer a:nth-child(1){
-    display: flex;
-    align-items: center;
-    gap: 30px;
+.logaut .main .button a:hover ion-icon{
+    transition-timing-function: ease-in-out;
+    transform: rotate(-30deg);
 }
 
-
-
+@media (max-width : 410px){
+    .logaut .main{
+        width: 300px;
+        padding: 30px 20px 60px 20px;
+    }
+}

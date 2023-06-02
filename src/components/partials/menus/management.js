@@ -1,6 +1,6 @@
 import '../../../styles/partials/menus/management.css';
 
-export default function ComponentNavManagement({style,setVisibility_management,user}){
+export default function ComponentNavManagement({style,user}){
     
     const cesion_close = () => {
         localStorage.removeItem('token');
@@ -9,9 +9,6 @@ export default function ComponentNavManagement({style,setVisibility_management,u
     
     return (
         <section className="items-management" style={style()}>
-            <article onClick={() => setVisibility_management(false)} className='close-management'>
-                <ion-icon name="close-outline"></ion-icon>
-            </article>
             <article className="header">
                 <div>
                     <img src={user.logo}/>

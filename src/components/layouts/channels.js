@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from 'react';
+import { Fragment, useContext, useState, useEffect } from 'react';
 
 import ComponentNavTop from '../partials/menus/top.js';
 import ComponentNavLeft from '../partials/menus/left.js';
@@ -41,11 +41,11 @@ export default function ComponentChannels(){
 
     return (
         (context_global.internet)?
-            <React.Fragment>
+            <Fragment>
                 <ComponentNavTop search_query={context_global.search_query} user={context_global.user}/>
                 <ComponentNavLeft capture_icono_nav_left={capture_icono_nav_left} item_selected="-4"/>
                 <ComponentListSubscriptions channels={channels}/>
-            </React.Fragment>
+            </Fragment>
         :
             <ComponentSinInternet/>
     )
