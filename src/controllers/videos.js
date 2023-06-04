@@ -5,9 +5,9 @@ import Service_playlists from '../service/playlists/index.js';
 import Schema_video_presentation, {Schema_video_watch, Schema_video_short} from '../schema/video.js';
 import Schema_channel from '../schema/channel.js';
 
-export default async function Load_videos(search_query,categorie_selected,count_video,format_imagen){
+export default async function Load_videos(search_query,categorie_selected,count_video,format_imagen,page){
     let new_videos = [], promises = [], channel;
-    const videos_search = await Service_videos.get_all(search_query,categorie_selected,count_video);
+    const videos_search = await Service_videos.get_all(search_query,categorie_selected,count_video,page);
             
     for(let video of videos_search.data.items){
         let new_channel = Service_channels.get_id(video.snippet.channelId);
@@ -39,7 +39,10 @@ export default async function Load_videos(search_query,categorie_selected,count_
             new_videos.push(Schema_video_presentation.push(video,channel,format_imagen));
         }
     }
-    return new_videos;
+    return {
+        videos : new_videos,
+        page : videos_search.data.nextPageToken
+    }
 }
 export async function Load_video(id_video){
     let search_video_selected = await Service_videos.get_all_id(id_video);

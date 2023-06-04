@@ -79,13 +79,11 @@ export default function ComponentVideosLayouts({videos}){
                 <div className="visualizaciones">
                   <p>{video.view_count} .{video.time_elapsed}</p>
                   {
-                    video.live?
+                    video.live && 
                       <div className="live">
                         <ion-icon name="radio-outline"></ion-icon>
                         <span>EN DIRECTO</span>
                       </div>
-                    : 
-                      ""
                   }
                 </div>
               </article>

@@ -20,42 +20,60 @@ export default function GlobalContextProvider({children}){
     const [categories,setCategories] = useState([]);
     const [categorie_selected,setCategorie_selected] = useState();
     const [videos,setVideos] = useState([]);
+    const [page,setPage] = useState("");
+
+
+    const load_channel = async (id_channel) => {
+        let new_channel = await Load_channel(id_channel);
+        localStorage.setItem('token',JSON.stringify(new_channel));
+        setChannel(new_channel);
+        window.location.href = "/";
+    }
+    const load_categories = async () => {
+        try{
+            let new_categories = await Load_categories_general(categorie_selected);
+            setCategories(new_categories);
+        }catch(error){
+            if(!error.response){
+                setInternet(false);
+            }
+        }
+    }
+    const load_videos = async (page) => {
+        try{
+            let new_videos = await Load_videos(search_query,categorie_selected,10,"medium",page);
+            setPage(new_videos.page);
+            setVideos((videos.length>=10)? ((prev) => [...prev,...new_videos.videos]) : new_videos.videos);
+        }catch(error){
+            if(!error.response){
+                setInternet(false);
+            }
+        }
+    }
+    const handle_scroll = () => {
+        if(window.innerHeight + document.documentElement.scrollTop + 1 >= document.documentElement.scrollHeight){
+            console.log("s")
+            load_videos(page);    
+        }
+    }
+    
+    useEffect(() => {
+        window.addEventListener('scroll',handle_scroll);
+    
+        return () => {
+            window.removeEventListener('scroll',handle_scroll);
+        }
+    },[page])
 
     useEffect(() => {
-        const load_channel = async (id_channel) => {
-            let new_channel = await Load_channel(id_channel);
-            localStorage.setItem('token',JSON.stringify(new_channel));
-            setChannel(new_channel);
-            window.location.href = "/";
-        }
-        const load_categories = async () => {
-            try{
-                let new_categories = await Load_categories_general(categorie_selected);
-                setCategories(new_categories);
-            }catch(error){
-                if(!error.response){
-                    setInternet(false);
-                }
-            }
-        }
-        const load_videos = async () => {
-            try{
-                let new_videos = await Load_videos(search_query,categorie_selected,10,"medium");
-                setVideos(new_videos);
-            }catch(error){
-                if(!error.response){
-                    setInternet(false);
-                }
-            }
-        }
- 
         if(search_query===null){
             load_categories();
         }
         if(id_channel!=undefined){
             load_channel(id_channel);
         }
-        load_videos();
+        console.log("ss")
+        load_videos("");
     },[categorie_selected])
 
     const capture_id_categorie = (id) => {
