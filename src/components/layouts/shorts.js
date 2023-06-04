@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import { useContext, useEffect, useState, Fragment } from 'react'
 
 import { useParams } from "react-router-dom";
 
@@ -14,7 +14,7 @@ import {Global_context} from '../../context/global_context.js';
 export default function ComponentShorts(){
     const context_global = useContext(Global_context);
 
-    const {name,id} = useParams();
+    const {name, id} = useParams();
 
     const [videos,setVideos] = useState([]);
     const [name_icono_selected_nav_left,setName_icono_selected_nav_left] = useState(-1);
@@ -46,11 +46,11 @@ export default function ComponentShorts(){
 
     return (
         (context_global.internet)? 
-            <React.Fragment>
-                <ComponentNavTop search_query={context_global.search_query} user={context_global.user}/>
+            <Fragment>
+                <ComponentNavTop search_query={context_global.search_query} channel={context_global.channel}/>
                 <ComponentNavLeft capture_icono_nav_left={capture_icono_nav_left} item_selected={name_icono_selected_nav_left}/>
                 <ComponentVideosShorts videos={videos}/>
-            </React.Fragment>
+            </Fragment>
         :
             <ComponentSinInternet/>
     )

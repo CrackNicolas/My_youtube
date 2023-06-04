@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState }  from "react"
+import { useContext, useEffect, useState, Fragment }  from "react"
 
 import { useParams } from "react-router-dom";
 
@@ -31,8 +31,8 @@ export default function ComponentHashtag(){
 
     return (
         (context_global.internet)?
-            <React.Fragment>
-                <ComponentNavTop search_query={context_global.search_query} user={context_global.user}/>
+            <Fragment>
+                <ComponentNavTop search_query={context_global.search_query} channel={context_global.channel}/>
                 <ComponentNavLeft capture_icono_nav_left={context_global.capture_id_categorie} item_selected="0"/>
                 <ComponentHeaderHashtag videos={videos} name_hashtag={name} option_selected={shorts}/>
                 {
@@ -41,7 +41,7 @@ export default function ComponentHashtag(){
                     :
                         <ComponentVideosHashtagShorts videos={videos} name={name}/>
                 }
-            </React.Fragment>
+            </Fragment>
         :
             <ComponentSinInternet/>
     )

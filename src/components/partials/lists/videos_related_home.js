@@ -53,7 +53,9 @@ export default function ComponentListVideosRelated({id_playlist}){
                                     <ion-icon name="play-outline"></ion-icon>
                                 </div>
                                 <div className="duration">
-                                    {video.duration}
+                                    <span>
+                                        {video.duration}
+                                    </span>
                                 </div>
                             </div>
                             <div className="datails">

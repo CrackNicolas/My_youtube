@@ -1,31 +1,31 @@
-import React, {useState, useEffect} from "react";
+import {useState, useEffect, createContext} from "react";
 
 import { useLocation, useParams } from 'react-router-dom';
 
 import Load_categories_general from '../controllers/categories.js';
 import Load_videos from '../controllers/videos.js';
-import Load_channel_user from '../controllers/config.js';
+import Load_channel from '../controllers/config.js';
 
 import {get_search_param} from '../logic/functions.js';
 
-export const Global_context = React.createContext({});
+export const Global_context = createContext({});
 
 export default function GlobalContextProvider({children}){
     let {search} = useLocation();
-    let {channel_user} = useParams();
+    let {id_channel} = useParams();
     let search_query = get_search_param(search);
 
-    const [user,setUser] = useState((localStorage.getItem('token'))? JSON.parse(localStorage.getItem('token')) : undefined);
+    const [channel,setChannel] = useState((localStorage.getItem('token'))? JSON.parse(localStorage.getItem('token')) : undefined);
     const [internet,setInternet] = useState(true);
     const [categories,setCategories] = useState([]);
     const [categorie_selected,setCategorie_selected] = useState();
     const [videos,setVideos] = useState([]);
 
     useEffect(() => {
-        const load_user = async (channel) => {
-            let new_channel_user = await Load_channel_user(channel);
-            localStorage.setItem('token',JSON.stringify(new_channel_user));
-            setUser(new_channel_user);
+        const load_channel = async (id_channel) => {
+            let new_channel = await Load_channel(id_channel);
+            localStorage.setItem('token',JSON.stringify(new_channel));
+            setChannel(new_channel);
             window.location.href = "/";
         }
         const load_categories = async () => {
@@ -52,8 +52,8 @@ export default function GlobalContextProvider({children}){
         if(search_query===null){
             load_categories();
         }
-        if(channel_user!=undefined){
-            load_user(channel_user);
+        if(id_channel!=undefined){
+            load_channel(id_channel);
         }
         load_videos();
     },[categorie_selected])
@@ -76,7 +76,7 @@ export default function GlobalContextProvider({children}){
     }
 
     return (
-        <Global_context.Provider value={{user, search_query, capture_id_categorie, categories, videos, internet}}>
+        <Global_context.Provider value={{channel, search_query, capture_id_categorie, categories, videos, internet}}>
             {children}
         </Global_context.Provider>
     )

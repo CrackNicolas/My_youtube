@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState, useContext, Fragment } from "react";
 
 import {get_url_player_short} from '../../../logic/functions.js';
 
@@ -8,7 +8,11 @@ import ComponentShareVideo from "../menus/share_video.js";
 
 import '../../../styles/partials/videos/shorts.css';
 
+import {Global_context} from '../../../context/global_context.js';
+
 export default function ComponentVideosShorts({videos}){
+    const context_global = useContext(Global_context);
+
     const [video_selected, setVideo_selected] = useState(0);
     const [selected_like,setSelected_like] = useState(0);
     const [option_selected, setOption_selected] = useState();
@@ -41,7 +45,7 @@ export default function ComponentVideosShorts({videos}){
                 {
                     videos.map((video,index) => {
                         return (
-                            <React.Fragment key={index}>
+                            <Fragment key={index}>
                                 <div className="video">
                                     <div className="image">
                                         <iframe allow='autoplay *' src={get_url_player_short(video.id, (video_selected == index)?  1 : 0) } onMouseOver={() => setVideo_selected(index)} ></iframe>
@@ -74,9 +78,9 @@ export default function ComponentVideosShorts({videos}){
                                     </div>
                                 </div>
                                 <ComponentNavOptionsVideoShort get_style_option={get_style_option} index={(index-index*2)}/>
-                                <ComponentListCommentsShorts video={video} get_style_option={get_style_option} index={(index+1)} visibility_option={visibility_option}/>
+                                <ComponentListCommentsShorts video={video} get_style_option={get_style_option} index={(index+1)} visibility_option={visibility_option} channel={context_global.channel}/>
                                 <ComponentShareVideo get_style_option={get_style_option} index={video.id} visibility_option={visibility_option}/>
-                            </React.Fragment>
+                            </Fragment>
                         )
                     })
                 }

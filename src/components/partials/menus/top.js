@@ -13,7 +13,7 @@ import {Load_suggestions} from '../../../controllers/videos.js';
 
 import '../../../styles/partials/menus/top.css';
 
-export default function ComponentNavTop({search_query,user,style}){
+export default function ComponentNavTop({search_query,channel,style}){
     const [styles, setStyles] = useState(Schema_styles_nav_top.model);
     const [action_menu,setAction_menu] = useState(true);
     const [name_selected_icon, setName_selected_icon] = useState();
@@ -55,7 +55,7 @@ export default function ComponentNavTop({search_query,user,style}){
             <div className="logo">
                 <div className="menu" onClick={() => view_menu()}>
                     <ion-icon id="icon-menu" name="menu-outline"></ion-icon>
-                    <ComponentNavToggler styles={styles} user={user}/>
+                    <ComponentNavToggler styles={styles} channel={channel}/>
                 </div>
                 <a href="/">
                     <img src="/images/youtube.png" title="Página de inicio de YouTube"/>
@@ -73,7 +73,7 @@ export default function ComponentNavTop({search_query,user,style}){
             </form>
             <ComponentSearchMicro get_style={get_style} visibility_options={visibility_options}/>            
             {
-                (user==undefined)?
+                (channel==undefined)?
                     <div className="acceder">
                         <ion-icon className="option" name="ellipsis-vertical-outline"></ion-icon>
                         <a href="/logaut">
@@ -93,8 +93,8 @@ export default function ComponentNavTop({search_query,user,style}){
                         <div className="notification">
                             <ion-icon onClick={(e) => visibility_options(e)} name={(name_selected_icon==="notifications-outline")? "notifications":"notifications-outline" } title="Notificaciones"></ion-icon>
                         </div>
-                        <img onClick={() => setVisibility_management(!visibility_management)} className="perfil" src={user.logo} alt="Perfil del autor"/>          
-                        <ComponentNavManagement style={style_management} user={user}/>     
+                        <img onClick={() => setVisibility_management(!visibility_management)} className="perfil" src={channel.logo} alt="Perfil del autor"/>          
+                        <ComponentNavManagement style={style_management} channel={channel}/>     
                         <ComponentNavOptionsNotification get_style={get_style}/>
                     </div>
             }

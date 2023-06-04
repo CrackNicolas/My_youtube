@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import {useEffect, useState} from "react";
 
 import ComponentNavOptionsComments from '../menus/options_comments.js';
 import ComponentListComments from "../lists/comments_home.js";
@@ -8,7 +8,7 @@ import Load_comments from "../../../controllers/comments.js";
 
 import '../../../styles/partials/lists/comments_shorts.css';
 
-export default function ComponentListCommentsShorts({video,get_style_option,index,visibility_option}){
+export default function ComponentListCommentsShorts({video,get_style_option,index,visibility_option,channel}){
     const [options_selected,setOptions_selected] = useState(false);
     const [comments_video_selected, setComments_video_selected] = useState([]);
 
@@ -45,7 +45,7 @@ export default function ComponentListCommentsShorts({video,get_style_option,inde
             </article>
             <ComponentNavOptionsComments get_style={get_style} index={index}/>
             <article className="comments">
-                <ComponentAddComment icono={false}/>
+                <ComponentAddComment icono={false} channel={channel}/>
                 <ComponentListComments comments={comments_video_selected} icono="caret"/>
             </article>
         </section>

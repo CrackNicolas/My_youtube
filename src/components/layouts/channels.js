@@ -15,11 +15,11 @@ export default function ComponentChannels(){
     const [channels,setChannels] = useState();
 
     useEffect(() => {
-        const load_channels = async (channel_id) => {
-            let new_channels = await Load_channels_subscriptions(channel_id);
+        const load_channels = async (id_channel) => {
+            let new_channels = await Load_channels_subscriptions(id_channel);
             setChannels(new_channels);
         }
-        load_channels(context_global.user.id);
+        load_channels(context_global.channel.id);
     },[]);
 
     let capture_icono_nav_left = (id) => {
@@ -42,7 +42,7 @@ export default function ComponentChannels(){
     return (
         (context_global.internet)?
             <Fragment>
-                <ComponentNavTop search_query={context_global.search_query} user={context_global.user}/>
+                <ComponentNavTop search_query={context_global.search_query} channel={context_global.channel}/>
                 <ComponentNavLeft capture_icono_nav_left={capture_icono_nav_left} item_selected="-4"/>
                 <ComponentListSubscriptions channels={channels}/>
             </Fragment>

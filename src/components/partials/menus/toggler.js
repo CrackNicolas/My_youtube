@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
 import '../../../styles/partials/menus/toggler.css';
 
-export default function ComponentNavToggler({styles,user}){
+export default function ComponentNavToggler({styles,channel}){
     
     return (
         <div className="items-menu" style={styles}>
@@ -29,7 +29,7 @@ export default function ComponentNavToggler({styles,user}){
                 </a>
                 <div className="linea-item">__________________________</div>
                 {
-                    (user==undefined)?
+                    (channel==undefined)?
                         <Fragment>
                             <a href="/feed/library" className="item">
                                 <ion-icon name="library-outline"></ion-icon>

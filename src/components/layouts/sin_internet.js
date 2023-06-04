@@ -1,4 +1,4 @@
-import React from 'react'
+import { Fragment } from 'react'
 
 import ComponentNavTop from '../partials/menus/top.js';
 import ComponentNavLeft from '../partials/menus/left.js';
@@ -7,7 +7,7 @@ import '../../styles/layouts/sin_internet.css';
 
 export default function ComponentSinInternet(){
     return (
-        <React.Fragment>
+        <Fragment>
             <ComponentNavTop/>
             <ComponentNavLeft/>
             <section className="sin-internet">
@@ -65,6 +65,6 @@ export default function ComponentSinInternet(){
                     Sin conexion a Internet
                 </article>
             </section>
-        </React.Fragment>
+        </Fragment>
     )
 }

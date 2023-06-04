@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from "react";
+import { useEffect, useState, useContext, Fragment } from "react";
 import { useMediaQuery } from 'react-responsive'
 import { useParams } from "react-router-dom";
 
@@ -63,8 +63,8 @@ export default function ComponentWatch(){
 
     return (
         (context_global.internet)? 
-            <React.Fragment>
-                <ComponentNavTop search_query={context_global.search_query} user={context_global.user} style={(isMobile)? { visibility : "hidden"} : { visibility : "visible"}}/>
+            <Fragment>
+                <ComponentNavTop search_query={context_global.search_query} channel={context_global.channel} style={(isMobile)? { visibility : "hidden"} : { visibility : "visible"}}/>
                 <section className="section-view-video">
                     <section className="view_videos">
                         <ComponentHeaderVideoSelected video={video_selected} channel={channel_video_selected}/>      
@@ -73,7 +73,7 @@ export default function ComponentWatch(){
                             <ComponentListVideosRelated id_playlist={categorie_selected}/>
                         </section>
                         <article className="comments">
-                            <ComponentHeaderComments comments_count={video_selected.comments_count}/>
+                            <ComponentHeaderComments comments_count={video_selected.comments_count} channel={context_global.channel}/>
                             <ComponentListComments comments={comments_video_selected} icono="chevron"/>
                         </article>
                     </section>
@@ -82,7 +82,7 @@ export default function ComponentWatch(){
                         <ComponentListVideosRelated id_playlist={categorie_selected}/>
                     </section>
                 </section>
-            </React.Fragment>
+            </Fragment>
         :
             <ComponentSinInternet/>
     );

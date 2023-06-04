@@ -1,4 +1,4 @@
-import React, {useEffect,useState } from "react";
+import { useState, Fragment } from "react";
 
 import '../../../styles/partials/lists/comments_home.css';
 
@@ -68,7 +68,7 @@ export default function ComponentListComments({comments,icono}){
                             </div>
                             {
                                 comment.replies_count !== undefined?
-                                    <React.Fragment>
+                                    <Fragment>
                                         <button className="view-replies" onClick={() => check_icon_replie(index)}>
                                             <ion-icon style={ disguise_icon_repli_selected(index) } name={icono+"-up-outline"}></ion-icon>
                                             <ion-icon style={ watch_icon_repli_selected(index) } name={icono+"-down-outline"}></ion-icon>
@@ -106,7 +106,7 @@ export default function ComponentListComments({comments,icono}){
                                                 })
                                             }
                                         </div>
-                                    </React.Fragment>
+                                    </Fragment>
                                 : ""
                             }
                         </div>

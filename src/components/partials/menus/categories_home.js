@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState, Fragment } from 'react'
 
 import Schema_styles_nav_categories from '../../../styles/schema/styles_nav_categories.js';
 
@@ -24,7 +24,7 @@ export default function ComponentNavCategories({categories,categorie_selected}){
   }
 
   return (
-      <React.Fragment>
+      <Fragment>
         {
           (categories.length>0)?
             <button className="prev" title="Anterior" style={styles.prev} onClick={(e) => scroll(e)}>
@@ -55,6 +55,6 @@ export default function ComponentNavCategories({categories,categorie_selected}){
             </button>
           : ""
         }
-      </React.Fragment>
+      </Fragment>
     )
 }

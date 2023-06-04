@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import { useContext, useState, Fragment } from 'react';
 
 import ComponentNavTop from '../partials/menus/top.js';
 import ComponentNavLeft from '../partials/menus/left.js';
@@ -31,11 +31,11 @@ export default function ComponentLibrary(){
 
     return (
         (context_global.internet)?
-            <React.Fragment>
-                <ComponentNavTop search_query={context_global.search_query} user={context_global.user}/>
+            <Fragment>
+                <ComponentNavTop search_query={context_global.search_query} channel={context_global.channel}/>
                 <ComponentNavLeft capture_icono_nav_left={capture_icono_nav_left} item_selected={name_icono_selected_nav_left}/>
                 <ComponentCover icono="library" texto="Biblioteca"/>
-            </React.Fragment>
+            </Fragment>
         :
             <ComponentSinInternet/>
     )

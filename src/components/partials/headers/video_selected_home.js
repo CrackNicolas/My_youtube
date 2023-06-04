@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import { useEffect, useState, Fragment } from "react"
 
 import { get_url_player } from "../../../logic/functions.js";
 
@@ -45,7 +45,7 @@ export default function ComponentHeaderVideoSelected({video,channel}){
     }
 
     return (
-        <React.Fragment>
+        <Fragment>
             <article className="player">
                 <iframe src={get_url_player(video.id)} allow="autoplay *"></iframe>
             </article>
@@ -53,7 +53,7 @@ export default function ComponentHeaderVideoSelected({video,channel}){
                 (channel.logo===undefined)?
                     <ComponentVideoSelectedLoad/>
                 :
-                    <React.Fragment>
+                    <Fragment>
                         <p className="title">{video.title}</p>
                         <article className="details">
                             <div className="btns-izq">
@@ -101,8 +101,8 @@ export default function ComponentHeaderVideoSelected({video,channel}){
                             <p className={name_id_description}></p>
                             <button onClick={() => hidden_description()}>Mostrar {(name_id_description==="hidden_description")? "menos" : "más"}</button>
                         </article>
-                    </React.Fragment>    
+                    </Fragment>    
             }
-        </React.Fragment>        
+        </Fragment>        
     )
 }

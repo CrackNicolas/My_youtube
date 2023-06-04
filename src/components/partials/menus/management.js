@@ -1,6 +1,6 @@
 import '../../../styles/partials/menus/management.css';
 
-export default function ComponentNavManagement({style,user}){
+export default function ComponentNavManagement({style,channel}){
     
     const cesion_close = () => {
         localStorage.removeItem('token');
@@ -11,11 +11,11 @@ export default function ComponentNavManagement({style,user}){
         <section className="items-management" style={style()}>
             <article className="header">
                 <div>
-                    <img src={user.logo}/>
+                    <img src={channel.logo}/>
                 </div>
                 <div>
-                    <p>{user.title}</p>
-                    <p>{user.custom_url}</p>
+                    <p>{channel.title}</p>
+                    <p>{channel.custom_url}</p>
                     <p>Gestionar tu cuenta de Google</p>
                 </div>
             </article>
