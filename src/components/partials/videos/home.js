@@ -6,7 +6,7 @@ import ComponentVideosLoad from '../before_load/videos_home.js';
 
 import '../../../styles/partials/videos/home.css';
 
-export default function ComponentVideosLayouts({videos}){
+export default function ComponentVideosLayouts({videos,loading}){
   let set_time;
   const [option_selected, setOption_selected] = useState();
   const [key_video_selected,setKey_video_selected] = useState();
@@ -36,7 +36,7 @@ export default function ComponentVideosLayouts({videos}){
 
   return (
     <section className="videos">
-      { (videos.length===0)? <ComponentVideosLoad/> : "" }
+      { (videos.length===0) && <ComponentVideosLoad/> }
       {
         videos.map((video,index) => {
           return (

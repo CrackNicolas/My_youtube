@@ -17,7 +17,7 @@ export default function ComponentHome(){
         <ComponentNavTop search_query={context_global.search_query} channel={context_global.channel} style={{visibility : "visible"}}/>
         <ComponentNavCategories categorie_selected={context_global.capture_id_categorie} categories={context_global.categories}/>
         <ComponentNavLeft capture_icono_nav_left={context_global.capture_id_categorie} item_selected="0"/>
-        <ComponentVideosLayouts videos={context_global.videos}/>
+        <ComponentVideosLayouts videos={context_global.videos} loading={context_global.loading}/>
       </Fragment>
     :
       <ComponentSinInternet/>

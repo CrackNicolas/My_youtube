@@ -1,5 +1,4 @@
 import {useState, useEffect, createContext} from "react";
-
 import { useLocation, useParams } from 'react-router-dom';
 
 import Load_categories_general from '../controllers/categories.js';
@@ -21,7 +20,7 @@ export default function GlobalContextProvider({children}){
     const [categorie_selected,setCategorie_selected] = useState();
     const [videos,setVideos] = useState([]);
     const [page,setPage] = useState("");
-
+    const [loading,setLoading] = useState(false);
 
     const load_channel = async (id_channel) => {
         let new_channel = await Load_channel(id_channel);
@@ -34,35 +33,37 @@ export default function GlobalContextProvider({children}){
             let new_categories = await Load_categories_general(categorie_selected);
             setCategories(new_categories);
         }catch(error){
-            if(!error.response){
-                setInternet(false);
-            }
+            if(!error.response) setInternet(false);
         }
     }
     const load_videos = async (page) => {
         try{
             let new_videos = await Load_videos(search_query,categorie_selected,10,"medium",page);
             setPage(new_videos.page);
-            setVideos((videos.length>=10)? ((prev) => [...prev,...new_videos.videos]) : new_videos.videos);
-        }catch(error){
-            if(!error.response){
-                setInternet(false);
+            if(categorie_selected==undefined){
+                if(videos.length>=10){
+                    setVideos((prev) => [...prev,...new_videos.videos]);
+                }else{
+                    setVideos(new_videos.videos);
+                }
+            }else{
+                setVideos((prev) => [...prev,...new_videos.videos]);
             }
+            setLoading(false);
+        }catch(error){
+            if(!error.response) setInternet(false);
         }
     }
     const handle_scroll = () => {
         if(window.innerHeight + document.documentElement.scrollTop + 1 >= document.documentElement.scrollHeight){
-            console.log("s")
             load_videos(page);    
+            setLoading(true);
         }
     }
     
     useEffect(() => {
         window.addEventListener('scroll',handle_scroll);
-    
-        return () => {
-            window.removeEventListener('scroll',handle_scroll);
-        }
+        return () => window.removeEventListener('scroll',handle_scroll);
     },[page])
 
     useEffect(() => {
@@ -72,7 +73,7 @@ export default function GlobalContextProvider({children}){
         if(id_channel!=undefined){
             load_channel(id_channel);
         }
-        console.log("ss")
+        setVideos([]);
         load_videos("");
     },[categorie_selected])
 
@@ -94,7 +95,7 @@ export default function GlobalContextProvider({children}){
     }
 
     return (
-        <Global_context.Provider value={{channel, search_query, capture_id_categorie, categories, videos, internet}}>
+        <Global_context.Provider value={{channel, search_query, capture_id_categorie, categories, videos, loading, internet}}>
             {children}
         </Global_context.Provider>
     )
