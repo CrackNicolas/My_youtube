@@ -15,7 +15,7 @@ export default function ComponentNavManagement({style,user}){
                 </div>
                 <div>
                     <p>{user.title}</p>
-                    <p>@</p>
+                    <p>{user.custom_url}</p>
                     <p>Gestionar tu cuenta de Google</p>
                 </div>
             </article>
