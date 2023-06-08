@@ -7,7 +7,23 @@ export default function ComponentVideosLoadShorts(){
             {
                 videos.map((index) => {
                     return (
-                        <article key={index} className="video"></article>
+                        <article key={index} className="video">
+                            <div className="image"></div>
+                            <div className="cont-functions">
+                                <div className="functions">
+                                    <div className="function"></div>
+                                    <p></p>
+                                    <div className="function"></div>
+                                    <p></p>
+                                    <div className="function"></div>
+                                    <p></p>
+                                    <div className="function"></div>
+                                    <p></p>
+                                    <div className="function"></div>
+                                    <div className="function"></div>
+                                </div>
+                            </div>
+                        </article>
                     )
                 })
             }

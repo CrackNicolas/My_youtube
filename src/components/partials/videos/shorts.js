@@ -1,10 +1,11 @@
 import { useState, useContext, Fragment } from "react";
 
-import {get_url_player_short} from '../../../logic/functions.js';
+import { get_url_player_short } from '../../../logic/functions.js';
 
 import ComponentNavOptionsVideoShort from '../menus/options_videos_short.js';
 import ComponentListCommentsShorts from '../lists/comments_shorts.js';
 import ComponentShareVideo from "../menus/share_video.js";
+import ComponentVideosLoadShorts from "../before_load/videos_shorts.js";
 
 import '../../../styles/partials/videos/shorts.css';
 
@@ -18,14 +19,6 @@ export default function ComponentVideosShorts({videos}){
     const [option_selected, setOption_selected] = useState();
 
     const capture_selected_likes = (item) => {
-        /*if(item===1 || (item===1 && selected_like==item)){
-            console.log("increase");
-            console.log("lower de increase");
-        }
-        if(item===2 || (item===2 && selected_like==item)){
-            console.log("lower");
-            console.log("increase de un lower");
-        }*/
         setSelected_like((selected_like==item)? 0 : item);
     }
     const get_style = (item) => {
@@ -42,6 +35,7 @@ export default function ComponentVideosShorts({videos}){
     return (
         <section className="videos-shorts">
             <article className="videos">
+                { (videos.length==0) && <ComponentVideosLoadShorts/> }
                 {
                     videos.map((video,index) => {
                         return (
