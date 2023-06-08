@@ -1,8 +1,10 @@
 import { useState } from 'react'
 
 import { get_url_player_presentation } from '../../../logic/functions.js';
+
 import ComponentNavOptionsVideo from '../menus/options_videos_home.js';
 import ComponentVideosLoad from '../before_load/videos_home.js';
+import ComponentSpinnerLoad from '../before_load/spinner_load.js';
 
 import '../../../styles/partials/videos/home.css';
 
@@ -35,62 +37,65 @@ export default function ComponentVideosLayouts({videos,loading}){
   }
 
   return (
-    <section className="videos">
-      { (videos.length===0) && <ComponentVideosLoad/> }
-      {
-        videos.map((video,index) => {
-          return (
-            <a href={("/watch/"+video.id)} key={index}>
-              <article className="video">
-                {
-                  (index == key_video_selected)?
-                    <iframe src={play(video.id,index)} className="imagen_frame" allow='autoplay *' onMouseOver={() => mouse_over(index)} onMouseOut={() => mouse_out()} >
-                      <img src={video.url_imagen} alt={video.title}/>
-                      <div className="duration">
-                          <span>
-                              {video.duration}
-                          </span>
+    <>
+      <section className="videos">
+        { (videos.length==0) && <ComponentVideosLoad/>}
+        {
+          videos.map((video,index) => {
+            return (
+              <a href={("/watch/"+video.id)} key={index}>
+                <article className="video">
+                  {
+                    (index == key_video_selected)?
+                      <iframe src={play(video.id,index)} className="imagen_frame" allow='autoplay *' onMouseOver={() => mouse_over(index)} onMouseOut={() => mouse_out()} >
+                        <img src={video.url_imagen} alt={video.title}/>
+                        <div className="duration">
+                            <span>
+                                {video.duration}
+                            </span>
+                        </div>
+                      </iframe>
+                    :
+                      <div className="imagen" onMouseOver={() => mouse_over(index)} onMouseOut={() => mouse_out()}>
+                        <img src={video.url_imagen} alt={video.title}/>
+                        <div className="duration">
+                            <span>
+                                {video.duration}
+                            </span>
+                        </div>
                       </div>
-                    </iframe>
-                  :
-                    <div className="imagen" onMouseOver={() => mouse_over(index)} onMouseOut={() => mouse_out()}>
-                      <img src={video.url_imagen} alt={video.title}/>
-                      <div className="duration">
-                          <span>
-                              {video.duration}
-                          </span>
-                      </div>
+                  }
+                  <div className="icon-autor">
+                    <img src={video.channel.logo} alt={video.channel.title}/>
+                    <p>{video.title}</p>
+                    <div className="icon-options">
+                      <ion-icon onClick={(e) => visibility_option(e,index)} style={get_style_icon_option(index)} name="ellipsis-vertical"></ion-icon>
                     </div>
-                }
-                <div className="icon-autor">
-                  <img src={video.channel.logo} alt={video.channel.title}/>
-                  <p>{video.title}</p>
-                  <div className="icon-options">
-                    <ion-icon onClick={(e) => visibility_option(e,index)} style={get_style_icon_option(index)} name="ellipsis-vertical"></ion-icon>
+                    <ComponentNavOptionsVideo get_style_option={get_style_option} index={index}/>
                   </div>
-                  <ComponentNavOptionsVideo get_style_option={get_style_option} index={index}/>
-                </div>
-                <div className="name-autor">
-                  <p>{video.channel.title}</p>
-                  {
-                    video.license? <ion-icon name="checkmark-circle"></ion-icon> : ""
-                  }
-                </div>
-                <div className="visualizaciones">
-                  <p>{video.view_count} .{video.time_elapsed}</p>
-                  {
-                    video.live && 
-                      <div className="live">
-                        <ion-icon name="radio-outline"></ion-icon>
-                        <span>EN DIRECTO</span>
-                      </div>
-                  }
-                </div>
-              </article>
-            </a>
-          )
-        })
-      }
-    </section>
+                  <div className="name-autor">
+                    <p>{video.channel.title}</p>
+                    {
+                      video.license? <ion-icon name="checkmark-circle"></ion-icon> : ""
+                    }
+                  </div>
+                  <div className="visualizaciones">
+                    <p>{video.view_count} .{video.time_elapsed}</p>
+                    {
+                      video.live && 
+                        <div className="live">
+                          <ion-icon name="radio-outline"></ion-icon>
+                          <span>EN DIRECTO</span>
+                        </div>
+                    }
+                  </div>
+                </article>
+              </a>
+            )
+          })
+        }
+      </section>
+      { (loading && videos.length!=0) && <ComponentSpinnerLoad/> }
+    </>
   )
 }

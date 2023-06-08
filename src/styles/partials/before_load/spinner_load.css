@@ -1,0 +1,23 @@
+.content_spinner{
+    margin-top: -40px;
+    padding-bottom: 30px;
+    text-align: center;
+}
+.spinner{
+    margin: auto;
+    border: 2.3px solid rgba(249, 231, 231, 0.1);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border-left-color: var(--color-icon-youtube);
+    box-shadow: 0 0 13px 2px var(--color-icon-youtube);
+    animation: animation_spinner 1s linear infinite;
+}
+@keyframes animation_spinner{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}

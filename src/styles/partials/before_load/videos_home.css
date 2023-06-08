@@ -12,6 +12,7 @@
     width: 357px;
     height: 200px;
     border-radius: 10px;
+    animation: animation_opacity 1.6s linear infinite;
 }
 .videos-load .header{
     display: flex;
@@ -38,6 +39,14 @@
     margin-top: -9px;
     height: 16.5px;
     border-radius: 3px;
+}
+@keyframes animation_opacity{
+    0%{
+        opacity: 0.9;
+    }
+    100%{
+        opacity: 1;
+    }
 }
 @media (max-width : 600px){
     .videos-load{

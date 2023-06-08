@@ -73,6 +73,7 @@ export default function GlobalContextProvider({children}){
         if(id_channel!=undefined){
             load_channel(id_channel);
         }
+        window.scrollTo(0, 0);
         setVideos([]);
         load_videos("");
     },[categorie_selected])
