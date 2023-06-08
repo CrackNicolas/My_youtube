@@ -1,0 +1,51 @@
+.videos-load-subscriptions{
+    padding-top: 10px;
+    background-color: var(--color-font-primary);
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(212px,1fr));
+    gap: 80px 7px;
+    color: var(--color-text-primary);
+    padding-bottom: 80px;
+}
+.videos-load-subscriptions .video{
+    min-width: 216px;
+    max-width: 216px;
+    height: 125px;
+    background-color: var(--color-font-secondary);
+    animation: animation_opacity 1.6s linear infinite;
+    border-radius: 5px;
+}
+.videos-load-subscriptions .header{
+    display: flex;
+}
+.videos-load-subscriptions .icon, .videos-load-subscriptions .title, .videos-load-subscriptions .description{
+    position: relative;
+    background-color: var(--color-font-secondary);
+    transform: translateY(127px);
+    animation: animation_opacity 1.6s linear infinite;
+}
+.videos-load-subscriptions .icon{
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+}
+.videos-load-subscriptions .title{
+    width: 77%;
+    height: 17px;
+    border-radius: 3px;
+    margin-right: 5px;
+}
+.videos-load-subscriptions .description{
+    margin-left: 45px;
+    width: 47%;
+    height: 16px;
+    border-radius: 3px;
+}
+@keyframes animation_opacity{
+    0%{
+        opacity: 0.9;
+    }
+    100%{
+        opacity: 1;
+    }
+}

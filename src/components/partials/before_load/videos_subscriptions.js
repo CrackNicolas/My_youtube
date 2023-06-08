@@ -1,9 +1,9 @@
-import '../../../styles/partials/before_load/videos_home.css';
+import '../../../styles/partials/before_load/videos_subscriptions.css';
 
-export default function ComponentVideosLoad(){
-    let videos = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18];
+export default function ComponentVideosLoadSubscriptions(){
+    let videos = [1,2,3,4,5,6,7,8,9,10];
     return (
-        <section className="videos-load-home">
+        <section className="videos-load-subscriptions">
             {
                 videos.map((index) => {
                     return (
