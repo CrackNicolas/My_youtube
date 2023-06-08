@@ -1,0 +1,21 @@
+.nav-categories-load{
+    color: var(--color-text-primary);
+    position: fixed;
+    z-index: 10;
+    left: 90px;
+    top: 60px;
+    width: 91%;
+    padding: 10px 10px 10px 10px;
+    background-color: var(--color-font-primary);
+    display: flex;
+    gap: 10px;
+}
+.nav-categories-load .categori-load{
+    background-color: var(--color-font-secondary);
+    padding: 8px 13px;
+    min-height: 30px;
+    width: 80px;
+    border-radius: 7px;
+    white-space: nowrap;
+    color: var(--color-text-primary);
+}

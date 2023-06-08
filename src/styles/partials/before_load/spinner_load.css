@@ -6,8 +6,8 @@
 .spinner{
     margin: auto;
     border: 2.3px solid rgba(249, 231, 231, 0.1);
-    width: 32px;
-    height: 32px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     border-left-color: var(--color-icon-youtube);
     box-shadow: 0 0 13px 2px var(--color-icon-youtube);
