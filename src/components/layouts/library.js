@@ -3,6 +3,7 @@ import { useContext, useState, Fragment } from 'react';
 import ComponentNavTop from '../partials/menus/top.js';
 import ComponentNavLeft from '../partials/menus/left.js';
 import ComponentCover from '../partials/session_cover/cover.js';
+import ComponentVideosLibrary from '../partials/videos/library.js';
 import ComponentSinInternet from './sin_internet.js';
 
 import {Global_context} from '../../context/global_context.js';
@@ -34,7 +35,12 @@ export default function ComponentLibrary(){
             <Fragment>
                 <ComponentNavTop search_query={context_global.search_query} channel={context_global.channel}/>
                 <ComponentNavLeft capture_icono_nav_left={capture_icono_nav_left} item_selected={name_icono_selected_nav_left}/>
-                <ComponentCover icono="library" texto="Biblioteca"/>
+                {
+                    context_global.channel == undefined ?
+                        <ComponentCover icono="library" texto="Biblioteca"/> 
+                    :
+                        <ComponentVideosLibrary channel={context_global.channel}/>
+                }
             </Fragment>
         :
             <ComponentSinInternet/>

@@ -6,6 +6,9 @@
 ** Ejecucion
    -- 1. npm start
 
+** Descripcion
+   -- App clon de youtube realizado como prueba, siempre respetando sus politicas de privacidad.
+
 ** Tecnologias utilizadas
    .React
    .JavaScript
