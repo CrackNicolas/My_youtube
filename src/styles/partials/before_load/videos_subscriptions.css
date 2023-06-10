@@ -21,7 +21,7 @@
 .videos-load-subscriptions .icon, .videos-load-subscriptions .title, .videos-load-subscriptions .description{
     position: relative;
     background-color: var(--color-font-secondary);
-    transform: translateY(127px);
+    transform: translateY(133px);
     animation: animation_opacity 1.6s linear infinite;
 }
 .videos-load-subscriptions .icon{

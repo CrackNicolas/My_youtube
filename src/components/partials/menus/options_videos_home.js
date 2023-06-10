@@ -1,6 +1,11 @@
 import '../../../styles/partials/menus/options_videos_home.css';
 
-export default function ComponentNavOptionsVideo({get_style_option,index}){
+import { Global_context } from '../../../context/global_context';
+import { useContext } from 'react';
+
+export default function ComponentNavOptionsVideo({videos,get_style_option,index}){
+    const context_global = useContext(Global_context);
+
     return (
         <div className="options" style={get_style_option(index)}>
             <div className="option">
@@ -32,7 +37,7 @@ export default function ComponentNavOptionsVideo({get_style_option,index}){
               <ion-icon name="remove-circle-outline"></ion-icon>
               <p>No recomendarme este canal</p>
             </div>
-            <div className="option">
+            <div className="option" onClick={(e) => context_global.add_video_see_later(e,videos[index])}>
               <ion-icon name="flag-outline"></ion-icon>
               <p>Denunciar</p>
             </div>

@@ -1,6 +1,7 @@
 import '../../../styles/partials/videos/subscriptions.css';
 
 import ComponentVideosLoadSubscriptions from '../before_load/videos_subscriptions';
+import ComponentVideo from './video';
 
 export default function ComponentVideosSubscriptions({videos}){
     return (
@@ -20,29 +21,7 @@ export default function ComponentVideosSubscriptions({videos}){
                         {
                             videos.map((video,index) => {
                                 return (
-                                    <a href={"/watch/"+video.id} className="video" key={index}>
-                                        <div className="imagen">
-                                            <img src={video.url_imagen} alt={video.title}/>
-                                            <div className="duration">
-                                                <span>
-                                                    {video.duration}
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <div className="description">
-                                            <div>
-                                                <p>{video.title}</p>
-                                                <ion-icon name="ellipsis-vertical"></ion-icon>
-                                            </div>
-                                            <div className="name-autor">
-                                                <p>{video.channel.title}</p>
-                                                { video.license && <ion-icon name="checkmark-circle"></ion-icon> }
-                                            </div>
-                                            <div className="visualizaciones">
-                                                <p>{video.view_count} .{video.time_elapsed}</p>
-                                            </div>
-                                        </div>
-                                    </a>
+                                    <ComponentVideo video={video} index={index}/>  
                                 )
                             })
                         }

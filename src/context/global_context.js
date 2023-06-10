@@ -18,6 +18,7 @@ export default function GlobalContextProvider({children}){
     const [internet,setInternet] = useState(true);
     const [categories,setCategories] = useState([]);
     const [categorie_selected,setCategorie_selected] = useState();
+    const [list_see_later,setList_see_later] = useState((localStorage.getItem('list_see_later'))? JSON.parse(localStorage.getItem('list_see_later')) : []);
     const [videos,setVideos] = useState([]);
     const [page,setPage] = useState("");
     const [loading,setLoading] = useState(false);
@@ -95,8 +96,18 @@ export default function GlobalContextProvider({children}){
         }
     }
 
+    const add_video_see_later = (e,video) => {
+        e.preventDefault();
+        let videos = JSON.parse(localStorage.getItem('list_see_later'));
+        let exists = (videos.find((schema) => schema.id == video.id) == undefined)? true : false;
+        if(exists){
+            videos.push(video);
+            localStorage.setItem('list_see_later',JSON.stringify(videos));
+        }
+    }
+
     return (
-        <Global_context.Provider value={{channel, search_query, capture_id_categorie, categories, videos, loading, internet}}>
+        <Global_context.Provider value={{channel, search_query, capture_id_categorie, categories, videos, loading, internet, list_see_later, add_video_see_later}}>
             {children}
         </Global_context.Provider>
     )

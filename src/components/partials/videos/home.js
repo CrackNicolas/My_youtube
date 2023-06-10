@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { Fragment, useState } from 'react'
 
 import { get_url_player_presentation } from '../../../logic/functions.js';
 
@@ -71,7 +71,7 @@ export default function ComponentVideosLayouts({videos,loading}){
                     <div className="icon-options">
                       <ion-icon onClick={(e) => visibility_option(e,index)} style={get_style_icon_option(index)} name="ellipsis-vertical"></ion-icon>
                     </div>
-                    <ComponentNavOptionsVideo get_style_option={get_style_option} index={index}/>
+                    <ComponentNavOptionsVideo videos={videos} get_style_option={get_style_option} index={index}/>
                   </div>
                   <div className="name-autor">
                     <p>{video.channel.title}</p>

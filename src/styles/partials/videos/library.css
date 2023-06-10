@@ -4,17 +4,129 @@
     color: var(--color-text-primary);
     display: grid;
     grid-template-columns: 5fr 1fr;
+    gap: 25px;
 }
 .library .main{
     background-color: var(--color-font-primary);
 }
 .library .main .history, .library .main .see-later, .library .main .play-list, .library .main .video-likes{
     border-bottom: 1px solid var(--color-font-hover-buttons);
-}
-.library .main .history{
     padding: 25px 0px;
 }
-
+.library .main .clips{
+    padding: 25px 0px;
+}
+.library .main .history .title ion-icon, .library .main .see-later .title ion-icon,  .library .main .video-likes .title ion-icon, .library .main .clips .title ion-icon{
+    width: 23px;
+    height: 23px;
+}
+.library .main .history .title, .library .main .clips .title{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.library .main .history .title span, .library .main .clips .title span{
+    margin-top: 3px;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.library .main .history p, .library .main .clips p{
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 10px;
+    font-size: 14px;
+    color: var(--color-text-cuartiary);
+}
+.library .main .history p a{
+    margin-left: 5px;
+    text-decoration: none;
+    color: var(--color-border-input-search);
+}
+.library .main .see-later .title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.library .main .see-later .title div:nth-child(1), .library .main .video-likes .title div:nth-child(1){
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.library .main .see-later .title div:nth-child(1) span, .library .main .video-likes .title div:nth-child(1) span{
+    margin-top: 3px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.library .main .see-later .title div:nth-child(1) span:nth-child(2), .library .main .video-likes .title div:nth-child(1) span:nth-child(2){
+    font-weight: 600;
+    color: var(--color-text-primary);
+}
+.library .main .see-later .title div:nth-child(1) span:nth-child(3){
+    color: var(--color-text-secondary);
+}
+.library .main .see-later .title a, .library .main .video-likes .title a{
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    color: var(--color-border-input-search);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    padding: 10px 15px;
+    border-radius: 20px;
+}
+.library .main .see-later .title a:hover, .library .main .video-likes .title a:hover{
+    cursor: pointer;
+    background-color: var(--color-font-hover-button-reintentar);
+}
+.library .main .see-later .lists{
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(213px,1fr));
+    padding: 0px;
+    gap: 5px;
+}
+.library .main .play-list .title{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+.library .main .play-list .title div:nth-child(1){
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.library .main .play-list .title div:nth-child(2){
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.library .main .play-list .title div:nth-child(1) span{
+    margin-top: 3px;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.library .main .play-list .title div:nth-child(2) span{
+    margin-top: 3px;
+    font-weight: 600;
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--color-text-cuartiary);
+    letter-spacing: 0.4px;
+}
+.library .main .play-list .title div:nth-child(1) ion-icon{
+    width: 23px;
+    height: 23px;
+}
+.library .main .play-list .title div:nth-child(2) ion-icon{
+    margin-top: 2px;
+    width: 18px;
+    height: 18px;
+    color: var(--color-text-cuartiary);
+}
+.library .main .video-likes .title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 .library .details{
     background-color: var(--color-font-primary);
     font-family: Arial, Helvetica, sans-serif;

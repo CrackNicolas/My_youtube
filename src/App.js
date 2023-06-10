@@ -7,6 +7,7 @@ import ComponentShorts from './components/layouts/shorts.js';
 import ComponentSubscriptions from './components/layouts/subscriptions.js';
 import ComponentLibrary from './components/layouts/library.js';
 import ComponentChannels from './components/layouts/channels.js';
+import ComponentPlaylist from './components/layouts/playlist.js';
 import ComponentSinInternet from './components/layouts/sin_internet.js';
 
 import './styles/global.css';
@@ -98,6 +99,13 @@ function App() {
           { 
             <GlobalContextProvider>
               <ComponentChannels/>
+            </GlobalContextProvider>
+          } 
+        />
+        <Route exact path="/playlist/:list" element=
+          { 
+            <GlobalContextProvider>
+              <ComponentPlaylist/>
             </GlobalContextProvider>
           } 
         />

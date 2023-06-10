@@ -1,0 +1,8 @@
+.playlist{
+    background-color: var(--color-font-primary);
+    padding: 75px 50px 50px 90px;
+    color: var(--color-text-primary);
+    display: grid;
+    grid-template-columns: 2fr 5fr;
+    gap: 25px;
+}

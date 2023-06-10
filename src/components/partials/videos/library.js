@@ -1,36 +1,50 @@
 import '../../../styles/partials/videos/library.css';
 
-export default function ComponentVideosLibrary({channel}){
+import ComponentVideo from './video';
+
+export default function ComponentVideosLibrary({channel,list_see_later}){
     return (
         <section className='library'>
             <article className='main'>
                 <div className='history'>
                     <div className='title'>
-                        <ion-icon name="time-outline"></ion-icon>
+                        <ion-icon name="stopwatch-outline"></ion-icon>
                         <span>Historial</span>
                     </div>
-                    <p>Los vídeos que veas aparecerán aquí. Buscar vídeos</p>
+                    <p>
+                        Los vídeos que veas aparecerán aquí.
+                        <a href="/">Buscar vídeos</a>
+                    </p>
                 </div>
                 <div className='see-later'>
                     <div className='title'>
                         <div>
                             <ion-icon name="time-outline"></ion-icon>
-                            <span>Ver mas tarde</span>
-                            <span>3</span>
+                            <span>Ver más tarde</span>
+                            <span>{list_see_later.length}</span>
                         </div>
                         <div>
-                            <a>Ver todo</a>
+                            <a href="/playlist/1">Ver todo</a>
                         </div>
+                    </div>
+                    <div className='lists'>
+                        {
+                            list_see_later.map((video,index) => {
+                                return (
+                                    <ComponentVideo video={video} index={index}/>
+                                )
+                            })
+                        }
                     </div>
                 </div>
                 <div className='play-list'>
                     <div className='title'>
                         <div>
-                            <ion-icon name="time-outline"></ion-icon>
+                            <ion-icon name="list-outline"></ion-icon>
                             <span>Lista de reproduccion</span>
                         </div>
                         <div>
-                            <a>Añadido recientemente</a>
+                            <span>Añadidas recientemente</span>
                             <ion-icon name="chevron-down-outline"></ion-icon>
                         </div>
                     </div>
@@ -39,7 +53,7 @@ export default function ComponentVideosLibrary({channel}){
                     <div className='title'>
                         <div>
                             <ion-icon name="thumbs-up-outline"></ion-icon>
-                            <span>Ver que me gustan</span>
+                            <span>Vídeos que me gustan</span>
                             <span>99</span>
                         </div>
                         <div>
@@ -72,7 +86,7 @@ export default function ComponentVideosLibrary({channel}){
                         </div>
                         <div className='item'>
                             <span>Me gusta</span>
-                            <span>99</span>
+                            <span>{channel.likes}</span>
                         </div>
                     </div>
                 </div>
