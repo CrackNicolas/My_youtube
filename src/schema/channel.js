@@ -1,7 +1,7 @@
 import {get_convert_cantidad, get_time_elapsed} from '../logic/functions.js';
 
 export default class Schema_channel{
-    constructor(id,title,subscriptions,logo,view_count,time_elapsed,description,custom_url,likes){
+    constructor(id,title,subscriptions,logo,view_count,time_elapsed,description,custom_url){
         this.id = id;
         this.title = title;
         this.subscriptions = subscriptions;
@@ -10,7 +10,6 @@ export default class Schema_channel{
         this.time_elapsed = time_elapsed;
         this.description = description;
         this.custom_url = custom_url;
-        this.likes = likes;
     }
     static push(channel){
         return new Schema_channel(
@@ -21,8 +20,7 @@ export default class Schema_channel{
             get_convert_cantidad(channel.statistics.viewCount) + " de visitas",
             get_time_elapsed(channel.snippet.publishedAt),
             channel.snippet.description,
-            channel.snippet.customUrl,
-            channel.contentDetails.relatedPlaylists.likes
+            channel.snippet.customUrl
         )
     }
 }

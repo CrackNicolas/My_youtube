@@ -34,7 +34,7 @@ export default function ComponentPlaylist(){
             <Fragment>
                 <ComponentNavTop search_query={context_global.search_query} channel={context_global.channel}/>
                 <ComponentNavLeft capture_icono_nav_left={capture_icono_nav_left} item_selected={name_icono_selected_nav_left}/>
-                <ComponentVideosPlaylist/>
+                <ComponentVideosPlaylist channel={context_global.channel} videos={context_global.list_see_later}/>
             </Fragment>
         :
             <ComponentSinInternet/>

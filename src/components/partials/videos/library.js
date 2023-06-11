@@ -86,7 +86,7 @@ export default function ComponentVideosLibrary({channel,list_see_later}){
                         </div>
                         <div className='item'>
                             <span>Me gusta</span>
-                            <span>{channel.likes}</span>
+                            <span>0</span>
                         </div>
                     </div>
                 </div>
