@@ -7,6 +7,7 @@ export default function ComponentVideosPlaylist({channel,videos}){
                 <img src={videos[0].url_imagen}/>
                 <div className='imagen'>
                     <div>
+                        <ion-icon name="play"></ion-icon>
                         <span>REPRODUCIR TODO</span>
                     </div>
                 </div>

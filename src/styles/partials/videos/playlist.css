@@ -95,6 +95,36 @@
     margin-bottom: 20px;
     width: 100%;
 }
+.playlist .presentation img:hover ~ .imagen{
+    visibility: visible;
+}
+.playlist .presentation .imagen{
+    visibility: hidden;
+    position: absolute;
+    transform: translateY(-200px);
+    background-color: rgba(0, 0, 0, 0.532);
+    border-radius: 10px;
+    display: grid;
+    justify-content: center;
+    place-items: center;
+    height: 176px;
+    width: 87.5%;
+    cursor: pointer;
+}
+.playlist .presentation .imagen div{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.playlist .presentation .imagen div span{
+    margin-top: 2px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+.playlist .presentation .imagen div ion-icon{
+    width: 23px;
+    height: 23px;
+}
 .playlist .presentation img:hover{
     cursor: pointer;
 }
