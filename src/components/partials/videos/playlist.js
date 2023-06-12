@@ -5,6 +5,11 @@ export default function ComponentVideosPlaylist({channel,videos}){
         <section className='playlist'>
             <article className='presentation' style={{backgroundImage: "url("+videos[0].url_imagen+")"}}>
                 <img src={videos[0].url_imagen}/>
+                <div className='imagen'>
+                    <div>
+                        <span>REPRODUCIR TODO</span>
+                    </div>
+                </div>
                 <article>
                     <div className='header'>
                         <span className='title'>Ver más tarde</span>
@@ -55,7 +60,7 @@ export default function ComponentVideosPlaylist({channel,videos}){
                                             <div className="description">
                                                 <p className="title">{video.title}</p>
                                                 <div className="data">
-                                                    <span>{video.channel.title}</span>
+                                                    <span title={video.channel.title}>{video.channel.title}</span>
                                                     <span>. {video.view_count}</span>
                                                     <span>. {video.time_elapsed}</span>
                                                 </div>

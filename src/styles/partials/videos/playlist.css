@@ -95,6 +95,9 @@
     margin-bottom: 20px;
     width: 100%;
 }
+.playlist .presentation img:hover{
+    cursor: pointer;
+}
 .playlist .list{
     padding-top: 20px;
     padding-left: 365px;
@@ -102,9 +105,13 @@
 .playlist .list .header .title{
     display: flex;
     align-items: center;
-    padding-left: 35px;
+    margin-left: 35px;
     gap: 10px;
     margin-bottom: 10px;
+    width: 95px;
+}
+.playlist .list .header .title:hover{
+    cursor: pointer;
 }
 .playlist .list .header .title ion-icon{
     width: 23px;
@@ -200,4 +207,8 @@
     margin-top: 10px;
     font-size: 12px;
     font-family: Arial, Helvetica, sans-serif;
+}
+.playlist .list .body .items .video .description .data span:nth-child(1):hover{
+    cursor: pointer;
+    color: var(--color-text-primary);
 }
