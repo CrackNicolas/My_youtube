@@ -102,7 +102,7 @@
     visibility: hidden;
     position: absolute;
     transform: translateY(-200px);
-    background-color: rgba(0, 0, 0, 0.532);
+    background-color: rgba(0, 0, 0, 0.669);
     border-radius: 10px;
     display: grid;
     justify-content: center;
@@ -173,9 +173,20 @@
 }
 .playlist .list .body .items .item:hover .icon-right{
     visibility: visible;
+    transition-timing-function: ease-in-out;
 }
 .playlist .list .body .items .item .icon-right{
     visibility: hidden;
+    display: grid;
+    place-items: center;
+    width: 35px;
+    height: 32px;
+    border-radius: 50%;
+    transition-duration: 200ms;
+}
+.playlist .list .body .items .item .icon-right:hover{
+    cursor: pointer;
+    background-color: var(--color-font-tertiary);
 }
 .playlist .list .body .items .item .icon-left ion-icon{
     width: 27px;

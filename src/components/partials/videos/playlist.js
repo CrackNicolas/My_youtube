@@ -1,4 +1,5 @@
 import { useState } from 'react';
+
 import '../../../styles/partials/videos/playlist.css';
 
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
@@ -18,6 +19,10 @@ const handler = (result) => {
 
 export default function ComponentVideosPlaylist({channel,videos}){
     const [videos_playlist, setVideos_playlist] = useState(videos);
+
+    const order_items = () => {
+        
+    }
 
     return (
         <section className='playlist'>
@@ -53,7 +58,7 @@ export default function ComponentVideosPlaylist({channel,videos}){
             </article>
             <article className='list'>
                 <div className='header'>
-                    <div className='title'>
+                    <div className='title' onClick={() => order_items()}>
                         <ion-icon name="options-outline"></ion-icon>
                         <span>Ordenar</span>
                     </div>
