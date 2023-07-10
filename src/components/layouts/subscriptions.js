@@ -21,7 +21,7 @@ export default function ComponentSubscriptions(){
             let new_videos = await Load_subscriptions(context_global.channel.id);
             setVideos(new_videos);
         }
-        load_subscriptions();
+        if(context_global.channel!=undefined) load_subscriptions();
     },[]);
 
     let capture_icono_nav_left = (id) => {

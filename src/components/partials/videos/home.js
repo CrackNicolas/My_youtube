@@ -75,9 +75,7 @@ export default function ComponentVideosLayouts({videos,loading}){
                   </div>
                   <div className="name-autor">
                     <p>{video.channel.title}</p>
-                    {
-                      video.license? <ion-icon name="checkmark-circle"></ion-icon> : ""
-                    }
+                    { video.license && <ion-icon name="checkmark-circle"></ion-icon> }
                   </div>
                   <div className="visualizaciones">
                     <p>{video.view_count} .{video.time_elapsed}</p>
